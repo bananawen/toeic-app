@@ -51,31 +51,87 @@ const getQuestionsByType = (type: string, seed?: number): Question[] => {
   
   switch (type) {
     case "vocabulary":
-      pool = allQuestions.filter(q => 
-        ["word-form", "quantifiers"].includes(q.category)
-      )
+      pool = allQuestions.filter(q => q.type === "vocabulary")
       break
     case "grammar":
-      pool = allQuestions.filter(q => 
-        !["word-form", "quantifiers"].includes(q.category)
-      )
+      pool = allQuestions.filter(q => q.type === "grammar")
       break
     case "full":
+      pool = allQuestions.filter(q => q.type === "full")
+      break
+    // 新增分類題庫
+    case "verb-tense":
+      pool = allQuestions.filter(q => q.category === "verb-tense")
+      break
+    case "preposition":
+      pool = allQuestions.filter(q => q.category === "preposition")
+      break
+    case "modal-verbs":
+      pool = allQuestions.filter(q => q.category === "modal-verbs")
+      break
+    case "conditionals":
+      pool = allQuestions.filter(q => q.category === "conditionals")
+      break
+    case "passive-voice":
+      pool = allQuestions.filter(q => q.category === "passive-voice")
+      break
+    case "word-form":
+      pool = allQuestions.filter(q => q.category === "word-form")
+      break
+    case "relative-pronoun":
+      pool = allQuestions.filter(q => q.category === "relative-pronoun")
+      break
+    case "conjunction":
+      pool = allQuestions.filter(q => q.category === "conjunction")
+      break
+    case "quantifiers":
+      pool = allQuestions.filter(q => q.category === "quantifiers")
+      break
+    case "gerund-infinitive":
+      pool = allQuestions.filter(q => q.category === "gerund-infinitive")
+      break
+    case "comparative":
+      pool = allQuestions.filter(q => q.category === "comparative")
+      break
+    case "article":
+      pool = allQuestions.filter(q => q.category === "article")
+      break
+    case "noun-clause":
+      pool = allQuestions.filter(q => q.category === "noun-clause")
+      break
+    case "adjective-order":
+      pool = allQuestions.filter(q => q.category === "adjective-order")
+      break
     default:
       pool = allQuestions
   }
   
   // 使用固定 seed 確保 SSR 一致
   const shuffled = shuffleArray(pool, seed)
-  const count = type === "full" ? 10 : 5
+  const count = ["full", "verb-tense", "preposition", "modal-verbs", "conditionals", "passive-voice", "word-form", "relative-pronoun", "conjunction", "quantifiers", "gerund-infinitive", "comparative", "article", "noun-clause", "adjective-order"].includes(type) ? 10 : (type === "full" ? 10 : 5)
   return shuffled.slice(0, count)
 }
 
 // 測驗時間設定（秒）
-const TIME_LIMITS = {
+const TIME_LIMITS: Record<string, number> = {
   vocabulary: 2 * 60,   // 2 分鐘
   grammar: 3 * 60,     // 3 分鐘  
   full: 5 * 60,        // 5 分鐘
+  // 分類測驗時間
+  "verb-tense": 3 * 60,
+  "preposition": 3 * 60,
+  "modal-verbs": 3 * 60,
+  "conditionals": 3 * 60,
+  "passive-voice": 3 * 60,
+  "word-form": 3 * 60,
+  "relative-pronoun": 3 * 60,
+  "conjunction": 3 * 60,
+  "quantifiers": 3 * 60,
+  "gerund-infinitive": 3 * 60,
+  "comparative": 3 * 60,
+  "article": 3 * 60,
+  "noun-clause": 3 * 60,
+  "adjective-order": 3 * 60,
 }
 
 // 思考過久閾值（秒）- 超過這個時間未答題視為思考過久
@@ -190,12 +246,26 @@ export default function QuizPage() {
   }, [showResult])
 
   const getQuizTitle = () => {
-    switch (quizType) {
-      case "vocabulary": return "單字測驗"
-      case "grammar": return "文法測驗"
-      case "full": return "模擬考試"
-      default: return "測驗"
+    const titles: Record<string, string> = {
+      vocabulary: "單字測驗",
+      grammar: "文法測驗",
+      full: "模擬考試",
+      "verb-tense": "動詞時態",
+      preposition: "介系詞",
+      "modal-verbs": "助動詞",
+      conditionals: "條件句",
+      "passive-voice": "被動語態",
+      "word-form": "詞性變化",
+      "relative-pronoun": "關係代名詞",
+      conjunction: "連接詞",
+      quantifiers: "數量詞",
+      "gerund-infinitive": "動名詞/不定詞",
+      comparative: "比較級",
+      article: "冠詞",
+      "noun-clause": "名詞子句",
+      "adjective-order": "形容詞順序",
     }
+    return titles[quizType] || "測驗"
   }
 
   // 查詢單字定義
@@ -626,13 +696,23 @@ export default function QuizPage() {
                 <span
                   key={index}
                   className="inline cursor-pointer hover:bg-blue-100 rounded px-0.5 select-none"
-                  onClick={() => handleAddToNotebook(word)}
+                  onTouchStart={(e) => {
+                    e.preventDefault()
+                    longPressTimerRef.current = setTimeout(() => {
+                      handleAddToNotebook(word)
+                    }, 500)
+                  }}
+                  onTouchEnd={() => {
+                    if (longPressTimerRef.current) {
+                      clearTimeout(longPressTimerRef.current)
+                    }
+                  }}
                 >
                   {word}{" "}
                 </span>
               ))}
             </div>
-            <div className="text-xs text-gray-400 mt-1">(點擊單字加入生詞本)</div>
+            <div className="text-xs text-gray-400 mt-1">(長按單字加入生詞本)</div>
           </CardHeader>
           <CardContent className="space-y-2">
             {currentQuestion.options.map((option) => {

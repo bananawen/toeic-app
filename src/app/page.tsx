@@ -1,8 +1,39 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, FileText, Clock, Heart } from "lucide-react"
+import { BookOpen, FileText, Clock, Heart, GraduationCap } from "lucide-react"
 
 export default function Home() {
+  // 分類列表
+  const categories = [
+    { type: "verb-tense", name: "動詞時態", color: "blue" },
+    { type: "preposition", name: "介系詞", color: "green" },
+    { type: "modal-verbs", name: "助動詞", color: "yellow" },
+    { type: "conditionals", name: "條件句", color: "orange" },
+    { type: "passive-voice", name: "被動語態", color: "red" },
+    { type: "word-form", name: "詞性變化", color: "purple" },
+    { type: "relative-pronoun", name: "關係代名詞", color: "indigo" },
+    { type: "conjunction", name: "連接詞", color: "pink" },
+    { type: "quantifiers", name: "數量詞", color: "cyan" },
+    { type: "gerund-infinitive", name: "動名詞", color: "teal" },
+    { type: "comparative", name: "比較級", color: "amber" },
+    { type: "article", name: "冠詞", color: "slate" },
+  ]
+
+  const colorMap: Record<string, string> = {
+    blue: "bg-blue-100 text-blue-600",
+    green: "bg-green-100 text-green-600",
+    yellow: "bg-yellow-100 text-yellow-600",
+    orange: "bg-orange-100 text-orange-600",
+    red: "bg-red-100 text-red-600",
+    purple: "bg-purple-100 text-purple-600",
+    indigo: "bg-indigo-100 text-indigo-600",
+    pink: "bg-pink-100 text-pink-600",
+    cyan: "bg-cyan-100 text-cyan-600",
+    teal: "bg-teal-100 text-teal-600",
+    amber: "bg-amber-100 text-amber-600",
+    slate: "bg-slate-100 text-slate-600",
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-8">
@@ -76,8 +107,34 @@ export default function Home() {
             </Card>
           </Link>
 
+          {/* 分類練習 */}
+          <div className="mt-4">
+            <div className="flex items-center gap-2 mb-3">
+              <GraduationCap className="w-5 h-5 text-orange-600" />
+              <h2 className="text-lg font-bold text-gray-700">分類練習</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {categories.map((cat) => (
+                <Link key={cat.type} href={`/quiz?type=${cat.type}`} className="block">
+                  <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
+                    <CardHeader className="py-3 px-3">
+                      <div className="flex items-center gap-2">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${colorMap[cat.color]}`}>
+                          <GraduationCap className="w-4 h-4" />
+                        </div>
+                        <div className="flex-1">
+                          <CardTitle className="text-sm">{cat.name}</CardTitle>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* 我的單字本 */}
-          <Link href="/notebook" className="block">
+          <Link href="/notebook" className="block mt-4">
             <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
               <CardHeader className="py-4 px-4">
                 <div className="flex items-center gap-4">

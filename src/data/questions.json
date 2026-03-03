@@ -2,7 +2,8 @@
   "meta": {
     "version": "1.0",
     "created": "2026-03-03",
-    "totalQuestions": 20
+    "updated": "2026-03-04",
+    "totalQuestions": 50
   },
   "questions": [
     {
@@ -18,7 +19,7 @@
         { "key": "D", "text": "to reduce" }
       ],
       "correctAnswer": "A",
-      "explanation": "\"will\" 後面必須接動詞原形 (原形動詞)，因此正確答案是 reduce。"
+      "explanation": "\"will\" 後面必須接動詞原形，因此正確答案是 reduce。"
     },
     {
       "id": "p5-q002",
@@ -93,7 +94,7 @@
         { "key": "D", "text": "has completed" }
       ],
       "correctAnswer": "C",
-      "explanation": "這是假設過去的事實 (與過去事實相反的假設)，用過去完成式 had completed。"
+      "explanation": "這是假設過去的事實，用過去完成式 had completed。"
     },
     {
       "id": "p5-q007",
@@ -156,11 +157,161 @@
       "explanation": "\"documents\" 是可數名詞，用 \"a few\" (幾個) 表示肯定語氣。"
     },
     {
+      "id": "p5-q011",
+      "type": "part5",
+      "category": "verb-tense",
+      "difficulty": "easy",
+      "question": "She _____ working here since 2020.",
+      "options": [
+        { "key": "A", "text": "is" },
+        { "key": "B", "text": "has been" },
+        { "key": "C", "text": "had been" },
+        { "key": "D", "text": "will be" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "since + 時間點用現在完成式，\"has been working\" 是正確答案。"
+    },
+    {
+      "id": "p5-q012",
+      "type": "part5",
+      "category": "preposition",
+      "difficulty": "medium",
+      "question": "The train is heading _____ north.",
+      "options": [
+        { "key": "A", "text": "to" },
+        { "key": "B", "text": "toward" },
+        { "key": "C", "text": "at" },
+        { "key": "D", "text": "for" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "\"toward\" 表示方向，正確答案是 \"toward north\"。"
+    },
+    {
+      "id": "p5-q013",
+      "type": "part5",
+      "category": "comparative",
+      "difficulty": "easy",
+      "question": "This task is _____ than the previous one.",
+      "options": [
+        { "key": "A", "text": "more difficult" },
+        { "key": "B", "text": "difficultier" },
+        { "key": "C", "text": "more difficulter" },
+        { "key": "D", "text": "most difficult" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "比較級用 \"more difficult\"，三音節以上形容詞用 more + 形容詞。"
+    },
+    {
+      "id": "p5-q014",
+      "type": "part5",
+      "category": "article",
+      "difficulty": "easy",
+      "question": "We need _____ honest person for this position.",
+      "options": [
+        { "key": "A", "text": "a" },
+        { "key": "B", "text": "an" },
+        { "key": "C", "text": "the" },
+        { "key": "D", "text": "-" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "\"honest\" 是母音開頭，用 \"an honest person\"。"
+    },
+    {
+      "id": "p5-q015",
+      "type": "part5",
+      "category": "gerund-infinitive",
+      "difficulty": "medium",
+      "question": "I enjoy _____ to music during work.",
+      "options": [
+        { "key": "A", "text": "listen" },
+        { "key": "B", "text": "listening" },
+        { "key": "C", "text": "to listen" },
+        { "key": "D", "text": "listened" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "enjoy 後面接動名詞 (Ving)，\"listening\" 是正確答案。"
+    },
+    {
+      "id": "p5-q016",
+      "type": "part5",
+      "category": "passive-voice",
+      "difficulty": "hard",
+      "question": "The new factory _____ next year.",
+      "options": [
+        { "key": "A", "text": "completes" },
+        { "key": "B", "text": "will complete" },
+        { "key": "C", "text": "will be completed" },
+        { "key": "D", "text": "is completing" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "工廠是「被建造」，用未來被動式 \"will be completed\"。"
+    },
+    {
+      "id": "p5-q017",
+      "type": "part5",
+      "category": "noun-clause",
+      "difficulty": "medium",
+      "question": "_____ we finish the report on time depends on the resources we get.",
+      "options": [
+        { "key": "A", "text": "What" },
+        { "key": "B", "text": "Whether" },
+        { "key": "C", "text": "That" },
+        { "key": "D", "text": "If" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "if/whether 表「是否」，根據語意 \"Whether\" 是正確答案。"
+    },
+    {
+      "id": "p5-q018",
+      "type": "part5",
+      "category": "adjective-order",
+      "difficulty": "hard",
+      "question": "She has _____ cat.",
+      "options": [
+        { "key": "A", "text": "a cute black small" },
+        { "key": "B", "text": "a small cute black" },
+        { "key": "C", "text": "a black cute small" },
+        { "key": "D", "text": "a small black cute" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "形容詞順序：大小 → 年齡 → 形狀 → 顏色 → 出處 → 目的，所以是 \"a small cute black cat\"。"
+    },
+    {
+      "id": "p5-q019",
+      "type": "part5",
+      "category": "modal-verbs",
+      "difficulty": "medium",
+      "question": "You _____ have paid for the dinner. It was my treat!",
+      "options": [
+        { "key": "A", "text": "couldn't" },
+        { "key": "B", "text": "shouldn't" },
+        { "key": "C", "text": "mustn't" },
+        { "key": "D", "text": "might not" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "\"shouldn't have done\" 表示「不應該做... (但做了)」，符合語意。"
+    },
+    {
+      "id": "p5-q020",
+      "type": "part5",
+      "category": "conjunction",
+      "difficulty": "medium",
+      "question": "I'll call you _____ I arrive at the airport.",
+      "options": [
+        { "key": "A", "text": "as soon as" },
+        { "key": "B", "text": "before" },
+        { "key": "C", "text": "until" },
+        { "key": "D", "text": "while" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "\"as soon as\" 表示「一...就...」，符合句意。"
+    },
+    {
       "id": "voc-q001",
       "type": "vocabulary",
       "category": "word-form",
       "difficulty": "easy",
-      "question": "The company's _____ hasdecreased significantly over the past year.",
+      "question": "The company's _____ has decreased significantly over the past year.",
       "options": [
         { "key": "A", "text": "compete" },
         { "key": "B", "text": "competent" },
@@ -228,7 +379,7 @@
         { "key": "D", "text": "resisting" }
       ],
       "correctAnswer": "B",
-      "explanation": "形容詞性物主代詞後面需要名詞，\"resistance\" (韌性、抵抗力) 是正確答案。"
+      "explanation": "形容詞性物主代詞後面需要名詞，\"resistance\" (韌性) 是正確答案。"
     },
     {
       "id": "voc-q006",
@@ -304,6 +455,306 @@
       ],
       "correctAnswer": "B",
       "explanation": "形容詞修飾名詞 reporting，\"accurate\" (準確的) 是正確答案。"
+    },
+    {
+      "id": "gram-q001",
+      "type": "grammar",
+      "category": "verb-tense",
+      "difficulty": "easy",
+      "question": "By next month, we _____ the project.",
+      "options": [
+        { "key": "A", "text": "will finish" },
+        { "key": "B", "text": "will have finished" },
+        { "key": "C", "text": "finished" },
+        { "key": "D", "text": "finish" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "\"by + 未來時間\" 用未來完成式，\"will have finished\" 是正確答案。"
+    },
+    {
+      "id": "gram-q002",
+      "type": "grammar",
+      "category": "conditionals",
+      "difficulty": "medium",
+      "question": "If I _____ more money, I would buy a new car.",
+      "options": [
+        { "key": "A", "text": "have" },
+        { "key": "B", "text": "had" },
+        { "key": "C", "text": "will have" },
+        { "key": "D", "text": "would have" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "這是与現在事實相反的假設，用過去式，\"had\" 是正確答案。"
+    },
+    {
+      "id": "gram-q003",
+      "type": "grammar",
+      "category": "passive-voice",
+      "difficulty": "easy",
+      "question": "The documents _____ on the table by someone.",
+      "options": [
+        { "key": "A", "text": "were left" },
+        { "key": "B", "text": "left" },
+        { "key": "C", "text": "leaves" },
+        { "key": "D", "text": "was leaving" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "documents 是複數，用過去被動式 \"were left\"。"
+    },
+    {
+      "id": "gram-q004",
+      "type": "grammar",
+      "category": "gerund-infinitive",
+      "difficulty": "medium",
+      "question": "She suggested _____ a meeting tomorrow.",
+      "options": [
+        { "key": "A", "text": "have" },
+        { "key": "B", "text": "to have" },
+        { "key": "C", "text": "having" },
+        { "key": "D", "text": "had" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "suggest 後面接動名詞，\"having a meeting\" 是正確答案。"
+    },
+    {
+      "id": "gram-q005",
+      "type": "grammar",
+      "category": "relative-pronoun",
+      "difficulty": "easy",
+      "question": "The person _____ car was stolen reported to the police.",
+      "options": [
+        { "key": "A", "text": "who" },
+        { "key": "B", "text": "whom" },
+        { "key": "C", "text": "whose" },
+        { "key": "D", "text": "which" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "所有格關係代名詞用 \"whose\"，表示「那個人的車...」。"
+    },
+    {
+      "id": "gram-q006",
+      "type": "grammar",
+      "category": "conjunction",
+      "difficulty": "medium",
+      "question": "She works hard _____ she can support her family.",
+      "options": [
+        { "key": "A", "text": "because of" },
+        { "key": "B", "text": "in order to" },
+        { "key": "C", "text": "so that" },
+        { "key": "D", "text": "although" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "\"so that\" 表示目的，\"she can support her family\" 是附屬子句。"
+    },
+    {
+      "id": "gram-q007",
+      "type": "grammar",
+      "category": "modal-verbs",
+      "difficulty": "hard",
+      "question": "You _____ have forgotten the meeting. It was announced last week.",
+      "options": [
+        { "key": "A", "text": "might not" },
+        { "key": "B", "text": "mustn't" },
+        { "key": "C", "text": "can't" },
+        { "key": "D", "text": "couldn't" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "\"can't have done\" 表示「不可能做...」，語意最合適。"
+    },
+    {
+      "id": "gram-q008",
+      "type": "grammar",
+      "category": "noun-clause",
+      "difficulty": "medium",
+      "question": "I wonder _____ she will attend the conference.",
+      "options": [
+        { "key": "A", "text": "that" },
+        { "key": "B", "text": "what" },
+        { "key": "C", "text": "whether" },
+        { "key": "D", "text": "which" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "wonder + whether/if 表「不知道...」，\"whether\" 是正確答案。"
+    },
+    {
+      "id": "gram-q009",
+      "type": "grammar",
+      "category": "quantifiers",
+      "difficulty": "easy",
+      "question": "There is _____ water in the bottle. It's almost empty.",
+      "options": [
+        { "key": "A", "text": "few" },
+        { "key": "B", "text": "a few" },
+        { "key": "C", "text": "little" },
+        { "key": "D", "text": "a little" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "water 是不可數名詞，用 \"little\" 表示否定 (幾乎沒有)。"
+    },
+    {
+      "id": "gram-q010",
+      "type": "grammar",
+      "category": "article",
+      "difficulty": "easy",
+      "question": "He is _____ university professor.",
+      "options": [
+        { "key": "A", "text": "a" },
+        { "key": "B", "text": "an" },
+        { "key": "C", "text": "the" },
+        { "key": "D", "text": "-" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "\"university\" 是子音開頭，用 \"a university professor\"。"
+    },
+    {
+      "id": "full-q001",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "easy",
+      "question": "Please make sure to _____ the documents before submitting.",
+      "options": [
+        { "key": "A", "text": "review" },
+        { "key": "B", "text": "reviews" },
+        { "key": "C", "text": "reviewing" },
+        { "key": "D", "text": "reviewed" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "to + 動詞原形，\"review\" 是正確答案。"
+    },
+    {
+      "id": "full-q002",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "medium",
+      "question": "The manager insisted that the report _____ submitted by Friday.",
+      "options": [
+        { "key": "A", "text": "be" },
+        { "key": "B", "text": "is" },
+        { "key": "C", "text": "was" },
+        { "key": "D", "text": "are" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "insisted that + (should) + V，用虛擬語氣，\"be submitted\" 是正確答案。"
+    },
+    {
+      "id": "full-q003",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "easy",
+      "question": "I would like to know more _____ the company's new policy.",
+      "options": [
+        { "key": "A", "text": "about" },
+        { "key": "B", "text": "from" },
+        { "key": "C", "text": "to" },
+        { "key": "D", "text": "at" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "\"know more about\" 表示「了解更多關於...」，\"about\" 是正確答案。"
+    },
+    {
+      "id": "full-q004",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "medium",
+      "question": "Had I known about the traffic, I _____ earlier.",
+      "options": [
+        { "key": "A", "text": "would leave" },
+        { "key": "B", "text": "would have left" },
+        { "key": "C", "text": "left" },
+        { "key": "D", "text": "had left" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "與過去事實相反的假設，用過去完成式，\"would have left\" 是正確答案。"
+    },
+    {
+      "id": "full-q005",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "easy",
+      "question": "The company's revenue increased _____ 20% last year.",
+      "options": [
+        { "key": "A", "text": "by" },
+        { "key": "B", "text": "to" },
+        { "key": "C", "text": "with" },
+        { "key": "D", "text": "at" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "increase/decrease + by 表「增加了...」，\"by 20%\" 是正確答案。"
+    },
+    {
+      "id": "full-q006",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "hard",
+      "question": "Not only _____ the project on time, but also under budget.",
+      "options": [
+        { "key": "A", "text": "they completed" },
+        { "key": "B", "text": "did they complete" },
+        { "key": "C", "text": "they complete" },
+        { "key": "D", "text": "they had completed" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Not only 放在句首要倒裝，\"did they complete\" 是正確答案。"
+    },
+    {
+      "id": "full-q007",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "medium",
+      "question": "I look forward to _____ from you soon.",
+      "options": [
+        { "key": "A", "text": "hear" },
+        { "key": "B", "text": "hearing" },
+        { "key": "C", "text": "to hear" },
+        { "key": "D", "text": "heard" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "look forward to + Ving，\"hearing\" 是正確答案。"
+    },
+    {
+      "id": "full-q008",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "easy",
+      "question": "The meeting has been _____ until next week.",
+      "options": [
+        { "key": "A", "text": "put off" },
+        { "key": "B", "text": "put away" },
+        { "key": "C", "text": "put up" },
+        { "key": "D", "text": "put down" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "\"put off\" 表示「延後」，\"has been put off\" 是正確答案。"
+    },
+    {
+      "id": "full-q009",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "hard",
+      "question": "No sooner _____ the presentation than the questions started.",
+      "options": [
+        { "key": "A", "text": "he finished" },
+        { "key": "B", "text": "did he finish" },
+        { "key": "C", "text": "he had finished" },
+        { "key": "D", "text": "he finishes" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "No sooner 放在句首要倒裝，\"did he finish\" 是正確答案。"
+    },
+    {
+      "id": "full-q010",
+      "type": "full",
+      "category": "mixed",
+      "difficulty": "medium",
+      "question": "I would rather _____ than work overtime today.",
+      "options": [
+        { "key": "A", "text": "go home" },
+        { "key": "B", "text": "to go home" },
+        { "key": "C", "text": "going home" },
+        { "key": "D", "text": "gone home" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "would rather + V (動詞原形)，\"go home\" 是正確答案。"
     }
   ]
 }
