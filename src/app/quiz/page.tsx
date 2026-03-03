@@ -50,67 +50,68 @@ const getQuestionsByType = (type: string, seed?: number): Question[] => {
   let pool: Question[]
   
   switch (type) {
+    // 統一題庫：vocabulary/grammar/full 都指向 part5
     case "vocabulary":
-      pool = allQuestions.filter(q => q.type === "vocabulary")
-      break
     case "grammar":
-      pool = allQuestions.filter(q => q.type === "grammar")
-      break
     case "full":
-      pool = allQuestions.filter(q => q.type === "full")
+      pool = allQuestions.filter(q => q.type === "part5")
       break
-    // 新增分類題庫
-    case "verb-tense":
-      pool = allQuestions.filter(q => q.category === "verb-tense")
-      break
-    case "preposition":
-      pool = allQuestions.filter(q => q.category === "preposition")
-      break
-    case "modal-verbs":
-      pool = allQuestions.filter(q => q.category === "modal-verbs")
-      break
-    case "conditionals":
-      pool = allQuestions.filter(q => q.category === "conditionals")
-      break
-    case "passive-voice":
-      pool = allQuestions.filter(q => q.category === "passive-voice")
-      break
-    case "word-form":
-      pool = allQuestions.filter(q => q.category === "word-form")
-      break
-    case "relative-pronoun":
-      pool = allQuestions.filter(q => q.category === "relative-pronoun")
-      break
-    case "conjunction":
-      pool = allQuestions.filter(q => q.category === "conjunction")
-      break
-    case "quantifiers":
-      pool = allQuestions.filter(q => q.category === "quantifiers")
-      break
-    case "gerund-infinitive":
-      pool = allQuestions.filter(q => q.category === "gerund-infinitive")
-      break
-    case "comparative":
-      pool = allQuestions.filter(q => q.category === "comparative")
-      break
-    case "article":
-      pool = allQuestions.filter(q => q.category === "article")
-      break
-    case "noun-clause":
-      pool = allQuestions.filter(q => q.category === "noun-clause")
-      break
-    case "adjective-order":
-      pool = allQuestions.filter(q => q.category === "adjective-order")
-      break
-    // TOEIC Part 大題分類
     case "part2":
       pool = allQuestions.filter(q => q.type === "part2")
       break
+    case "part5":
+      pool = allQuestions.filter(q => q.type === "part5")
+      break
+    // 文法分類題庫
+    case "verb-tense":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "verb-tense")
+      break
+    case "preposition":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "preposition")
+      break
+    case "modal-verbs":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "modal-verbs")
+      break
+    case "conditionals":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "conditionals")
+      break
+    case "passive-voice":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "passive-voice")
+      break
+    case "word-form":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "word-form")
+      break
+    case "relative-pronoun":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "relative-pronoun")
+      break
+    case "conjunction":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "conjunction")
+      break
+    case "quantifiers":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "quantifiers")
+      break
+    case "gerund-infinitive":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "gerund-infinitive")
+      break
+    case "comparative":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "comparative")
+      break
+    case "article":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "article")
+      break
+    case "noun-clause":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "noun-clause")
+      break
+    case "adjective-order":
+      pool = allQuestions.filter(q => q.type === "part5" && q.category === "adjective-order")
+      break
+    // TOEIC Part 大題分類
     case "part3":
       pool = allQuestions.filter(q => q.type === "part3")
       break
     case "part4":
       pool = allQuestions.filter(q => q.type === "part4")
+      break
       break
     case "part5":
       pool = allQuestions.filter(q => q.type === "part5")

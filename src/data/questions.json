@@ -548,7 +548,7 @@
     },
     {
       "id": "voc-q001",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "easy",
       "question": "The company's _____ has decreased significantly over the past year.",
@@ -575,7 +575,7 @@
     },
     {
       "id": "voc-q002",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "medium",
       "question": "The CEO made a _____ decision to expand into new markets.",
@@ -602,7 +602,7 @@
     },
     {
       "id": "voc-q003",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "easy",
       "question": "We need to _____ our marketing efforts to reach a younger audience.",
@@ -629,7 +629,7 @@
     },
     {
       "id": "voc-q004",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "medium",
       "question": "The _____ of the new product was higher than expected.",
@@ -656,7 +656,7 @@
     },
     {
       "id": "voc-q005",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "easy",
       "question": "Our team showed great _____ in overcoming the challenges.",
@@ -683,7 +683,7 @@
     },
     {
       "id": "voc-q006",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "medium",
       "question": "The presentation was very _____, and everyone understood the main points.",
@@ -710,7 +710,7 @@
     },
     {
       "id": "voc-q007",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "easy",
       "question": "The company is looking for _____ candidates with international experience.",
@@ -737,7 +737,7 @@
     },
     {
       "id": "voc-q008",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "medium",
       "question": "There has been a significant _____ in online sales this year.",
@@ -764,7 +764,7 @@
     },
     {
       "id": "voc-q009",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "easy",
       "question": "The committee made a unanimous _____ to approve the budget.",
@@ -791,7 +791,7 @@
     },
     {
       "id": "voc-q010",
-      "type": "vocabulary",
+      "type": "part5",
       "category": "word-form",
       "difficulty": "medium",
       "question": "The new regulations require _____ reporting of financial data.",
@@ -818,7 +818,7 @@
     },
     {
       "id": "gram-q001",
-      "type": "grammar",
+      "type": "part5",
       "category": "verb-tense",
       "difficulty": "easy",
       "question": "By next month, we _____ the project.",
@@ -845,7 +845,7 @@
     },
     {
       "id": "gram-q002",
-      "type": "grammar",
+      "type": "part5",
       "category": "conditionals",
       "difficulty": "medium",
       "question": "If I _____ more money, I would buy a new car.",
@@ -872,7 +872,7 @@
     },
     {
       "id": "gram-q003",
-      "type": "grammar",
+      "type": "part5",
       "category": "passive-voice",
       "difficulty": "easy",
       "question": "The documents _____ on the table by someone.",
@@ -899,7 +899,7 @@
     },
     {
       "id": "gram-q004",
-      "type": "grammar",
+      "type": "part5",
       "category": "gerund-infinitive",
       "difficulty": "medium",
       "question": "She suggested _____ a meeting tomorrow.",
@@ -926,7 +926,7 @@
     },
     {
       "id": "gram-q005",
-      "type": "grammar",
+      "type": "part5",
       "category": "relative-pronoun",
       "difficulty": "easy",
       "question": "The person _____ car was stolen reported to the police.",
@@ -953,7 +953,7 @@
     },
     {
       "id": "gram-q006",
-      "type": "grammar",
+      "type": "part5",
       "category": "conjunction",
       "difficulty": "medium",
       "question": "She works hard _____ she can support her family.",
@@ -980,7 +980,7 @@
     },
     {
       "id": "gram-q007",
-      "type": "grammar",
+      "type": "part5",
       "category": "modal-verbs",
       "difficulty": "hard",
       "question": "You _____ have forgotten the meeting. It was announced last week.",
@@ -1007,7 +1007,7 @@
     },
     {
       "id": "gram-q008",
-      "type": "grammar",
+      "type": "part5",
       "category": "noun-clause",
       "difficulty": "medium",
       "question": "I wonder _____ she will attend the conference.",
@@ -1034,7 +1034,7 @@
     },
     {
       "id": "gram-q009",
-      "type": "grammar",
+      "type": "part5",
       "category": "quantifiers",
       "difficulty": "easy",
       "question": "There is _____ water in the bottle. It's almost empty.",
@@ -1061,7 +1061,7 @@
     },
     {
       "id": "gram-q010",
-      "type": "grammar",
+      "type": "part5",
       "category": "article",
       "difficulty": "easy",
       "question": "He is _____ university professor.",
@@ -1088,7 +1088,7 @@
     },
     {
       "id": "full-q001",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "easy",
       "question": "Please make sure to _____ the documents before submitting.",
@@ -1115,7 +1115,7 @@
     },
     {
       "id": "full-q002",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "medium",
       "question": "The manager insisted that the report _____ submitted by Friday.",
@@ -1142,7 +1142,7 @@
     },
     {
       "id": "full-q003",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "easy",
       "question": "I would like to know more _____ the company's new policy.",
@@ -1169,7 +1169,7 @@
     },
     {
       "id": "full-q004",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "medium",
       "question": "Had I known about the traffic, I _____ earlier.",
@@ -1196,7 +1196,7 @@
     },
     {
       "id": "full-q005",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "easy",
       "question": "The company's revenue increased _____ 20% last year.",
@@ -1223,7 +1223,7 @@
     },
     {
       "id": "full-q006",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "hard",
       "question": "Not only _____ the project on time, but also under budget.",
@@ -1250,7 +1250,7 @@
     },
     {
       "id": "full-q007",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "medium",
       "question": "I look forward to _____ from you soon.",
@@ -1277,7 +1277,7 @@
     },
     {
       "id": "full-q008",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "easy",
       "question": "The meeting has been _____ until next week.",
@@ -1304,7 +1304,7 @@
     },
     {
       "id": "full-q009",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "hard",
       "question": "No sooner _____ the presentation than the questions started.",
@@ -1331,7 +1331,7 @@
     },
     {
       "id": "full-q010",
-      "type": "full",
+      "type": "part5",
       "category": "mixed",
       "difficulty": "medium",
       "question": "I would rather _____ than work overtime today.",

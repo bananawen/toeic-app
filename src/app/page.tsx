@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, FileText, Clock, Heart, GraduationCap, Headphones } from "lucide-react"
+import { BookOpen, FileText, Heart, GraduationCap } from "lucide-react"
 
 export default function Home() {
   // 分類列表
@@ -17,12 +17,6 @@ export default function Home() {
     { type: "gerund-infinitive", name: "動名詞", color: "teal" },
     { type: "comparative", name: "比較級", color: "amber" },
     { type: "article", name: "冠詞", color: "slate" },
-  ]
-
-  // TOEIC Part 大題（只顯示有題目的）
-  const parts = [
-    { type: "part2", name: "Part 2", desc: "應答問題", color: "blue" },
-    { type: "part5", name: "Part 5", desc: "句子填空", color: "orange" },
   ]
 
   const colorMap: Record<string, string> = {
@@ -51,10 +45,10 @@ export default function Home() {
           <p className="text-gray-600 text-sm">TOEIC 練習 App</p>
         </div>
 
-        {/* Menu Cards - 優化間距和大小 */}
+        {/* Menu Cards - 統一題庫 */}
         <div className="grid gap-4 max-w-lg mx-auto">
-          {/* 單字測驗 */}
-          <Link href="/quiz?type=vocabulary" className="block">
+          {/* Part 5 句子填空 */}
+          <Link href="/quiz?type=part5" className="block">
             <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
               <CardHeader className="py-4 px-4">
                 <div className="flex items-center gap-4">
@@ -62,19 +56,19 @@ export default function Home() {
                     <BookOpen className="w-5 h-5 text-blue-600" />
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-lg">單字測驗</CardTitle>
-                    <p className="text-xs text-gray-500">練習 TOEIC 必備單字</p>
+                    <CardTitle className="text-lg">Part 5 句子填空</CardTitle>
+                    <p className="text-xs text-gray-500">字彙與文法選擇題</p>
                   </div>
                   <div className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">
-                    5 題
+                    63 題
                   </div>
                 </div>
               </CardHeader>
             </Card>
           </Link>
 
-          {/* 文法測驗 */}
-          <Link href="/quiz?type=grammar" className="block">
+          {/* Part 2 應答問題 */}
+          <Link href="/quiz?type=part2" className="block">
             <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
               <CardHeader className="py-4 px-4">
                 <div className="flex items-center gap-4">
@@ -82,38 +76,18 @@ export default function Home() {
                     <FileText className="w-5 h-5 text-green-600" />
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-lg">文法測驗</CardTitle>
-                    <p className="text-xs text-gray-500">Part 5 文法題型</p>
+                    <CardTitle className="text-lg">Part 2 應答問題</CardTitle>
+                    <p className="text-xs text-gray-500">三選一應答題</p>
                   </div>
                   <div className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">
-                    5 題
+                    15 題
                   </div>
                 </div>
               </CardHeader>
             </Card>
           </Link>
 
-          {/* 模擬考試 */}
-          <Link href="/quiz?type=full" className="block">
-            <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
-              <CardHeader className="py-4 px-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">模擬考試</CardTitle>
-                    <p className="text-xs text-gray-500">完整 TOEIC 測驗</p>
-                  </div>
-                  <div className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">
-                    10 題
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-          </Link>
-
-          {/* 分類練習 */}
+          {/* 分類練習 - 從統一題庫篩選 */}
           <div className="mt-4">
             <div className="flex items-center gap-2 mb-3">
               <GraduationCap className="w-5 h-5 text-orange-600" />
@@ -130,33 +104,6 @@ export default function Home() {
                         </div>
                         <div className="flex-1">
                           <CardTitle className="text-sm">{cat.name}</CardTitle>
-                        </div>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* TOEIC Part 大題 */}
-          <div className="mt-4">
-            <div className="flex items-center gap-2 mb-3">
-              <Headphones className="w-5 h-5 text-purple-600" />
-              <h2 className="text-lg font-bold text-gray-700">TOEIC Part 大題</h2>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {parts.map((part) => (
-                <Link key={part.type} href={`/quiz?type=${part.type}`} className="block">
-                  <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
-                    <CardHeader className="py-3 px-3">
-                      <div className="flex items-center gap-2">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${colorMap[part.color]}`}>
-                          <Headphones className="w-4 h-4" />
-                        </div>
-                        <div className="flex-1">
-                          <CardTitle className="text-sm">{part.name}</CardTitle>
-                          <p className="text-xs text-gray-500">{part.desc}</p>
                         </div>
                       </div>
                     </CardHeader>
