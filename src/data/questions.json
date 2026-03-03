@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "version": "1.0",
+    "created": "2026-03-03",
+    "totalQuestions": 20
+  },
+  "questions": [
+    {
+      "id": "p5-q001",
+      "type": "part5",
+      "category": "verb-tense",
+      "difficulty": "easy",
+      "question": "The new policy will _____ the company's environmental impact.",
+      "options": [
+        { "key": "A", "text": "reduce" },
+        { "key": "B", "text": "reduces" },
+        { "key": "C", "text": "reducing" },
+        { "key": "D", "text": "to reduce" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "\"will\" 後面必須接動詞原形 (原形動詞)，因此正確答案是 reduce。"
+    },
+    {
+      "id": "p5-q002",
+      "type": "part5",
+      "category": "preposition",
+      "difficulty": "easy",
+      "question": "The meeting is scheduled _____ 3:00 PM tomorrow.",
+      "options": [
+        { "key": "A", "text": "in" },
+        { "key": "B", "text": "at" },
+        { "key": "C", "text": "on" },
+        { "key": "D", "text": "by" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "具體時間點用 \"at\"，所以答案是 \"at 3:00 PM\"。"
+    },
+    {
+      "id": "p5-q003",
+      "type": "part5",
+      "category": "word-form",
+      "difficulty": "medium",
+      "question": "The company announced a _____ increase in sales this quarter.",
+      "options": [
+        { "key": "A", "text": "signify" },
+        { "key": "B", "text": "significant" },
+        { "key": "C", "text": "significantly" },
+        { "key": "D", "text": "signification" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "形容詞修飾名詞，形容詞置於名詞前，所以用 \"significant\"。"
+    },
+    {
+      "id": "p5-q004",
+      "type": "part5",
+      "category": "relative-pronoun",
+      "difficulty": "medium",
+      "question": "The employee _____ works in the marketing department is attending the conference.",
+      "options": [
+        { "key": "A", "text": "who" },
+        { "key": "B", "text": "whom" },
+        { "key": "C", "text": "whose" },
+        { "key": "D", "text": "which" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "先行詞是 \"employee\" (人)，用關係代名詞 \"who\"。"
+    },
+    {
+      "id": "p5-q005",
+      "type": "part5",
+      "category": "modal-verbs",
+      "difficulty": "easy",
+      "question": "Employees _____ wear identification badges while in the building.",
+      "options": [
+        { "key": "A", "text": "must" },
+        { "key": "B", "text": "can" },
+        { "key": "C", "text": "may" },
+        { "key": "D", "text": "would" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "\"must\" 表示必要性/強制性，語意最合適。"
+    },
+    {
+      "id": "p5-q006",
+      "type": "part5",
+      "category": "conditionals",
+      "difficulty": "hard",
+      "question": "If she _____ the project on time, we would have won the contract.",
+      "options": [
+        { "key": "A", "text": "completes" },
+        { "key": "B", "text": "completed" },
+        { "key": "C", "text": "had completed" },
+        { "key": "D", "text": "has completed" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "這是假設過去的事實 (與過去事實相反的假設)，用過去完成式 had completed。"
+    },
+    {
+      "id": "p5-q007",
+      "type": "part5",
+      "category": "word-form",
+      "difficulty": "medium",
+      "question": "The manager gave a _____ presentation about the new product.",
+      "options": [
+        { "key": "A", "text": "thorough" },
+        { "key": "B", "text": "thoroughly" },
+        { "key": "C", "text": "thoroughness" },
+        { "key": "D", "text": "thoroughly" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "形容詞修飾名詞 \"presentation\"，所以用形容詞 \"thorough\"。"
+    },
+    {
+      "id": "p5-q008",
+      "type": "part5",
+      "category": "conjunction",
+      "difficulty": "easy",
+      "question": "We can start the meeting now _____ everyone has arrived.",
+      "options": [
+        { "key": "A", "text": "although" },
+        { "key": "B", "text": "because" },
+        { "key": "C", "text": "unless" },
+        { "key": "D", "text": "provided that" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "\"provided that\" 表示條件 (只要...就)，符合句意。"
+    },
+    {
+      "id": "p5-q009",
+      "type": "part5",
+      "category": "passive-voice",
+      "difficulty": "medium",
+      "question": "The report _____ by the research team last month.",
+      "options": [
+        { "key": "A", "text": "wrote" },
+        { "key": "B", "text": "writes" },
+        { "key": "C", "text": "was written" },
+        { "key": "D", "text": "has written" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "時間狀態 \"last month\" 是過去式，且主詞是 \"report\" (受事者)，所以用過去式的被動語態 \"was written\"。"
+    },
+    {
+      "id": "p5-q010",
+      "type": "part5",
+      "category": "quantifiers",
+      "difficulty": "easy",
+      "question": "There are _____ documents on the desk. You can take one if you need.",
+      "options": [
+        { "key": "A", "text": "few" },
+        { "key": "B", "text": "a few" },
+        { "key": "C", "text": "little" },
+        { "key": "D", "text": "a little" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "\"documents\" 是可數名詞，用 \"a few\" (幾個) 表示肯定語氣。"
+    },
+    {
+      "id": "voc-q001",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "easy",
+      "question": "The company's _____ hasdecreased significantly over the past year.",
+      "options": [
+        { "key": "A", "text": "compete" },
+        { "key": "B", "text": "competent" },
+        { "key": "C", "text": "competition" },
+        { "key": "D", "text": "competitive" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "這裡需要名詞，\"competition\" (競爭) 是正確答案。"
+    },
+    {
+      "id": "voc-q002",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "medium",
+      "question": "The CEO made a _____ decision to expand into new markets.",
+      "options": [
+        { "key": "A", "text": "strategic" },
+        { "key": "B", "text": "strategize" },
+        { "key": "C", "text": "strategy" },
+        { "key": "D", "text": "strategically" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "形容詞修飾名詞 decision，\"strategic\" (策略性的) 是正確答案。"
+    },
+    {
+      "id": "voc-q003",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "easy",
+      "question": "We need to _____ our marketing efforts to reach a younger audience.",
+      "options": [
+        { "key": "A", "text": "diverse" },
+        { "key": "B", "text": "diversify" },
+        { "key": "C", "text": "diversity" },
+        { "key": "D", "text": "diversion" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "need to + 動詞原形，\"diversify\" (使多樣化) 是正確答案。"
+    },
+    {
+      "id": "voc-q004",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "medium",
+      "question": "The _____ of the new product was higher than expected.",
+      "options": [
+        { "key": "A", "text": "demanding" },
+        { "key": "B", "text": "demanded" },
+        { "key": "C", "text": "demand" },
+        { "key": "D", "text": "demandable" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The + 名詞，\"demand\" (需求) 是正確答案。"
+    },
+    {
+      "id": "voc-q005",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "easy",
+      "question": "Our team showed great _____ in overcoming the challenges.",
+      "options": [
+        { "key": "A", "text": "resist" },
+        { "key": "B", "text": "resistance" },
+        { "key": "C", "text": "resistant" },
+        { "key": "D", "text": "resisting" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "形容詞性物主代詞後面需要名詞，\"resistance\" (韌性、抵抗力) 是正確答案。"
+    },
+    {
+      "id": "voc-q006",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "medium",
+      "question": "The presentation was very _____, and everyone understood the main points.",
+      "options": [
+        { "key": "A", "text": "clarify" },
+        { "key": "B", "text": "clear" },
+        { "key": "C", "text": "clearly" },
+        { "key": "D", "text": "clearness" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "be 動詞後面用形容詞，\"clear\" (清楚的) 是正確答案。"
+    },
+    {
+      "id": "voc-q007",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "easy",
+      "question": "The company is looking for _____ candidates with international experience.",
+      "options": [
+        { "key": "A", "text": "qualify" },
+        { "key": "B", "text": "qualification" },
+        { "key": "C", "text": "qualified" },
+        { "key": "D", "text": "qualifying" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "形容詞修飾名詞 candidates，\"qualified\" (合格的) 是正確答案。"
+    },
+    {
+      "id": "voc-q008",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "medium",
+      "question": "There has been a significant _____ in online sales this year.",
+      "options": [
+        { "key": "A", "text": "increase" },
+        { "key": "B", "text": "increasing" },
+        { "key": "C", "text": "increased" },
+        { "key": "D", "text": "increases" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "a + 形容詞 + 名詞，這裡需要名詞 \"increase\" (增長)。"
+    },
+    {
+      "id": "voc-q009",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "easy",
+      "question": "The committee made a unanimous _____ to approve the budget.",
+      "options": [
+        { "key": "A", "text": "decide" },
+        { "key": "B", "text": "deciding" },
+        { "key": "C", "text": "decision" },
+        { "key": "D", "text": "decisive" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "a + 形容詞 + 名詞，\"decision\" (決定) 是正確答案。"
+    },
+    {
+      "id": "voc-q010",
+      "type": "vocabulary",
+      "category": "word-form",
+      "difficulty": "medium",
+      "question": "The new regulations require _____ reporting of financial data.",
+      "options": [
+        { "key": "A", "text": "accuracy" },
+        { "key": "B", "text": "accurate" },
+        { "key": "C", "text": "accurately" },
+        { "key": "D", "text": "accurate" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "形容詞修飾名詞 reporting，\"accurate\" (準確的) 是正確答案。"
+    }
+  ]
+}
