@@ -45,7 +45,7 @@ function shuffleArray<T>(array: T[], seed?: number): T[] {
 }
 
 // 根據類型過濾題庫並隨機抽取
-const getQuestionsByType = (type: string, seed?: number): Question[] => {
+const getQuestionsByType = (type: string, count: number = 5, seed?: number): Question[] => {
   const allQuestions = questions.questions as Question[]
   let pool: Question[]
   
@@ -128,8 +128,9 @@ const getQuestionsByType = (type: string, seed?: number): Question[] => {
   
   // 使用固定 seed 確保 SSR 一致
   const shuffled = shuffleArray(pool, seed)
-  const count = ["full", "verb-tense", "preposition", "modal-verbs", "conditionals", "passive-voice", "word-form", "relative-pronoun", "conjunction", "quantifiers", "gerund-infinitive", "comparative", "article", "noun-clause", "adjective-order", "part2", "part3", "part4", "part5", "part6", "part7"].includes(type) ? 10 : (type === "full" ? 10 : 5)
-  return shuffled.slice(0, count)
+  // 使用傳入的 count 參數，最多取 pool 大小
+  const actualCount = Math.min(count, pool.length)
+  return shuffled.slice(0, actualCount)
 }
 
 // 測驗時間設定（秒）
@@ -175,6 +176,7 @@ export default function QuizPage() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const quizType = searchParams.get("type") || "grammar"
+  const questionCount = parseInt(searchParams.get("count") || "5", 10)
   const storageKey = `toeic_quiz_${quizType}`
 
   // 從 localStorage 恢復進度
@@ -245,7 +247,7 @@ export default function QuizPage() {
     }
   }, [showResult, storageKey])
 
-  const quizQuestions = useMemo(() => getQuestionsByType(quizType), [quizType])
+  const quizQuestions = useMemo(() => getQuestionsByType(quizType, questionCount), [quizType, questionCount])
   
   // 確保 quizQuestions 和 currentIndex 是有效的（防呆）
   const safeCurrentIndex = currentIndex ?? 0

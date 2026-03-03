@@ -1,8 +1,18 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, FileText, Heart, GraduationCap } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { BookOpen, FileText, Heart, GraduationCap, X } from "lucide-react"
 
 export default function Home() {
+  const router = useRouter()
+  const [showModal, setShowModal] = useState(false)
+  const [selectedType, setSelectedType] = useState("")
+  const [selectedName, setSelectedName] = useState("")
+  const [questionCount, setQuestionCount] = useState(5)
   // 分類列表
   const categories = [
     { type: "verb-tense", name: "動詞時態", color: "blue" },
@@ -34,6 +44,20 @@ export default function Home() {
     slate: "bg-slate-100 text-slate-600",
   }
 
+  // 開始測驗
+  const startQuiz = (type: string, name: string) => {
+    setSelectedType(type)
+    setSelectedName(name)
+    setQuestionCount(5)
+    setShowModal(true)
+  }
+
+  // 確認開始
+  const confirmStart = () => {
+    setShowModal(false)
+    router.push(`/quiz?type=${selectedType}&count=${questionCount}`)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-8">
@@ -45,10 +69,48 @@ export default function Home() {
           <p className="text-gray-600 text-sm">TOEIC 練習 App</p>
         </div>
 
+        {/* 選擇題目數量Modal */}
+        {showModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg p-6 max-w-sm w-full shadow-xl">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-bold">開始練習</h3>
+                <button onClick={() => setShowModal(false)} className="text-gray-400 hover:text-gray-600">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <p className="text-gray-600 mb-4">{selectedName}</p>
+              
+              <div className="mb-4">
+                <label className="text-sm text-gray-600 mb-2 block">選擇題目數量</label>
+                <div className="flex gap-2">
+                  {[5, 10, 15, 20].map(num => (
+                    <button
+                      key={num}
+                      onClick={() => setQuestionCount(num)}
+                      className={`flex-1 py-2 rounded-lg border-2 transition-all ${
+                        questionCount === num 
+                          ? "border-blue-500 bg-blue-50 text-blue-600" 
+                          : "border-gray-200 hover:border-gray-300"
+                      }`}
+                    >
+                      {num} 題
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <Button onClick={confirmStart} className="w-full">
+                開始練習
+              </Button>
+            </div>
+          </div>
+        )}
+
         {/* Menu Cards - 統一題庫 */}
         <div className="grid gap-4 max-w-lg mx-auto">
           {/* Part 5 句子填空 */}
-          <Link href="/quiz?type=part5" className="block">
+          <button onClick={() => startQuiz("part5", "Part 5 句子填空")} className="block w-full text-left">
             <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
               <CardHeader className="py-4 px-4">
                 <div className="flex items-center gap-4">
@@ -65,10 +127,10 @@ export default function Home() {
                 </div>
               </CardHeader>
             </Card>
-          </Link>
+          </button>
 
           {/* Part 2 應答問題 */}
-          <Link href="/quiz?type=part2" className="block">
+          <button onClick={() => startQuiz("part2", "Part 2 應答問題")} className="block w-full text-left">
             <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
               <CardHeader className="py-4 px-4">
                 <div className="flex items-center gap-4">
@@ -85,7 +147,7 @@ export default function Home() {
                 </div>
               </CardHeader>
             </Card>
-          </Link>
+          </button>
 
           {/* 分類練習 - 從統一題庫篩選 */}
           <div className="mt-4">
