@@ -19,14 +19,10 @@ export default function Home() {
     { type: "article", name: "冠詞", color: "slate" },
   ]
 
-  // TOEIC Part 大題
+  // TOEIC Part 大題（只顯示有題目的）
   const parts = [
     { type: "part2", name: "Part 2", desc: "應答問題", color: "blue" },
-    { type: "part3", name: "Part 3", desc: "簡短對話", color: "green" },
-    { type: "part4", name: "Part 4", desc: "簡短獨白", color: "purple" },
     { type: "part5", name: "Part 5", desc: "句子填空", color: "orange" },
-    { type: "part6", name: "Part 6", desc: "段落填空", color: "red" },
-    { type: "part7", name: "Part 7", desc: "閱讀測驗", color: "indigo" },
   ]
 
   const colorMap: Record<string, string> = {

@@ -470,6 +470,22 @@ export default function QuizPage() {
     }
   }
 
+  // 檢查題目是否為空
+  if (!quizQuestions || quizQuestions.length === 0) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center">
+        <div className="text-center p-6">
+          <div className="text-4xl mb-4">📚</div>
+          <h2 className="text-xl font-bold text-gray-700 mb-2">暫無題目</h2>
+          <p className="text-gray-500 mb-4">這個分類目前還沒有題目</p>
+          <Button onClick={() => router.push("/")} variant="outline">
+            返回首頁
+          </Button>
+        </div>
+      </div>
+    )
+  }
+
   if (showResult) {
     const { correct, total, longThinkCount } = calculateScore()
     const percentage = Math.round((correct / total) * 100)
