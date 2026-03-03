@@ -102,13 +102,32 @@ const getQuestionsByType = (type: string, seed?: number): Question[] => {
     case "adjective-order":
       pool = allQuestions.filter(q => q.category === "adjective-order")
       break
+    // TOEIC Part 大題分類
+    case "part2":
+      pool = allQuestions.filter(q => q.type === "part2")
+      break
+    case "part3":
+      pool = allQuestions.filter(q => q.type === "part3")
+      break
+    case "part4":
+      pool = allQuestions.filter(q => q.type === "part4")
+      break
+    case "part5":
+      pool = allQuestions.filter(q => q.type === "part5")
+      break
+    case "part6":
+      pool = allQuestions.filter(q => q.type === "part6")
+      break
+    case "part7":
+      pool = allQuestions.filter(q => q.type === "part7")
+      break
     default:
       pool = allQuestions
   }
   
   // 使用固定 seed 確保 SSR 一致
   const shuffled = shuffleArray(pool, seed)
-  const count = ["full", "verb-tense", "preposition", "modal-verbs", "conditionals", "passive-voice", "word-form", "relative-pronoun", "conjunction", "quantifiers", "gerund-infinitive", "comparative", "article", "noun-clause", "adjective-order"].includes(type) ? 10 : (type === "full" ? 10 : 5)
+  const count = ["full", "verb-tense", "preposition", "modal-verbs", "conditionals", "passive-voice", "word-form", "relative-pronoun", "conjunction", "quantifiers", "gerund-infinitive", "comparative", "article", "noun-clause", "adjective-order", "part2", "part3", "part4", "part5", "part6", "part7"].includes(type) ? 10 : (type === "full" ? 10 : 5)
   return shuffled.slice(0, count)
 }
 
@@ -132,6 +151,13 @@ const TIME_LIMITS: Record<string, number> = {
   "article": 3 * 60,
   "noun-clause": 3 * 60,
   "adjective-order": 3 * 60,
+  // TOEIC Part 大題
+  "part2": 3 * 60,
+  "part3": 3 * 60,
+  "part4": 3 * 60,
+  "part5": 3 * 60,
+  "part6": 3 * 60,
+  "part7": 5 * 60,
 }
 
 // 思考過久閾值（秒）- 超過這個時間未答題視為思考過久
@@ -264,6 +290,13 @@ export default function QuizPage() {
       article: "冠詞",
       "noun-clause": "名詞子句",
       "adjective-order": "形容詞順序",
+      // TOEIC Part 大題
+      "part2": "Part 2 應答問題",
+      "part3": "Part 3 簡短對話",
+      "part4": "Part 4 簡短獨白",
+      "part5": "Part 5 句子填空",
+      "part6": "Part 6 段落填空",
+      "part7": "Part 7 閱讀測驗",
     }
     return titles[quizType] || "測驗"
   }

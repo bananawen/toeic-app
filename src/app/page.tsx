@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, FileText, Clock, Heart, GraduationCap } from "lucide-react"
+import { BookOpen, FileText, Clock, Heart, GraduationCap, Headphones } from "lucide-react"
 
 export default function Home() {
   // 分類列表
@@ -17,6 +17,16 @@ export default function Home() {
     { type: "gerund-infinitive", name: "動名詞", color: "teal" },
     { type: "comparative", name: "比較級", color: "amber" },
     { type: "article", name: "冠詞", color: "slate" },
+  ]
+
+  // TOEIC Part 大題
+  const parts = [
+    { type: "part2", name: "Part 2", desc: "應答問題", color: "blue" },
+    { type: "part3", name: "Part 3", desc: "簡短對話", color: "green" },
+    { type: "part4", name: "Part 4", desc: "簡短獨白", color: "purple" },
+    { type: "part5", name: "Part 5", desc: "句子填空", color: "orange" },
+    { type: "part6", name: "Part 6", desc: "段落填空", color: "red" },
+    { type: "part7", name: "Part 7", desc: "閱讀測驗", color: "indigo" },
   ]
 
   const colorMap: Record<string, string> = {
@@ -124,6 +134,33 @@ export default function Home() {
                         </div>
                         <div className="flex-1">
                           <CardTitle className="text-sm">{cat.name}</CardTitle>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* TOEIC Part 大題 */}
+          <div className="mt-4">
+            <div className="flex items-center gap-2 mb-3">
+              <Headphones className="w-5 h-5 text-purple-600" />
+              <h2 className="text-lg font-bold text-gray-700">TOEIC Part 大題</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {parts.map((part) => (
+                <Link key={part.type} href={`/quiz?type=${part.type}`} className="block">
+                  <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
+                    <CardHeader className="py-3 px-3">
+                      <div className="flex items-center gap-2">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${colorMap[part.color]}`}>
+                          <Headphones className="w-4 h-4" />
+                        </div>
+                        <div className="flex-1">
+                          <CardTitle className="text-sm">{part.name}</CardTitle>
+                          <p className="text-xs text-gray-500">{part.desc}</p>
                         </div>
                       </div>
                     </CardHeader>
