@@ -288,35 +288,33 @@ export default function Home() {
           <p className="text-gray-500 text-xs mt-1">TOEIC 練習 App</p>
         </div>
 
-        {/* 滑動區域 */}
         {/* 滑動區域 - 輪播樣式 */}
-        <div 
-          className="relative min-h-[70vh] overflow-y-auto"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {/* 所有區塊 - 並排顯示 */}
-          <div className="flex h-full">
-            {sections.map((section, i) => (
-              <div 
-                key={i} 
-                className={`w-[70%] flex-shrink-0 px-2 transition-all duration-300 ${
-                  i === currentSection 
-                    ? "opacity-100 scale-100" 
-                    : "opacity-30 scale-95"
-                }`}
-                style={{
-                  marginLeft: i === 0 ? '15%' : '0',
-                }}
-              >
-                {section}
-              </div>
-            ))}
+        <div className="min-h-[70vh] flex flex-col">
+          {/* 輪播內容區 */}
+          <div className="flex-1 overflow-x-hidden relative">
+            {/* 輪播容器 */}
+            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar" style={{scrollBehavior: 'smooth'}}>
+              {/* 左側空白 */}
+              <div className="w-[15%] flex-shrink-0 snap-start" />
+              
+              {/* 區塊 */}
+              {sections.map((section, i) => (
+                <div 
+                  key={i} 
+                  className={`w-[70%] flex-shrink-0 px-2 snap-center ${i === currentSection ? "opacity-100" : "opacity-40"}`}
+                  onClick={() => setCurrentSection(i)}
+                >
+                  {section}
+                </div>
+              ))}
+              
+              {/* 右側空白 */}
+              <div className="w-[15%] flex-shrink-0 snap-end" />
+            </div>
           </div>
-
+          
           {/* 導航指示器 */}
-          <div className="flex justify-center gap-1 mt-4">
+          <div className="flex justify-center gap-1 py-2">
             {sections.map((_, i) => (
               <div
                 key={i}
