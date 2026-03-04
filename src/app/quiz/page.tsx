@@ -175,13 +175,13 @@ const TIME_LIMITS: Record<string, number> = {
 // 每題作答時間限制（秒）
 const TIME_LIMITS_PER_QUESTION: Record<string, number> = {
   // Part 2: 應答問題 - 8秒/題
-  "part2": 10,
-  // Part 5: 句子填空 - 30秒/題
-  "part5": 30,
-  // Part 6: 段落填空 - 60秒/題
-  "part6": 60,
-  // Part 7: 閱讀理解 - 90秒/題
-  "part7": 90,
+  "part2": 8,
+  // Part 5: 句子填空 - 25秒/題
+  "part5": 25,
+  // Part 6: 段落填空 - 45秒/題
+  "part6": 45,
+  // Part 7: 閱讀理解 - 60秒/題
+  "part7": 60,
 }
 
 // 思考過久閾值（秒）- 超過這個時間未答題視為思考過久
