@@ -522,6 +522,12 @@ export default function QuizPage() {
         
         setCurrentIndex(currentIndex + 1)
         setIsAnswered(false)
+        setAnswers((prev) => {
+          const newAnswers = { ...prev }
+          // 清除下一題的舊答案（如果有的話）
+          delete newAnswers[nextQuestion.id]
+          return newAnswers
+        })
         setCurrentPassageIndex(0)  // Reset passage index for Part 7
         if (shouldResetTimer) {
           setTimeLeft(TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)
