@@ -763,8 +763,8 @@ export default function QuizPage() {
       {/* 計時器 Header */}
       <div className="sticky top-0 bg-white/80 backdrop-blur-sm border-b">
         <div className="max-w-lg mx-auto">
-          {/* 橫條計時器 */}
-          <div className="w-full h-2 bg-gray-200">
+          {/* 橫條計時器 - 緊湊 */}
+          <div className="w-full h-1 bg-gray-200">
             <div 
               className={`h-full transition-all duration-1000 ${
                 timeLeft <= 30 ? "bg-red-500" : 
@@ -778,33 +778,30 @@ export default function QuizPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-3 py-4 max-w-lg">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-bold text-blue-600">
+      <div className="container mx-auto px-3 py-2 max-w-lg">
+        {/* 標題、題號、進度條整合 */}
+        <div className="flex items-center gap-2 mb-2">
+          <h1 className="text-lg font-bold text-blue-600 whitespace-nowrap">
             🦈 {getQuizTitle()}
           </h1>
-          <Button onClick={() => setShowExitConfirm(true)} variant="ghost" size="sm">
-            <LogOut className="w-4 h-4 mr-1" /> 離開
+          <span className="text-xs text-gray-500">
+            {currentIndex + 1}/{quizQuestions.length}
+          </span>
+          <div className="flex-1 bg-gray-200 rounded-full h-1.5">
+            <div
+              className="bg-blue-600 h-1.5 rounded-full transition-all"
+              style={{
+                width: `${((currentIndex + 1) / quizQuestions.length) * 100}%`,
+              }}
+            />
+          </div>
+          <Button onClick={() => setShowExitConfirm(true)} variant="ghost" size="sm" className="p-1 h-7">
+            <LogOut className="w-3 h-3" />
           </Button>
         </div>
 
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-sm text-gray-500">
-            第 {currentIndex + 1} 題，共 {quizQuestions.length} 題
-          </span>
-        </div>
-
-        <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
-          <div
-            className="bg-blue-600 h-2 rounded-full transition-all"
-            style={{
-              width: `${((currentIndex + 1) / quizQuestions.length) * 100}%`,
-            }}
-          />
-        </div>
-
-        <Card className="mb-4">
-          <CardHeader className="pb-3">
+        <Card className="mb-2">
+          <CardHeader className="pb-2">
             <div className="flex justify-between items-center text-xs text-gray-500">
               <span>{currentQuestion.category}</span>
               <span className="capitalize">{currentQuestion.difficulty}</span>
