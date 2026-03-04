@@ -3,7 +3,7 @@
     "version": "1.0",
     "created": "2026-03-03",
     "updated": "2026-03-04",
-    "totalQuestions": 88
+    "totalQuestions": 105
   },
   "questions": [
     {
@@ -2391,6 +2391,482 @@
       ],
       "correctAnswer": "A",
       "explanation": "The notice states normal business will resume on December 27th"
+    },
+    {
+      "id": "p6-q01",
+      "type": "part6",
+      "category": "text-completion",
+      "difficulty": "medium",
+      "passage": "Dear Valued Customer,\n\nThank you for your inquiry regarding our product. We _______ (29) pleased to inform you that all our products are currently in stock and ready for shipment. Our standard shipping takes 3-5 business days, _______ (30) express shipping is available for an additional fee. If you have any further questions, please do not hesitate to contact our customer service team.\n\nWe look forward to _______ (31) your business.",
+      "question": "We _______ pleased to inform you that all our products are currently in stock.",
+      "options": [
+        {
+          "key": "A",
+          "text": "are"
+        },
+        {
+          "key": "B",
+          "text": "is"
+        },
+        {
+          "key": "C",
+          "text": "were"
+        },
+        {
+          "key": "D",
+          "text": "be"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "'We are pleased' - subject/verb agreement. 'We' takes 'are'."
+    },
+    {
+      "id": "p6-q02",
+      "type": "part6",
+      "category": "text-completion",
+      "difficulty": "medium",
+      "passage": "Dear Valued Customer,\n\nThank you for your inquiry regarding our product. We _______ (29) pleased to inform you that all our products are currently in stock and ready for shipment. Our standard shipping takes 3-5 business days, _______ (30) express shipping is available for an additional fee. If you have any further questions, please do not hesitate to contact our customer service team.\n\nWe look forward to _______ (31) your business.",
+      "question": "Our standard shipping takes 3-5 business days, _______ express shipping is available for an additional fee.",
+      "options": [
+        {
+          "key": "A",
+          "text": "and"
+        },
+        {
+          "key": "B",
+          "text": "but"
+        },
+        {
+          "key": "C",
+          "text": "or"
+        },
+        {
+          "key": "D",
+          "text": "so"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Contrast between standard and express shipping - 'but' shows contrast."
+    },
+    {
+      "id": "p6-q03",
+      "type": "part6",
+      "category": "text-completion",
+      "difficulty": "medium",
+      "passage": "Dear Valued Customer,\n\nThank you for your inquiry regarding our product. We _______ (29) pleased to inform you that all our products are currently in stock and ready for shipment. Our standard shipping takes 3-5 business days, _______ (30) express shipping is available for an additional fee. If you have any further questions, please do not hesitate to contact our customer service team.\n\nWe look forward to _______ (31) your business.",
+      "question": "We look forward to _______ your business.",
+      "options": [
+        {
+          "key": "A",
+          "text": "serving"
+        },
+        {
+          "key": "B",
+          "text": "serve"
+        },
+        {
+          "key": "C",
+          "text": "have served"
+        },
+        {
+          "key": "D",
+          "text": "being served"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "'Look forward to + gerund' (serving). The 'to' here is a preposition, not an infinitive marker."
+    },
+    {
+      "id": "p6-q04",
+      "type": "part6",
+      "category": "text-completion",
+      "difficulty": "medium",
+      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing _______ (55) respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping _______ (56) orders over $500.\n\nPlease let me know if you need any _______ (57) information.\n\nBest regards,\nMary Wilson\nSales Manager",
+      "question": "I am writing _______ respond to your inquiry about our pricing.",
+      "options": [
+        {
+          "key": "A",
+          "text": "for"
+        },
+        {
+          "key": "B",
+          "text": "to"
+        },
+        {
+          "key": "C",
+          "text": "in"
+        },
+        {
+          "key": "D",
+          "text": "of"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "'Writing to respond' - infinitive of purpose. 'To' shows the purpose of writing."
+    },
+    {
+      "id": "p6-q05",
+      "type": "part6",
+      "category": "text-completion",
+      "difficulty": "medium",
+      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing _______ (55) respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping _______ (56) orders over $500.\n\nPlease let me know if you need any _______ (57) information.\n\nBest regards,\nMary Wilson\nSales Manager",
+      "question": "We also provide free shipping _______ orders over $500.",
+      "options": [
+        {
+          "key": "A",
+          "text": "for"
+        },
+        {
+          "key": "B",
+          "text": "on"
+        },
+        {
+          "key": "C",
+          "text": "with"
+        },
+        {
+          "key": "D",
+          "text": "at"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Collocation: 'shipping on orders' - correct preposition for orders over a certain amount."
+    },
+    {
+      "id": "p6-q06",
+      "type": "part6",
+      "category": "text-completion",
+      "difficulty": "easy",
+      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing _______ (55) respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping _______ (56) orders over $500.\n\nPlease let me know if you need any _______ (57) information.\n\nBest regards,\nMary Wilson\nSales Manager",
+      "question": "Please let me know if you need any _______ information.",
+      "options": [
+        {
+          "key": "A",
+          "text": "addition"
+        },
+        {
+          "key": "B",
+          "text": "additional"
+        },
+        {
+          "key": "C",
+          "text": "additionally"
+        },
+        {
+          "key": "D",
+          "text": "add"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Need adjective 'additional' to modify noun 'information'."
+    },
+    {
+      "id": "p7-q01",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "From: Jennifer Martinez\nTo: David Chen\nSubject: Project Update\n\nHi David,\n\nI wanted to give you an update on the marketing campaign project. We launched the new product last week, and the initial response has been positive. However, we have encountered some issues with the social media advertising. The click-through rate is lower than expected.\n\nI recommend we review the ad copy and targeting options tomorrow. Can you schedule some time in your schedule?\n\nLet me know what works for you.\n\nBest,\nJennifer",
+      "question": "What is the main purpose of this email?",
+      "options": [
+        {
+          "key": "A",
+          "text": "To complain about the project"
+        },
+        {
+          "key": "B",
+          "text": "To provide a project update"
+        },
+        {
+          "key": "C",
+          "text": "To request a meeting"
+        },
+        {
+          "key": "D",
+          "text": "To announce a new product"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The email explicitly states 'I wanted to give you an update on the marketing campaign project.'"
+    },
+    {
+      "id": "p7-q02",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "From: Jennifer Martinez\nTo: David Chen\nSubject: Project Update\n\nHi David,\n\nI wanted to give you an update on the marketing campaign project. We launched the new product last week, and the initial response has been positive. However, we have encountered some issues with the social media advertising. The click-through rate is lower than expected.\n\nI recommend we review the ad copy and targeting options tomorrow. Can you schedule some time in your schedule?\n\nLet me know what works for you.\n\nBest,\nJennifer",
+      "question": "What issue is mentioned?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Product quality problems"
+        },
+        {
+          "key": "B",
+          "text": "Low click-through rate"
+        },
+        {
+          "key": "C",
+          "text": "Budget overruns"
+        },
+        {
+          "key": "D",
+          "text": "Team conflicts"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The email states: 'The click-through rate is lower than expected.'"
+    },
+    {
+      "id": "p7-q03",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "From: Jennifer Martinez\nTo: David Chen\nSubject: Project Update\n\nHi David,\n\nI wanted to give you an update on the marketing campaign project. We launched the new product last week, and the initial response has been positive. However, we have encountered some issues with the social media advertising. The click-through rate is lower than expected.\n\nI recommend we review the ad copy and targeting options tomorrow. Can you schedule some time in your schedule?\n\nLet me know what works for you.\n\nBest,\nJennifer",
+      "question": "What does Jennifer ask David to do?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Review the ad copy"
+        },
+        {
+          "key": "B",
+          "text": "Schedule a meeting"
+        },
+        {
+          "key": "C",
+          "text": "Increase the budget"
+        },
+        {
+          "key": "D",
+          "text": "Launch a new campaign"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Jennifer asks: 'Can you schedule some time in your schedule?' This is asking David to schedule a meeting."
+    },
+    {
+      "id": "p7-q04",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "easy",
+      "passage": "NOTICE\n\nAll employees are informed that the company picnic scheduled for this Friday has been postponed due to inclement weather. A new date will be announced next week. Employees who have already registered for the event do not need to re-register. For any questions, please contact the HR department.",
+      "question": "Why was the picnic postponed?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Lack of participants"
+        },
+        {
+          "key": "B",
+          "text": "Inclement weather"
+        },
+        {
+          "key": "C",
+          "text": "Budget issues"
+        },
+        {
+          "key": "D",
+          "text": "Scheduling conflicts"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The notice states: 'has been postponed due to inclement weather.'"
+    },
+    {
+      "id": "p7-q05",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "easy",
+      "passage": "NOTICE\n\nAll employees are informed that the company picnic scheduled for this Friday has been postponed due to inclement weather. A new date will be announced next week. Employees who have already registered for the event do not need to re-register. For any questions, please contact the HR department.",
+      "question": "What should employees do if they have questions?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Email the manager"
+        },
+        {
+          "key": "B",
+          "text": "Contact HR"
+        },
+        {
+          "key": "C",
+          "text": "Register again"
+        },
+        {
+          "key": "D",
+          "text": "Wait for announcement"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The notice states: 'For any questions, please contact the HR department.'"
+    },
+    {
+      "id": "p7-q06",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "OFFICE RELOCATION NOTICE\n\nDear Employees,\n\nWe are pleased to announce that our office will be relocating to a new building at 555 Business Park Drive, effective March 15th. The new facility offers modern amenities, including a fitness center and cafeteria.\n\nMoving day will be on March 14th. Each department will be assigned a specific time to pack and move their equipment. Please coordinate with your department head for details.\n\nThe new office is easily accessible by public transportation, with a bus stop located just in front of the building. For those who drive, parking is available on the first floor.\n\nWe apologize for any inconvenience during this transition.",
+      "question": "When will the office relocate?",
+      "options": [
+        {
+          "key": "A",
+          "text": "March 1st"
+        },
+        {
+          "key": "B",
+          "text": "March 14th"
+        },
+        {
+          "key": "C",
+          "text": "March 15th"
+        },
+        {
+          "key": "D",
+          "text": "April 1st"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The notice states: 'effective March 15th' - this is when the relocation takes effect."
+    },
+    {
+      "id": "p7-q07",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "OFFICE RELOCATION NOTICE\n\nDear Employees,\n\nWe are pleased to announce that our office will be relocating to a new building at 555 Business Park Drive, effective March 15th. The new facility offers modern amenities, including a fitness center and cafeteria.\n\nMoving day will be on March 14th. Each department will be assigned a specific time to pack and move their equipment. Please coordinate with your department head for details.\n\nThe new office is easily accessible by public transportation, with a bus stop located just in front of the building. For those who drive, parking is available on the first floor.\n\nWe apologize for any inconvenience during this transition.",
+      "question": "What is NOT mentioned about the new office?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fitness center"
+        },
+        {
+          "key": "B",
+          "text": "Parking availability"
+        },
+        {
+          "key": "C",
+          "text": "Public transportation access"
+        },
+        {
+          "key": "D",
+          "text": "Larger meeting rooms"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The notice mentions fitness center, parking, and public transportation access - but not larger meeting rooms."
+    },
+    {
+      "id": "p7-q08",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "OFFICE RELOCATION NOTICE\n\nDear Employees,\n\nWe are pleased to announce that our office will be relocating to a new building at 555 Business Park Drive, effective March 15th. The new facility offers modern amenities, including a fitness center and cafeteria.\n\nMoving day will be on March 14th. Each department will be assigned a specific time to pack and move their equipment. Please coordinate with your department head for details.\n\nThe new office is easily accessible by public transportation, with a bus stop located just in front of the building. For those who drive, parking is available on the first floor.\n\nWe apologize for any inconvenience during this transition.",
+      "question": "What should employees do to prepare for the move?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pack their own equipment"
+        },
+        {
+          "key": "B",
+          "text": "Coordinate with department head"
+        },
+        {
+          "key": "C",
+          "text": "Hire moving company"
+        },
+        {
+          "key": "D",
+          "text": "Notify clients"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The notice states: 'Please coordinate with your department head for details.'"
+    },
+    {
+      "id": "p7-q09",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "From: Lisa Chen\nTo: Project Team\nSubject: Updated Timeline\n\nHi Team,\n\nI wanted to update you on the project timeline. After reviewing the client's feedback, we have decided to extend the development phase by two weeks. This means the new launch date will be April 30th instead of April 15th.\n\nPlease note that the client presentation originally scheduled for April 20th will also be moved to May 5th. I have already sent calendar invitations with the updated details.\n\nIf you have any concerns about the new timeline, please let me know as soon as possible.\n\nBest,\nLisa\nProject Manager",
+      "question": "Why was the timeline changed?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Budget issues"
+        },
+        {
+          "key": "B",
+          "text": "Client feedback"
+        },
+        {
+          "key": "C",
+          "text": "Staff shortage"
+        },
+        {
+          "key": "D",
+          "text": "Technical problems"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The email states: 'After reviewing the client's feedback, we have decided to extend the development phase by two weeks.'"
+    },
+    {
+      "id": "p7-q10",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "easy",
+      "passage": "From: Lisa Chen\nTo: Project Team\nSubject: Updated Timeline\n\nHi Team,\n\nI wanted to update you on the project timeline. After reviewing the client's feedback, we have decided to extend the development phase by two weeks. This means the new launch date will be April 30th instead of April 15th.\n\nPlease note that the client presentation originally scheduled for April 20th will also be moved to May 5th. I have already sent calendar invitations with the updated details.\n\nIf you have any concerns about the new timeline, please let me know as soon as possible.\n\nBest,\nLisa\nProject Manager",
+      "question": "What is the new launch date?",
+      "options": [
+        {
+          "key": "A",
+          "text": "April 15th"
+        },
+        {
+          "key": "B",
+          "text": "April 20th"
+        },
+        {
+          "key": "C",
+          "text": "April 30th"
+        },
+        {
+          "key": "D",
+          "text": "May 5th"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The email states: 'the new launch date will be April 30th instead of April 15th.'"
+    },
+    {
+      "id": "p7-q11",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passage": "From: Lisa Chen\nTo: Project Team\nSubject: Updated Timeline\n\nHi Team,\n\nI wanted to update you on the project timeline. After reviewing the client's feedback, we have decided to extend the development phase by two weeks. This means the new launch date will be April 30th instead of April 15th.\n\nPlease note that the client presentation originally scheduled for April 20th will also be moved to May 5th. I have already sent calendar invitations with the updated details.\n\nIf you have any concerns about the new timeline, please let me know as soon as possible.\n\nBest,\nLisa\nProject Manager",
+      "question": "What does Lisa ask the team to do?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Send client feedback"
+        },
+        {
+          "key": "B",
+          "text": "Confirm attendance"
+        },
+        {
+          "key": "C",
+          "text": "Raise concerns about timeline"
+        },
+        {
+          "key": "D",
+          "text": "Update the calendar"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lisa asks: 'If you have any concerns about the new timeline, please let me know as soon as possible.'"
     }
   ]
 }
