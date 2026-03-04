@@ -13,6 +13,8 @@ export default function Home() {
   const [showCategories, setShowCategories] = useState(false)
   const [currentSection, setCurrentSection] = useState(0)
   const touchStartX = useRef(0)
+  const touchStartY = useRef(0)
+  const touchDirection = useRef<"horizontal" | "vertical" | null>(null)
   
   // Section 2: Part 選擇
   const [selectedParts, setSelectedParts] = useState<string[]>(["part2", "part5", "part6", "part7"])
@@ -70,18 +72,43 @@ export default function Home() {
   // 觸控滑動處理
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+    touchDirection.current = null
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    const diff = e.touches[0].clientX - touchStartX.current
-    if (Math.abs(diff) > 50) {
-      if (diff > 0 && currentSection > 0) {
-        setCurrentSection(currentSection - 1)
-      } else if (diff < 0 && currentSection < 4) {
-        setCurrentSection(currentSection + 1)
-      }
-      touchStartX.current = e.touches[0].clientX
+    // 如果已經確定方向，阻止另一個方向
+    if (touchDirection.current === "horizontal") {
+      e.preventDefault()
     }
+    
+    const diffX = e.touches[0].clientX - touchStartX.current
+    const diffY = e.touches[0].clientY - touchStartY.current
+    
+    // 判斷主要滑動方向
+    if (!touchDirection.current) {
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
+        touchDirection.current = "horizontal"
+      } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 10) {
+        touchDirection.current = "vertical"
+      }
+    }
+    
+    // 水平滑動處理
+    if (touchDirection.current === "horizontal") {
+      if (Math.abs(diffX) > 50) {
+        if (diffX > 0 && currentSection > 0) {
+          setCurrentSection(currentSection - 1)
+        } else if (diffX < 0 && currentSection < 4) {
+          setCurrentSection(currentSection + 1)
+        }
+        touchStartX.current = e.touches[0].clientX
+      }
+    }
+  }
+
+  const handleTouchEnd = () => {
+    touchDirection.current = null
   }
 
   // 區塊內容
@@ -264,9 +291,10 @@ export default function Home() {
         {/* 滑動區域 */}
         {/* 滑動區域 - 輪播樣式 */}
         <div 
-          className="relative min-h-[70vh] overflow-hidden"
+          className="relative min-h-[70vh] overflow-y-auto"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {/* 所有區塊 - 並排顯示 */}
           <div className="flex h-full">
