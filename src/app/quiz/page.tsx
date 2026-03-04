@@ -172,6 +172,18 @@ const TIME_LIMITS: Record<string, number> = {
   "part7": 5 * 60,
 }
 
+// 每題作答時間限制（秒）
+const TIME_LIMITS_PER_QUESTION: Record<string, number> = {
+  // Part 2: 應答問題 - 8秒/題
+  "part2": 10,
+  // Part 5: 句子填空 - 30秒/題
+  "part5": 30,
+  // Part 6: 段落填空 - 60秒/題
+  "part6": 60,
+  // Part 7: 閱讀理解 - 90秒/題
+  "part7": 90,
+}
+
 // 思考過久閾值（秒）- 超過這個時間未答題視為思考過久
 const LONG_THINK_THRESHOLD = 30
 
@@ -206,7 +218,7 @@ export default function QuizPage() {
   const [showAddWordModal, setShowAddWordModal] = useState(false)
   const [isWordEditable, setIsWordEditable] = useState(false)
   const [selectedWord, setSelectedWord] = useState({ word: "", partOfSpeech: "", meaning: "", example: "", synonyms: "" })
-  const [timeLeft, setTimeLeft] = useState(TIME_LIMITS[quizType as keyof typeof TIME_LIMITS] || 180)
+  const [timeLeft, setTimeLeft] = useState(TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)
   
   // 長按計時器
   const longPressTimerRef = useRef<NodeJS.Timeout | null>(null)
@@ -232,7 +244,7 @@ export default function QuizPage() {
         setCurrentIndex(parsed.currentIndex || 0)
         setAnswers(parsed.answers || {})
         setQuestionTimes(parsed.questionTimes || {})
-        setTimeLeft(parsed.timeLeft || TIME_LIMITS[quizType as keyof typeof TIME_LIMITS] || 180)
+        setTimeLeft(parsed.timeLeft || TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)
       } catch (e) {
         console.error('Failed to parse saved quiz state:', e)
       }
@@ -499,6 +511,7 @@ export default function QuizPage() {
         setCurrentIndex(currentIndex + 1)
         setIsAnswered(false)
         setCurrentPassageIndex(0)  // Reset passage index for Part 7
+        setTimeLeft(TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)  // Reset timer
         questionStartTimeRef.current = Date.now() // 重置下一題的開始時間
       } else {
         setShowResult(true)
@@ -771,7 +784,7 @@ export default function QuizPage() {
                 timeLeft <= 60 ? "bg-orange-500" : "bg-blue-500"
               }`}
               style={{ 
-                width: `${(timeLeft / (TIME_LIMITS[quizType as keyof typeof TIME_LIMITS] || 180)) * 100}%` 
+                width: `${(timeLeft / (TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)) * 100}%` 
               }}
             />
           </div>
