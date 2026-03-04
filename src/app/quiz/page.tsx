@@ -288,59 +288,29 @@ export default function QuizPage() {
   const quizQuestions = useMemo(() => {
     const questions = getQuestionsByType(quizType, questionCount)
     
-    // 將 Part 6 的多題格式攤平為單一題目
-    if (quizType === "part6") {
-      const flattened: Question[] = []
-      questions.forEach((item, itemIndex) => {
-        if (item.questions) {
-          item.questions.forEach((q, qIndex) => {
-            flattened.push({
-              ...item,
-              id: `${item.id}-q${qIndex + 1}`,  // Unique ID
-              question: q.question,
-              options: q.options,
-              correctAnswer: q.correctAnswer,
-              explanation: q.explanation,
-              blankNumber: q.number,
-              groupId: item.id,  // Same group for same passage
-              questions: undefined
-            })
+    // 將 Part 6/7 的多題格式攤平為單一題目（所有包含 Part 6/7 的測驗類型）
+    const flattened: Question[] = []
+    questions.forEach((item, itemIndex) => {
+      if (item.questions) {
+        // 這是 Part 6/7 格式，需要攤平
+        item.questions.forEach((q, qIndex) => {
+          flattened.push({
+            ...item,
+            id: `${item.id}-q${qIndex + 1}`,
+            question: q.question,
+            options: q.options,
+            correctAnswer: q.correctAnswer,
+            explanation: q.explanation,
+            blankNumber: q.number,
+            groupId: item.id,
+            questions: undefined
           })
-        } else {
-          flattened.push(item)
-        }
-      })
-      return flattened
-    }
-    
-    // 將 Part 7 的多題格式攤平為單一題目
-    if (quizType === "part7") {
-      const flattened: Question[] = []
-      questions.forEach((item, itemIndex) => {
-        if (item.questions) {
-          item.questions.forEach((q, qIndex) => {
-            flattened.push({
-              ...item,
-              id: `${item.id}-q${qIndex + 1}`,  // Unique ID for each question
-              question: q.question,
-              options: q.options,
-              correctAnswer: q.correctAnswer,
-              explanation: q.explanation,
-              blankNumber: q.number,
-              groupId: item.id,  // Same group for same passage set
-              isMultiPassage: item.passages && item.passages.length > 1,
-              questions: undefined
-              // Keep passages for display
-            })
-          })
-        } else {
-          flattened.push(item)
-        }
-      })
-      return flattened
-    }
-    
-    return questions
+        })
+      } else {
+        flattened.push(item)
+      }
+    })
+    return flattened
   }, [quizType, questionCount])
   
   // 確保 quizQuestions 和 currentIndex 是有效的（防呆）
