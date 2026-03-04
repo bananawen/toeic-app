@@ -202,6 +202,7 @@ export default function QuizPage() {
   const [showResult, setShowResult] = useState(false)
   const [isAnswered, setIsAnswered] = useState(false)
   const [showExitConfirm, setShowExitConfirm] = useState(false)
+  const [currentPassageIndex, setCurrentPassageIndex] = useState(0)  // For Part 7 swipe
   const [showAddWordModal, setShowAddWordModal] = useState(false)
   const [isWordEditable, setIsWordEditable] = useState(false)
   const [selectedWord, setSelectedWord] = useState({ word: "", partOfSpeech: "", meaning: "", example: "", synonyms: "" })
@@ -496,6 +497,7 @@ export default function QuizPage() {
       if (currentIndex < quizQuestions.length - 1) {
         setCurrentIndex(currentIndex + 1)
         setIsAnswered(false)
+        setCurrentPassageIndex(0)  // Reset passage index for Part 7
         questionStartTimeRef.current = Date.now() // 重置下一題的開始時間
       } else {
         setShowResult(true)
@@ -812,18 +814,59 @@ export default function QuizPage() {
                 {currentQuestion.passage}
               </div>
             )}
-            {/* 顯示 Part 7 多篇段落 */}
+            {/* 顯示 Part 7 多篇段落（可滑動） */}
             {currentQuestion.isMultiPassage && currentQuestion.passages && (
-              <div className="space-y-3 mb-3">
-                {currentQuestion.passages.map((p, i) => (
-                  <div key={i} className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap">
-                    {p}
+              <div className="mb-3">
+                {/* 滑動指示器 */}
+                <div className="flex justify-center gap-1 mb-2">
+                  {currentQuestion.passages.map((_, i) => (
+                    <div
+                      key={i}
+                      className={`h-1.5 rounded-full transition-all ${
+                        i === currentPassageIndex ? "w-4 bg-blue-500" : "w-1.5 bg-gray-300"
+                      }`}
+                    />
+                  ))}
+                </div>
+                {/* 滑動內容 */}
+                <div className="relative">
+                  <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap min-h-[100px]">
+                    {currentQuestion.passages[currentPassageIndex]}
                   </div>
-                ))}
+                  {/* 左右滑動按鈕 */}
+                  {currentQuestion.passages.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => setCurrentPassageIndex(Math.max(0, currentPassageIndex - 1))}
+                        disabled={currentPassageIndex === 0}
+                        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center ${
+                          currentPassageIndex === 0 ? "opacity-30 cursor-not-allowed" : "opacity-100"
+                        }`}
+                      >
+                        ‹
+                      </button>
+                      <button
+                        onClick={() => currentQuestion.passages && setCurrentPassageIndex(Math.min(currentQuestion.passages.length - 1, currentPassageIndex + 1))}
+                        disabled={!currentQuestion.passages || currentPassageIndex === currentQuestion.passages.length - 1}
+                        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center ${
+                          !currentQuestion.passages || currentPassageIndex === currentQuestion.passages.length - 1 ? "opacity-30 cursor-not-allowed" : "opacity-100"
+                        }`}
+                      >
+                        ›
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
             )}
             {/* Part 6: 顯示題號 */}
-            {currentQuestion.passage && (
+            {currentQuestion.passage && !currentQuestion.isMultiPassage && (
+              <div className="text-sm font-medium text-blue-600 mb-2">
+                第 {currentQuestion.blankNumber || 1} 題
+              </div>
+            )}
+            {/* Part 7: 顯示題號 */}
+            {currentQuestion.isMultiPassage && (
               <div className="text-sm font-medium text-blue-600 mb-2">
                 第 {currentQuestion.blankNumber || 1} 題
               </div>
