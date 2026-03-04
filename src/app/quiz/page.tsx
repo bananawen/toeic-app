@@ -811,7 +811,7 @@ export default function QuizPage() {
             </div>
             {/* 顯示 Part 6 段落 */}
             {currentQuestion.passage && !currentQuestion.isMultiPassage && (
-              <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mb-3 whitespace-pre-wrap">
+              <div className="text-base text-gray-600 bg-gray-50 p-3 rounded-lg mb-2 whitespace-pre-wrap">
                 {currentQuestion.passage}
               </div>
             )}
@@ -831,7 +831,7 @@ export default function QuizPage() {
                 </div>
                 {/* 固定高度、可滾動、可滑動的文章區塊 */}
                 <div
-                  className="relative h-40 overflow-y-auto touch-pan-y"
+                  className="relative h-56 overflow-y-auto touch-pan-y"
                   onTouchStart={(e) => {
                     const touch = e.touches[0]
                     touchStartXRef.current = touch.clientX
@@ -856,7 +856,7 @@ export default function QuizPage() {
                     touchStartXRef.current = 0
                   }}
                 >
-                  <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap h-full">
+                  <div className="text-base text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap h-full">
                     {currentQuestion.passages[currentPassageIndex]}
                   </div>
                 </div>
@@ -876,7 +876,7 @@ export default function QuizPage() {
             )}
             {/* Part 5/7 顯示題目 */}
             {!currentQuestion.passage && (
-            <div className="text-lg leading-relaxed select-none" style={{ touchAction: 'manipulation' }}>
+            <div className="text-xl leading-relaxed select-none" style={{ touchAction: 'manipulation' }}>
               {currentQuestion.question.split(" ").map((word, index) => (
                 <span
                   key={index}
@@ -900,7 +900,7 @@ export default function QuizPage() {
             )}
             <div className="text-xs text-gray-400 mt-1">(長按單字加入生詞本)</div>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-1">
             {currentQuestion.options.map((option) => {
               const isSelected = answers[currentQuestion.id] === option.key
               return (
@@ -922,7 +922,7 @@ export default function QuizPage() {
                       clearTimeout(longPressTimerRef.current)
                     }
                   }}
-                  className={`w-full p-3 text-left rounded-lg border-2 transition-all flex items-center gap-2 select-none cursor-pointer ${
+                  className={`w-full p-2 text-left rounded-lg border-2 transition-all flex items-center gap-2 select-none cursor-pointer ${
                     isSelected
                       ? "border-blue-500 bg-blue-50"
                       : isAnswered
