@@ -149,6 +149,46 @@ export default function Home() {
             </Card>
           </button>
 
+          {/* Part 6 段落填空 */}
+          <button onClick={() => startQuiz("part6", "Part 6 段落填空")} className="block w-full text-left">
+            <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
+              <CardHeader className="py-4 px-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-red-600" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-lg">Part 6 段落填空</CardTitle>
+                    <p className="text-xs text-gray-500">短文填空題</p>
+                  </div>
+                  <div className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">
+                    6 題
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+          </button>
+
+          {/* Part 7 閱讀測驗 */}
+          <button onClick={() => startQuiz("part7", "Part 7 閱讀測驗")} className="block w-full text-left">
+            <Card className="hover:shadow-md transition-all cursor-pointer bg-white">
+              <CardHeader className="py-4 px-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-indigo-600" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-lg">Part 7 閱讀測驗</CardTitle>
+                    <p className="text-xs text-gray-500">閱讀理解題</p>
+                  </div>
+                  <div className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">
+                    4 題
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+          </button>
+
           {/* 分類練習 - 從統一題庫篩選 */}
           <div className="mt-4">
             <div className="flex items-center gap-2 mb-3">
