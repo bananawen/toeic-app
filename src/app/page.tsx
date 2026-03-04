@@ -127,7 +127,7 @@ export default function Home() {
       <h2 className="text-sm font-bold text-gray-700 mb-2">📝 自選測驗</h2>
       <Card>
         <CardContent className="p-3">
-          <div className="space-y-1.5 max-h-40 overflow-y-auto">
+          <div className="space-y-1.5 max-h-60 overflow-y-auto">
             {allParts.map(part => (
               <button
                 key={part.type}
@@ -263,12 +263,12 @@ export default function Home() {
 
         {/* 滑動區域 */}
         <div 
-          className="relative overflow-hidden"
+          className="relative overflow-hidden min-h-[70vh]"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
         >
           {/* 當前區塊 */}
-          <div className="transition-opacity duration-300">
+          <div className="transition-opacity duration-300 h-full">
             {sections[currentSection]}
           </div>
 
