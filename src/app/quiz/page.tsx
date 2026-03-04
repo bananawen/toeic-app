@@ -18,6 +18,7 @@ type Question = {
   explanation: string
   passage?: string  // For Part 6
   blankNumber?: number  // For Part 6
+  groupId?: string  // For Part 6/7: reset timer when group changes
   // For Part 6 new format (one passage with multiple blanks)
   questions?: {
     number: number
@@ -287,6 +288,7 @@ export default function QuizPage() {
               correctAnswer: q.correctAnswer,
               explanation: q.explanation,
               blankNumber: q.number,
+              groupId: item.id,  // Same group for same passage
               questions: undefined
             })
           })
@@ -311,6 +313,7 @@ export default function QuizPage() {
               correctAnswer: q.correctAnswer,
               explanation: q.explanation,
               blankNumber: q.number,
+              groupId: item.id,  // Same group for same passage set
               isMultiPassage: item.passages && item.passages.length > 1,
               questions: undefined
               // Keep passages for display
@@ -508,10 +511,20 @@ export default function QuizPage() {
     
     setTimeout(() => {
       if (currentIndex < quizQuestions.length - 1) {
+        const currentQuestion = quizQuestions[currentIndex]
+        const nextQuestion = quizQuestions[currentIndex + 1]
+        
+        // For Part 6/7: only reset timer when groupId changes (new passage set)
+        // For other parts: always reset
+        const shouldResetTimer = !currentQuestion.groupId || 
+          (nextQuestion.groupId && nextQuestion.groupId !== currentQuestion.groupId)
+        
         setCurrentIndex(currentIndex + 1)
         setIsAnswered(false)
         setCurrentPassageIndex(0)  // Reset passage index for Part 7
-        setTimeLeft(TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)  // Reset timer
+        if (shouldResetTimer) {
+          setTimeLeft(TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)
+        }
         questionStartTimeRef.current = Date.now() // 重置下一題的開始時間
       } else {
         setShowResult(true)
