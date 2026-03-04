@@ -263,7 +263,7 @@ export default function Home() {
 
         {/* 滑動區域 */}
         <div 
-          className="relative overflow-hidden min-h-[90vh]"
+          className="relative overflow-hidden min-h-[70vh]"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
         >
@@ -288,7 +288,7 @@ export default function Home() {
           <div className="flex justify-between items-center absolute top-1/2 -translate-y-1/2 w-full px-1 pointer-events-none">
             <button 
               onClick={() => currentSection > 0 && setCurrentSection(currentSection - 1)}
-          className={`w-10 h-[60vh] rounded-lg bg-white shadow-md flex items-center justify-center pointer-events-auto ${
+              className={`w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto ${
                 currentSection === 0 ? "opacity-30 cursor-not-allowed" : "opacity-80 hover:opacity-100"
               }`}
               disabled={currentSection === 0}
@@ -297,7 +297,7 @@ export default function Home() {
             </button>
             <button 
               onClick={() => currentSection < sections.length - 1 && setCurrentSection(currentSection + 1)}
-              className={`w-10 h-[60vh] rounded-lg bg-white shadow-md flex items-center justify-center pointer-events-auto ${
+              className={`w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto ${
                 currentSection === sections.length - 1 ? "opacity-30 cursor-not-allowed" : "opacity-80 hover:opacity-100"
               }`}
               disabled={currentSection === sections.length - 1}
