@@ -89,7 +89,7 @@ export default function Home() {
     // Section 1: 立刻測驗
     <div key="section1" className="w-full flex-shrink-0 px-1">
       <h2 className="text-sm font-bold text-gray-700 mb-2">⚡ 立刻測驗</h2>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="space-y-2">
         <button onClick={startRandomQuiz} className="block w-full text-left">
           <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-purple-500 to-purple-600 border-0 h-full">
             <CardHeader className="py-3 px-3">
@@ -186,36 +186,27 @@ export default function Home() {
       </Card>
     </div>,
 
-    // Section 3: 分類練習
+    // Section 3: 分類練習 - 固定顯示
     <div key="section3" className="w-full flex-shrink-0 px-1">
-      <button 
-        onClick={() => setShowCategories(!showCategories)}
-        className="flex items-center justify-between w-full text-left mb-2"
-      >
-        <h2 className="text-sm font-bold text-gray-700">📚 分類練習</h2>
-        {showCategories ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
-      </button>
-      
-      {showCategories && (
-        <div className="grid grid-cols-4 gap-2">
-          {categories.map(cat => (
-            <button 
-              key={cat.type} 
-              onClick={() => startCategoryQuiz(cat.type, cat.name)}
-              className="text-left"
-            >
-              <Card className="hover:shadow-sm transition-all cursor-pointer h-full">
-                <CardHeader className="py-2 px-2">
-                  <div className={`w-6 h-6 rounded-lg ${cat.color} flex items-center justify-center mb-1`}>
-                    <GraduationCap className="w-3 h-3 text-gray-600" />
-                  </div>
-                  <CardTitle className="text-xs">{cat.name}</CardTitle>
-                </CardHeader>
-              </Card>
-            </button>
-          ))}
-        </div>
-      )}
+      <h2 className="text-sm font-bold text-gray-700 mb-2">📚 分類練習</h2>
+      <div className="grid grid-cols-4 gap-2">
+        {categories.map(cat => (
+          <button 
+            key={cat.type} 
+            onClick={() => startCategoryQuiz(cat.type, cat.name)}
+            className="text-left"
+          >
+            <Card className="hover:shadow-sm transition-all cursor-pointer h-full">
+              <CardHeader className="py-2 px-2">
+                <div className={`w-6 h-6 rounded-lg ${cat.color} flex items-center justify-center mb-1`}>
+                  <GraduationCap className="w-3 h-3 text-gray-600" />
+                </div>
+                <CardTitle className="text-xs">{cat.name}</CardTitle>
+              </CardHeader>
+            </Card>
+          </button>
+        ))}
+      </div>
     </div>,
 
     // Section 4: 模擬試題
