@@ -87,7 +87,7 @@ export default function Home() {
   // 區塊內容
   const sections = [
     // Section 1: 立刻測驗
-    <div key="section1" className="w-full flex-shrink-0 px-1">
+    <div key="section1" className="w-[70%] flex-shrink-0 mx-auto px-1">
       <h2 className="text-sm font-bold text-gray-700 mb-2">⚡ 立刻測驗</h2>
       <div className="space-y-2">
         <button onClick={startRandomQuiz} className="block w-full text-left">
@@ -123,7 +123,7 @@ export default function Home() {
     </div>,
 
     // Section 2: 自選測驗
-    <div key="section2" className="w-full flex-shrink-0 px-1">
+    <div key="section2" className="w-[70%] flex-shrink-0 mx-auto px-1">
       <h2 className="text-sm font-bold text-gray-700 mb-2">📝 自選測驗</h2>
       <Card>
         <CardContent className="p-3">
@@ -187,7 +187,7 @@ export default function Home() {
     </div>,
 
     // Section 3: 分類練習 - 固定顯示
-    <div key="section3" className="w-full flex-shrink-0 px-1">
+    <div key="section3" className="w-[70%] flex-shrink-0 mx-auto px-1">
       <h2 className="text-sm font-bold text-gray-700 mb-2">📚 分類練習</h2>
       <div className="grid grid-cols-4 gap-2">
         {categories.map(cat => (
@@ -210,7 +210,7 @@ export default function Home() {
     </div>,
 
     // Section 4: 模擬試題
-    <div key="section4" className="w-full flex-shrink-0 px-1">
+    <div key="section4" className="w-[70%] flex-shrink-0 mx-auto px-1">
       <h2 className="text-sm font-bold text-gray-700 mb-2">🎯 模擬試題</h2>
       <button onClick={startMockQuiz} className="block w-full text-left">
         <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-amber-500 to-orange-500 border-0">
@@ -228,7 +228,7 @@ export default function Home() {
     </div>,
 
     // Section 5: 設定
-    <div key="section5" className="w-full flex-shrink-0 px-1">
+    <div key="section5" className="w-[70%] flex-shrink-0 mx-auto px-1">
       <h2 className="text-sm font-bold text-gray-700 mb-2">⚙️ 設定</h2>
       <button className="block w-full text-left" disabled>
         <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
