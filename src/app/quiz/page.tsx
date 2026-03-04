@@ -28,6 +28,7 @@ type Question = {
   }[]
   // For Part 7 (multiple passages with multiple questions)
   passages?: string[]
+  isMultiPassage?: boolean  // Flag to show all passages
 }
 
 type Word = {
@@ -291,14 +292,14 @@ export default function QuizPage() {
             flattened.push({
               ...item,
               id: `${item.id}-q${qIndex + 1}`,  // Unique ID for each question
-              passage: item.passages?.[0],  // Use first passage for display
               question: q.question,
               options: q.options,
               correctAnswer: q.correctAnswer,
               explanation: q.explanation,
               blankNumber: q.number,
-              questions: undefined,
-              passages: undefined
+              isMultiPassage: item.passages && item.passages.length > 1,
+              questions: undefined
+              // Keep passages for display
             })
           })
         } else {
@@ -806,9 +807,19 @@ export default function QuizPage() {
               <span className="capitalize">{currentQuestion.difficulty}</span>
             </div>
             {/* 顯示 Part 6 段落 */}
-            {currentQuestion.passage && (
+            {currentQuestion.passage && !currentQuestion.isMultiPassage && (
               <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mb-3 whitespace-pre-wrap">
                 {currentQuestion.passage}
+              </div>
+            )}
+            {/* 顯示 Part 7 多篇段落 */}
+            {currentQuestion.isMultiPassage && currentQuestion.passages && (
+              <div className="space-y-3 mb-3">
+                {currentQuestion.passages.map((p, i) => (
+                  <div key={i} className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap">
+                    {p}
+                  </div>
+                ))}
               </div>
             )}
             {/* Part 6: 顯示題號 */}

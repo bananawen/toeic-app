@@ -2256,56 +2256,57 @@
       "category": "reading-comprehension",
       "difficulty": "medium",
       "passages": [
-        "Memorandum\n\nTo: All Employees\nFrom: Human Resources\nDate: March 1, 2026\nSubject: New Office Hours\n\nEffective immediately, our office will be open from 9:00 AM to 6:00 PM, Monday through Friday. Employees may request flexible working hours with manager approval. Please contact HR if you have any questions."
+        "Advertisement\n\nWanted: Software Engineers\n\nWe are hiring experienced software engineers to join our growing team. Requirements: - 3+ years experience - Strong JavaScript skills - Good English communication. Benefits: Competitive salary, Health insurance, Remote work option. Apply at: careers@techcompany.com",
+        "Email\n\nFrom: john.doe@email.com\nTo: careers@techcompany.com\nSubject: Application for Software Engineer Position\n\nDear Hiring Manager,\n\nI am writing to apply for the software engineer position advertised on your website. I have 5 years of experience in software development and specialize in JavaScript. I am interested in the remote work option. Please find my resume attached.\n\nBest regards,\nJohn Doe"
       ],
       "questions": [
         {
           "number": 1,
-          "question": "What is the main purpose of this memo?",
+          "question": "What is the main purpose of the advertisement?",
           "options": [
             {
               "key": "A",
-              "text": "To announce new office hours"
+              "text": "To sell products"
             },
             {
               "key": "B",
-              "text": "To hire new employees"
+              "text": "To hire employees"
             },
             {
               "key": "C",
-              "text": "To announce a holiday"
+              "text": "To announce a new product"
             },
             {
               "key": "D",
-              "text": "To change the office location"
-            }
-          ],
-          "correctAnswer": "A",
-          "explanation": "The memo announces new office hours (9 AM to 6 PM)."
-        },
-        {
-          "number": 2,
-          "question": "Who can approve flexible working hours?",
-          "options": [
-            {
-              "key": "A",
-              "text": "Human Resources"
-            },
-            {
-              "key": "B",
-              "text": "The employees manager"
-            },
-            {
-              "key": "C",
-              "text": "The CEO"
-            },
-            {
-              "key": "D",
-              "text": "No one"
+              "text": "To find investors"
             }
           ],
           "correctAnswer": "B",
-          "explanation": "Employees may request flexible working hours with manager approval."
+          "explanation": "The advertisement is recruiting software engineers."
+        },
+        {
+          "number": 2,
+          "question": "What benefit is John Doe interested in?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Competitive salary"
+            },
+            {
+              "key": "B",
+              "text": "Health insurance"
+            },
+            {
+              "key": "C",
+              "text": "Remote work option"
+            },
+            {
+              "key": "D",
+              "text": "Career growth"
+            }
+          ],
+          "correctAnswer": "C",
+          "explanation": "John explicitly states he is interested in the remote work option."
         }
       ]
     },
@@ -2315,56 +2316,57 @@
       "category": "reading-comprehension",
       "difficulty": "medium",
       "passages": [
-        "Email\n\nFrom: john.smith@company.com\nTo: jane.doe@company.com\nSubject: Project Update\n\nHi Jane,\n\nI wanted to give you an update on the marketing project. We have completed the market research and are now working on the campaign strategy. The first draft will be ready by next Friday. Let me know if you have any questions.\n\nBest,\nJohn"
+        "Memorandum\n\nTo: All Staff\nFrom: IT Department\nDate: March 4, 2026\nSubject: System Maintenance\n\nPlease be advised that our email system will be undergoing maintenance on Saturday, March 8th, from 2:00 AM to 6:00 AM. During this time, email services will be unavailable. We apologize for any inconvenience.",
+        "Email\n\nFrom: sarah@company.com\nTo: it@company.com\nSubject: Re: System Maintenance\n\nHi,\n\nI have an important presentation on Saturday morning and need to send emails. Is there any way to access email during the maintenance window?\n\nThanks,\nSarah"
       ],
       "questions": [
         {
           "number": 1,
-          "question": "When will the first draft be ready?",
+          "question": "When will the email system be unavailable?",
           "options": [
             {
               "key": "A",
-              "text": "Next Friday"
+              "text": "Friday 2AM-6AM"
             },
             {
               "key": "B",
-              "text": "Tomorrow"
+              "text": "Saturday 2AM-6AM"
             },
             {
               "key": "C",
-              "text": "Next Monday"
+              "text": "Sunday 2AM-6AM"
             },
             {
               "key": "D",
-              "text": "In two weeks"
-            }
-          ],
-          "correctAnswer": "A",
-          "explanation": "The email states the first draft will be ready by next Friday."
-        },
-        {
-          "number": 2,
-          "question": "What stage is the project in?",
-          "options": [
-            {
-              "key": "A",
-              "text": "Market research"
-            },
-            {
-              "key": "B",
-              "text": "Campaign strategy"
-            },
-            {
-              "key": "C",
-              "text": "Final review"
-            },
-            {
-              "key": "D",
-              "text": "Completion"
+              "text": "Saturday 6AM-10AM"
             }
           ],
           "correctAnswer": "B",
-          "explanation": "The email says they have completed market research and are now working on campaign strategy."
+          "explanation": "The memo states maintenance on Saturday, March 8th, from 2:00 AM to 6:00 AM."
+        },
+        {
+          "number": 2,
+          "question": "Why is Sarah contacting IT?",
+          "options": [
+            {
+              "key": "A",
+              "text": "To report a problem"
+            },
+            {
+              "key": "B",
+              "text": "To ask for special access"
+            },
+            {
+              "key": "C",
+              "text": "To reschedule the maintenance"
+            },
+            {
+              "key": "D",
+              "text": "To get technical support"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Sarah needs to send emails during the maintenance window and is asking for access."
         }
       ]
     }
