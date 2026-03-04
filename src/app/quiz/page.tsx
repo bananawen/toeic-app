@@ -791,15 +791,17 @@ export default function QuizPage() {
         <div className="max-w-lg mx-auto">
           {/* 橫條計時器 - 緊湊 */}
           <div className="w-full h-1 bg-gray-200">
-            <div 
-              className={`h-full transition-all duration-1000 ${
-                timeLeft <= 30 ? "bg-red-500" : 
-                timeLeft <= 60 ? "bg-orange-500" : "bg-blue-500"
-              }`}
-              style={{ 
-                width: `${(timeLeft / (TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60)) * 100}%` 
-              }}
-            />
+            {(() => {
+              const maxTime = TIME_LIMITS_PER_QUESTION[quizType as keyof typeof TIME_LIMITS_PER_QUESTION] || 60
+              const percent = (timeLeft / maxTime) * 100
+              const colorClass = percent > 50 ? "bg-blue-500" : percent > 20 ? "bg-orange-500" : "bg-red-500"
+              return (
+                <div 
+                  className={`h-full transition-all duration-1000 ${colorClass}`}
+                  style={{ width: `${percent}%` }}
+                />
+              )
+            })()}
           </div>
         </div>
       </div>
