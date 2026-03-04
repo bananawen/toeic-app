@@ -17,6 +17,7 @@ type Question = {
   correctAnswer: string
   explanation: string
   passage?: string  // For Part 6 & 7
+  blankNumber?: number  // For Part 6
   // For Part 6 new format (one passage with multiple blanks)
   questions?: {
     number: number
@@ -268,6 +269,7 @@ export default function QuizPage() {
               options: q.options,
               correctAnswer: q.correctAnswer,
               explanation: q.explanation,
+              blankNumber: q.number,
               questions: undefined
             })
           })
@@ -781,6 +783,14 @@ export default function QuizPage() {
                 {currentQuestion.passage}
               </div>
             )}
+            {/* Part 6: 顯示題號 */}
+            {currentQuestion.passage && (
+              <div className="text-sm font-medium text-blue-600 mb-2">
+                第 {currentQuestion.blankNumber || 1} 題
+              </div>
+            )}
+            {/* Part 5/7 顯示題目 */}
+            {!currentQuestion.passage && (
             <div className="text-lg leading-relaxed select-none" style={{ touchAction: 'manipulation' }}>
               {currentQuestion.question.split(" ").map((word, index) => (
                 <span
@@ -802,6 +812,7 @@ export default function QuizPage() {
                 </span>
               ))}
             </div>
+            )}
             <div className="text-xs text-gray-400 mt-1">(長按單字加入生詞本)</div>
           </CardHeader>
           <CardContent className="space-y-2">
