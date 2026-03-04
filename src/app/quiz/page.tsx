@@ -285,11 +285,12 @@ export default function QuizPage() {
     // 將 Part 7 的多題格式攤平為單一題目
     if (quizType === "part7") {
       const flattened: Question[] = []
-      questions.forEach(item => {
+      questions.forEach((item, itemIndex) => {
         if (item.questions) {
-          item.questions.forEach(q => {
+          item.questions.forEach((q, qIndex) => {
             flattened.push({
               ...item,
+              id: `${item.id}-q${qIndex + 1}`,  // Unique ID for each question
               passage: item.passages?.[0],  // Use first passage for display
               question: q.question,
               options: q.options,
