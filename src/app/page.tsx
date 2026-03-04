@@ -1,16 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { BookOpen, FileText, Heart, GraduationCap, X, ChevronDown, ChevronUp, Shuffle, ClipboardList, Settings, RotateCcw, Check } from "lucide-react"
+import { BookOpen, FileText, Heart, GraduationCap, X, ChevronDown, ChevronUp, Shuffle, ClipboardList, Settings, RotateCcw, Check, ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function Home() {
   const router = useRouter()
   const [questionCount, setQuestionCount] = useState(10)
   const [showCategories, setShowCategories] = useState(false)
+  const [currentSection, setCurrentSection] = useState(0)
+  const touchStartX = useRef(0)
   
   // Section 2: Part 選擇
   const [selectedParts, setSelectedParts] = useState<string[]>(["part2", "part5", "part6", "part7"])
@@ -65,192 +67,257 @@ export default function Home() {
     router.push(`/quiz?type=mock&count=100`)
   }
 
+  // 觸控滑動處理
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    const diff = e.touches[0].clientX - touchStartX.current
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && currentSection > 0) {
+        setCurrentSection(currentSection - 1)
+      } else if (diff < 0 && currentSection < 4) {
+        setCurrentSection(currentSection + 1)
+      }
+      touchStartX.current = e.touches[0].clientX
+    }
+  }
+
+  // 區塊內容
+  const sections = [
+    // Section 1: 立刻測驗
+    <div key="section1" className="w-full flex-shrink-0 px-1">
+      <h2 className="text-sm font-bold text-gray-700 mb-2">⚡ 立刻測驗</h2>
+      <div className="grid grid-cols-3 gap-2">
+        <button onClick={startRandomQuiz} className="block w-full text-left">
+          <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-purple-500 to-purple-600 border-0 h-full">
+            <CardHeader className="py-3 px-3">
+              <Shuffle className="w-5 h-5 text-white mb-1" />
+              <CardTitle className="text-white text-sm">隨機測驗</CardTitle>
+              <p className="text-purple-100 text-xs">{questionCount} 題</p>
+            </CardHeader>
+          </Card>
+        </button>
+        
+        <button className="block w-full text-left" disabled>
+          <Card className="bg-gray-100 opacity-60 cursor-not-allowed h-full">
+            <CardHeader className="py-3 px-3">
+              <RotateCcw className="w-5 h-5 text-gray-400 mb-1" />
+              <CardTitle className="text-gray-500 text-sm">單字複習</CardTitle>
+              <p className="text-gray-400 text-xs">敬請期待</p>
+            </CardHeader>
+          </Card>
+        </button>
+        
+        <Link href="/notebook" className="block w-full text-left">
+          <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-red-500 to-red-600 border-0 h-full">
+            <CardHeader className="py-3 px-3">
+              <Heart className="w-5 h-5 text-white mb-1" />
+              <CardTitle className="text-white text-sm">我的單字</CardTitle>
+              <p className="text-red-100 text-xs">收藏單字</p>
+            </CardHeader>
+          </Card>
+        </Link>
+      </div>
+    </div>,
+
+    // Section 2: 自選測驗
+    <div key="section2" className="w-full flex-shrink-0 px-1">
+      <h2 className="text-sm font-bold text-gray-700 mb-2">📝 自選測驗</h2>
+      <Card>
+        <CardContent className="p-3">
+          <div className="space-y-1.5 max-h-40 overflow-y-auto">
+            {allParts.map(part => (
+              <button
+                key={part.type}
+                onClick={() => part.enabled && togglePart(part.type)}
+                disabled={!part.enabled}
+                className={`w-full flex items-center justify-between p-2 rounded-lg transition-all ${
+                  part.enabled 
+                    ? selectedParts.includes(part.type) 
+                      ? "bg-blue-50 border border-blue-200" 
+                      : "bg-gray-50 border border-gray-100 hover:bg-gray-100"
+                    : "bg-gray-50 opacity-50 cursor-not-allowed"
+                }`}
+              >
+                <span className={`text-sm ${part.enabled ? "text-gray-700" : "text-gray-400"}`}>
+                  {part.name}
+                </span>
+                {part.enabled && (
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
+                    selectedParts.includes(part.type) ? "bg-blue-500" : "bg-gray-200"
+                  }`}>
+                    {selectedParts.includes(part.type) && <Check className="w-3 h-3 text-white" />}
+                  </div>
+                )}
+                {!part.enabled && <span className="text-xs text-gray-400">敬請期待</span>}
+              </button>
+            ))}
+          </div>
+          
+          <div className="mt-3 pt-3 border-t border-gray-100">
+            <label className="text-xs text-gray-500 mb-2 block">題目數量</label>
+            <div className="flex gap-2">
+              {[5, 10, 15, 20, 30].map(num => (
+                <button
+                  key={num}
+                  onClick={() => setQuestionCount(num)}
+                  className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                    questionCount === num 
+                      ? "bg-blue-500 text-white" 
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
+                >
+                  {num}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <Button 
+            onClick={startRandomQuiz} 
+            className="w-full mt-3 bg-blue-600 hover:bg-blue-700"
+            disabled={selectedParts.length === 0}
+          >
+            開始測驗
+          </Button>
+        </CardContent>
+      </Card>
+    </div>,
+
+    // Section 3: 分類練習
+    <div key="section3" className="w-full flex-shrink-0 px-1">
+      <button 
+        onClick={() => setShowCategories(!showCategories)}
+        className="flex items-center justify-between w-full text-left mb-2"
+      >
+        <h2 className="text-sm font-bold text-gray-700">📚 分類練習</h2>
+        {showCategories ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+      </button>
+      
+      {showCategories && (
+        <div className="grid grid-cols-4 gap-2">
+          {categories.map(cat => (
+            <button 
+              key={cat.type} 
+              onClick={() => startCategoryQuiz(cat.type, cat.name)}
+              className="text-left"
+            >
+              <Card className="hover:shadow-sm transition-all cursor-pointer h-full">
+                <CardHeader className="py-2 px-2">
+                  <div className={`w-6 h-6 rounded-lg ${cat.color} flex items-center justify-center mb-1`}>
+                    <GraduationCap className="w-3 h-3 text-gray-600" />
+                  </div>
+                  <CardTitle className="text-xs">{cat.name}</CardTitle>
+                </CardHeader>
+              </Card>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>,
+
+    // Section 4: 模擬試題
+    <div key="section4" className="w-full flex-shrink-0 px-1">
+      <h2 className="text-sm font-bold text-gray-700 mb-2">🎯 模擬試題</h2>
+      <button onClick={startMockQuiz} className="block w-full text-left">
+        <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-amber-500 to-orange-500 border-0">
+          <CardHeader className="py-4 px-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-white text-base">模擬試題</CardTitle>
+                <p className="text-amber-100 text-xs mt-1">完整 TOEIC 100 題</p>
+              </div>
+              <ClipboardList className="w-8 h-8 text-white opacity-50" />
+            </div>
+          </CardHeader>
+        </Card>
+      </button>
+    </div>,
+
+    // Section 5: 設定
+    <div key="section5" className="w-full flex-shrink-0 px-1">
+      <h2 className="text-sm font-bold text-gray-700 mb-2">⚙️ 設定</h2>
+      <button className="block w-full text-left" disabled>
+        <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
+          <CardHeader className="py-3 px-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                <Settings className="w-4 h-4 text-gray-400" />
+              </div>
+              <div className="flex-1">
+                <CardTitle className="text-sm text-gray-500">設定</CardTitle>
+                <p className="text-xs text-gray-400">敬請期待</p>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
+      </button>
+    </div>,
+  ]
+
+  const sectionTitles = ["立刻測驗", "自選測驗", "分類練習", "模擬試題", "設定"]
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4 py-6 max-w-md">
         {/* Header */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-4">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             🦈 鯊逼多益
           </h1>
           <p className="text-gray-500 text-xs mt-1">TOEIC 練習 App</p>
         </div>
 
-        {/* 1️⃣ Section 1: 立刻測驗 */}
-        <div className="mb-4">
-          <h2 className="text-sm font-bold text-gray-700 mb-2">⚡ 立刻測驗</h2>
-          <div className="grid grid-cols-3 gap-2">
-            {/* 隨機測驗 */}
-            <button onClick={startRandomQuiz} className="block w-full text-left">
-              <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-purple-500 to-purple-600 border-0">
-                <CardHeader className="py-3 px-3">
-                  <Shuffle className="w-5 h-5 text-white mb-1" />
-                  <CardTitle className="text-white text-sm">隨機測驗</CardTitle>
-                  <p className="text-purple-100 text-xs">{questionCount} 題</p>
-                </CardHeader>
-              </Card>
+        {/* 滑動區域 */}
+        <div 
+          className="relative overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
+          {/* 當前區塊 */}
+          <div className="transition-opacity duration-300">
+            {sections[currentSection]}
+          </div>
+
+          {/* 導航指示器 */}
+          <div className="flex justify-center gap-1 mt-4">
+            {sections.map((_, i) => (
+              <div
+                key={i}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === currentSection ? "w-6 bg-blue-500" : "w-1.5 bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* 左右導航按鈕 */}
+          <div className="flex justify-between items-center absolute top-1/2 -translate-y-1/2 w-full px-1 pointer-events-none">
+            <button 
+              onClick={() => currentSection > 0 && setCurrentSection(currentSection - 1)}
+              className={`w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto ${
+                currentSection === 0 ? "opacity-30 cursor-not-allowed" : "opacity-80 hover:opacity-100"
+              }`}
+              disabled={currentSection === 0}
+            >
+              <ChevronLeft className="w-4 h-4 text-gray-600" />
             </button>
-            
-            {/* 單字複習（敬請期待） */}
-            <button className="block w-full text-left" disabled>
-              <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
-                <CardHeader className="py-3 px-3">
-                  <RotateCcw className="w-5 h-5 text-gray-400 mb-1" />
-                  <CardTitle className="text-gray-500 text-sm">單字複習</CardTitle>
-                  <p className="text-gray-400 text-xs">敬請期待</p>
-                </CardHeader>
-              </Card>
+            <button 
+              onClick={() => currentSection < sections.length - 1 && setCurrentSection(currentSection + 1)}
+              className={`w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto ${
+                currentSection === sections.length - 1 ? "opacity-30 cursor-not-allowed" : "opacity-80 hover:opacity-100"
+              }`}
+              disabled={currentSection === sections.length - 1}
+            >
+              <ChevronRight className="w-4 h-4 text-gray-600" />
             </button>
-            
-            {/* 單字本 */}
-            <Link href="/notebook" className="block w-full text-left">
-              <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-red-500 to-red-600 border-0">
-                <CardHeader className="py-3 px-3">
-                  <Heart className="w-5 h-5 text-white mb-1" />
-                  <CardTitle className="text-white text-sm">我的單字</CardTitle>
-                  <p className="text-red-100 text-xs">收藏單字</p>
-                </CardHeader>
-              </Card>
-            </Link>
           </div>
         </div>
 
-        {/* 2️⃣ Section 2: Part 選擇 */}
-        <div className="mb-4">
-          <h2 className="text-sm font-bold text-gray-700 mb-2">📝 自選測驗</h2>
-          <Card>
-            <CardContent className="p-3">
-              <div className="space-y-1.5">
-                {allParts.map(part => (
-                  <button
-                    key={part.type}
-                    onClick={() => part.enabled && togglePart(part.type)}
-                    disabled={!part.enabled}
-                    className={`w-full flex items-center justify-between p-2 rounded-lg transition-all ${
-                      part.enabled 
-                        ? selectedParts.includes(part.type) 
-                          ? "bg-blue-50 border border-blue-200" 
-                          : "bg-gray-50 border border-gray-100 hover:bg-gray-100"
-                        : "bg-gray-50 opacity-50 cursor-not-allowed"
-                    }`}
-                  >
-                    <span className={`text-sm ${part.enabled ? "text-gray-700" : "text-gray-400"}`}>
-                      {part.name}
-                    </span>
-                    {part.enabled && (
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                        selectedParts.includes(part.type) ? "bg-blue-500" : "bg-gray-200"
-                      }`}>
-                        {selectedParts.includes(part.type) && <Check className="w-3 h-3 text-white" />}
-                      </div>
-                    )}
-                    {!part.enabled && <span className="text-xs text-gray-400">敬請期待</span>}
-                  </button>
-                ))}
-              </div>
-              
-              {/* 題目數量 */}
-              <div className="mt-3 pt-3 border-t border-gray-100">
-                <label className="text-xs text-gray-500 mb-2 block">題目數量</label>
-                <div className="flex gap-2">
-                  {[5, 10, 15, 20, 30].map(num => (
-                    <button
-                      key={num}
-                      onClick={() => setQuestionCount(num)}
-                      className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                        questionCount === num 
-                          ? "bg-blue-500 text-white" 
-                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
-                    >
-                      {num}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              
-              {/* 開始按鈕 */}
-              <Button 
-                onClick={startRandomQuiz} 
-                className="w-full mt-3 bg-blue-600 hover:bg-blue-700"
-                disabled={selectedParts.length === 0}
-              >
-                開始測驗
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* 3️⃣ Section 3: 分類練習 */}
-        <div className="mb-4">
-          <button 
-            onClick={() => setShowCategories(!showCategories)}
-            className="flex items-center justify-between w-full text-left mb-2"
-          >
-            <h2 className="text-sm font-bold text-gray-700">📚 分類練習</h2>
-            {showCategories ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
-          </button>
-          
-          {showCategories && (
-            <div className="grid grid-cols-4 gap-2">
-              {categories.map(cat => (
-                <button 
-                  key={cat.type} 
-                  onClick={() => startCategoryQuiz(cat.type, cat.name)}
-                  className="text-left"
-                >
-                  <Card className="hover:shadow-sm transition-all cursor-pointer">
-                    <CardHeader className="py-2 px-2">
-                      <div className={`w-6 h-6 rounded-lg ${cat.color} flex items-center justify-center mb-1`}>
-                        <GraduationCap className="w-3 h-3 text-gray-600" />
-                      </div>
-                      <CardTitle className="text-xs">{cat.name}</CardTitle>
-                    </CardHeader>
-                  </Card>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* 4️⃣ Section 4: 模擬試題 */}
-        <div className="mb-4">
-          <button onClick={startMockQuiz} className="block w-full text-left">
-            <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-amber-500 to-orange-500 border-0">
-              <CardHeader className="py-4 px-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <CardTitle className="text-white text-base">🎯 模擬試題</CardTitle>
-                    <p className="text-amber-100 text-xs mt-1">完整 TOEIC 100 題</p>
-                  </div>
-                  <ClipboardList className="w-8 h-8 text-white opacity-50" />
-                </div>
-              </CardHeader>
-            </Card>
-          </button>
-        </div>
-
-        {/* 5️⃣ Section 5: 設定 */}
-        <div className="mb-4">
-          <button className="block w-full text-left" disabled>
-            <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
-              <CardHeader className="py-3 px-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
-                    <Settings className="w-4 h-4 text-gray-400" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-sm text-gray-500">設定</CardTitle>
-                    <p className="text-xs text-gray-400">敬請期待</p>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-          </button>
-        </div>
-
         {/* Version */}
-        <div className="text-center text-xs text-gray-400 mt-4 pb-4">
+        <div className="text-center text-xs text-gray-400 mt-6 pb-4">
           v1.1.0
         </div>
       </div>
