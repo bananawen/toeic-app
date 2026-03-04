@@ -3,7 +3,7 @@
     "version": "1.0",
     "created": "2026-03-03",
     "updated": "2026-03-04",
-    "totalQuestions": 95
+    "totalQuestions": 82
   },
   "questions": [
     {
@@ -2113,426 +2113,6 @@
       "explanation": "Recommend + gerund."
     },
     {
-      "id": "p7-q001",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "Memorandum\n\nTo: All Employees\nFrom: Human Resources\nDate: March 1, 2026\nSubject: New Office Hours\n\nEffective immediately, our office will be open from 9:00 AM to 6:00 PM, Monday through Friday. Employees may request flexible working hours with manager approval. Please contact HR if you have any questions.",
-      "question": "What is the main purpose of this memo?",
-      "options": [
-        {
-          "key": "A",
-          "text": "To announce new office hours"
-        },
-        {
-          "key": "B",
-          "text": "To hire new employees"
-        },
-        {
-          "key": "C",
-          "text": "To announce a holiday"
-        },
-        {
-          "key": "D",
-          "text": "To change the office location"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "The memo announces new office hours (9 AM to 6 PM)"
-    },
-    {
-      "id": "p7-q002",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "Memorandum\n\nTo: All Employees\nFrom: Human Resources\nDate: March 1, 2026\nSubject: New Office Hours\n\nEffective immediately, our office will be open from 9:00 AM to 6:00 PM, Monday through Friday. Employees may request flexible working hours with manager approval. Please contact HR if you have any questions.",
-      "question": "Who can approve flexible working hours?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Human Resources"
-        },
-        {
-          "key": "B",
-          "text": "The employee's manager"
-        },
-        {
-          "key": "C",
-          "text": "The CEO"
-        },
-        {
-          "key": "D",
-          "text": "No one"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "Employees may request flexible working hours with manager approval"
-    },
-    {
-      "id": "p7-q003",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "Email\n\nFrom: john.smith@company.com\nTo: jane.doe@company.com\nSubject: Project Update\n\nHi Jane,\n\nI wanted to give you an update on the marketing project. We have completed the market research and are now working on the campaign strategy. The first draft will be ready by next Friday. Let me know if you have any questions.\n\nBest,\nJohn",
-      "question": "When will the first draft be ready?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Next Friday"
-        },
-        {
-          "key": "B",
-          "text": "Tomorrow"
-        },
-        {
-          "key": "C",
-          "text": "Next Monday"
-        },
-        {
-          "key": "D",
-          "text": "In two weeks"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "The email states the first draft will be ready by next Friday"
-    },
-    {
-      "id": "p7-q004",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "Notice\n\nOur office will be closed on December 25th and 26th for the Christmas holiday. Emergency contact: 555-1234. Normal business will resume on December 27th.",
-      "question": "When will the office reopen?",
-      "options": [
-        {
-          "key": "A",
-          "text": "December 27th"
-        },
-        {
-          "key": "B",
-          "text": "December 24th"
-        },
-        {
-          "key": "C",
-          "text": "January 1st"
-        },
-        {
-          "key": "D",
-          "text": "December 26th"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "The notice states normal business will resume on December 27th"
-    },
-    {
-      "id": "p7-q01",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "From: Jennifer Martinez\nTo: David Chen\nSubject: Project Update\n\nHi David,\n\nI wanted to give you an update on the marketing campaign project. We launched the new product last week, and the initial response has been positive. However, we have encountered some issues with the social media advertising. The click-through rate is lower than expected.\n\nI recommend we review the ad copy and targeting options tomorrow. Can you schedule some time in your schedule?\n\nLet me know what works for you.\n\nBest,\nJennifer",
-      "question": "What is the main purpose of this email?",
-      "options": [
-        {
-          "key": "A",
-          "text": "To complain about the project"
-        },
-        {
-          "key": "B",
-          "text": "To provide a project update"
-        },
-        {
-          "key": "C",
-          "text": "To request a meeting"
-        },
-        {
-          "key": "D",
-          "text": "To announce a new product"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "The email explicitly states 'I wanted to give you an update on the marketing campaign project.'"
-    },
-    {
-      "id": "p7-q02",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "From: Jennifer Martinez\nTo: David Chen\nSubject: Project Update\n\nHi David,\n\nI wanted to give you an update on the marketing campaign project. We launched the new product last week, and the initial response has been positive. However, we have encountered some issues with the social media advertising. The click-through rate is lower than expected.\n\nI recommend we review the ad copy and targeting options tomorrow. Can you schedule some time in your schedule?\n\nLet me know what works for you.\n\nBest,\nJennifer",
-      "question": "What issue is mentioned?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Product quality problems"
-        },
-        {
-          "key": "B",
-          "text": "Low click-through rate"
-        },
-        {
-          "key": "C",
-          "text": "Budget overruns"
-        },
-        {
-          "key": "D",
-          "text": "Team conflicts"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "The email states: 'The click-through rate is lower than expected.'"
-    },
-    {
-      "id": "p7-q03",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "From: Jennifer Martinez\nTo: David Chen\nSubject: Project Update\n\nHi David,\n\nI wanted to give you an update on the marketing campaign project. We launched the new product last week, and the initial response has been positive. However, we have encountered some issues with the social media advertising. The click-through rate is lower than expected.\n\nI recommend we review the ad copy and targeting options tomorrow. Can you schedule some time in your schedule?\n\nLet me know what works for you.\n\nBest,\nJennifer",
-      "question": "What does Jennifer ask David to do?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Review the ad copy"
-        },
-        {
-          "key": "B",
-          "text": "Schedule a meeting"
-        },
-        {
-          "key": "C",
-          "text": "Increase the budget"
-        },
-        {
-          "key": "D",
-          "text": "Launch a new campaign"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "Jennifer asks: 'Can you schedule some time in your schedule?' This is asking David to schedule a meeting."
-    },
-    {
-      "id": "p7-q04",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "easy",
-      "passage": "NOTICE\n\nAll employees are informed that the company picnic scheduled for this Friday has been postponed due to inclement weather. A new date will be announced next week. Employees who have already registered for the event do not need to re-register. For any questions, please contact the HR department.",
-      "question": "Why was the picnic postponed?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Lack of participants"
-        },
-        {
-          "key": "B",
-          "text": "Inclement weather"
-        },
-        {
-          "key": "C",
-          "text": "Budget issues"
-        },
-        {
-          "key": "D",
-          "text": "Scheduling conflicts"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "The notice states: 'has been postponed due to inclement weather.'"
-    },
-    {
-      "id": "p7-q05",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "easy",
-      "passage": "NOTICE\n\nAll employees are informed that the company picnic scheduled for this Friday has been postponed due to inclement weather. A new date will be announced next week. Employees who have already registered for the event do not need to re-register. For any questions, please contact the HR department.",
-      "question": "What should employees do if they have questions?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Email the manager"
-        },
-        {
-          "key": "B",
-          "text": "Contact HR"
-        },
-        {
-          "key": "C",
-          "text": "Register again"
-        },
-        {
-          "key": "D",
-          "text": "Wait for announcement"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "The notice states: 'For any questions, please contact the HR department.'"
-    },
-    {
-      "id": "p7-q06",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "OFFICE RELOCATION NOTICE\n\nDear Employees,\n\nWe are pleased to announce that our office will be relocating to a new building at 555 Business Park Drive, effective March 15th. The new facility offers modern amenities, including a fitness center and cafeteria.\n\nMoving day will be on March 14th. Each department will be assigned a specific time to pack and move their equipment. Please coordinate with your department head for details.\n\nThe new office is easily accessible by public transportation, with a bus stop located just in front of the building. For those who drive, parking is available on the first floor.\n\nWe apologize for any inconvenience during this transition.",
-      "question": "When will the office relocate?",
-      "options": [
-        {
-          "key": "A",
-          "text": "March 1st"
-        },
-        {
-          "key": "B",
-          "text": "March 14th"
-        },
-        {
-          "key": "C",
-          "text": "March 15th"
-        },
-        {
-          "key": "D",
-          "text": "April 1st"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "The notice states: 'effective March 15th' - this is when the relocation takes effect."
-    },
-    {
-      "id": "p7-q07",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "OFFICE RELOCATION NOTICE\n\nDear Employees,\n\nWe are pleased to announce that our office will be relocating to a new building at 555 Business Park Drive, effective March 15th. The new facility offers modern amenities, including a fitness center and cafeteria.\n\nMoving day will be on March 14th. Each department will be assigned a specific time to pack and move their equipment. Please coordinate with your department head for details.\n\nThe new office is easily accessible by public transportation, with a bus stop located just in front of the building. For those who drive, parking is available on the first floor.\n\nWe apologize for any inconvenience during this transition.",
-      "question": "What is NOT mentioned about the new office?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Fitness center"
-        },
-        {
-          "key": "B",
-          "text": "Parking availability"
-        },
-        {
-          "key": "C",
-          "text": "Public transportation access"
-        },
-        {
-          "key": "D",
-          "text": "Larger meeting rooms"
-        }
-      ],
-      "correctAnswer": "D",
-      "explanation": "The notice mentions fitness center, parking, and public transportation access - but not larger meeting rooms."
-    },
-    {
-      "id": "p7-q08",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "OFFICE RELOCATION NOTICE\n\nDear Employees,\n\nWe are pleased to announce that our office will be relocating to a new building at 555 Business Park Drive, effective March 15th. The new facility offers modern amenities, including a fitness center and cafeteria.\n\nMoving day will be on March 14th. Each department will be assigned a specific time to pack and move their equipment. Please coordinate with your department head for details.\n\nThe new office is easily accessible by public transportation, with a bus stop located just in front of the building. For those who drive, parking is available on the first floor.\n\nWe apologize for any inconvenience during this transition.",
-      "question": "What should employees do to prepare for the move?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Pack their own equipment"
-        },
-        {
-          "key": "B",
-          "text": "Coordinate with department head"
-        },
-        {
-          "key": "C",
-          "text": "Hire moving company"
-        },
-        {
-          "key": "D",
-          "text": "Notify clients"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "The notice states: 'Please coordinate with your department head for details.'"
-    },
-    {
-      "id": "p7-q09",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "From: Lisa Chen\nTo: Project Team\nSubject: Updated Timeline\n\nHi Team,\n\nI wanted to update you on the project timeline. After reviewing the client's feedback, we have decided to extend the development phase by two weeks. This means the new launch date will be April 30th instead of April 15th.\n\nPlease note that the client presentation originally scheduled for April 20th will also be moved to May 5th. I have already sent calendar invitations with the updated details.\n\nIf you have any concerns about the new timeline, please let me know as soon as possible.\n\nBest,\nLisa\nProject Manager",
-      "question": "Why was the timeline changed?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Budget issues"
-        },
-        {
-          "key": "B",
-          "text": "Client feedback"
-        },
-        {
-          "key": "C",
-          "text": "Staff shortage"
-        },
-        {
-          "key": "D",
-          "text": "Technical problems"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "The email states: 'After reviewing the client's feedback, we have decided to extend the development phase by two weeks.'"
-    },
-    {
-      "id": "p7-q10",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "easy",
-      "passage": "From: Lisa Chen\nTo: Project Team\nSubject: Updated Timeline\n\nHi Team,\n\nI wanted to update you on the project timeline. After reviewing the client's feedback, we have decided to extend the development phase by two weeks. This means the new launch date will be April 30th instead of April 15th.\n\nPlease note that the client presentation originally scheduled for April 20th will also be moved to May 5th. I have already sent calendar invitations with the updated details.\n\nIf you have any concerns about the new timeline, please let me know as soon as possible.\n\nBest,\nLisa\nProject Manager",
-      "question": "What is the new launch date?",
-      "options": [
-        {
-          "key": "A",
-          "text": "April 15th"
-        },
-        {
-          "key": "B",
-          "text": "April 20th"
-        },
-        {
-          "key": "C",
-          "text": "April 30th"
-        },
-        {
-          "key": "D",
-          "text": "May 5th"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "The email states: 'the new launch date will be April 30th instead of April 15th.'"
-    },
-    {
-      "id": "p7-q11",
-      "type": "part7",
-      "category": "reading-comprehension",
-      "difficulty": "medium",
-      "passage": "From: Lisa Chen\nTo: Project Team\nSubject: Updated Timeline\n\nHi Team,\n\nI wanted to update you on the project timeline. After reviewing the client's feedback, we have decided to extend the development phase by two weeks. This means the new launch date will be April 30th instead of April 15th.\n\nPlease note that the client presentation originally scheduled for April 20th will also be moved to May 5th. I have already sent calendar invitations with the updated details.\n\nIf you have any concerns about the new timeline, please let me know as soon as possible.\n\nBest,\nLisa\nProject Manager",
-      "question": "What does Lisa ask the team to do?",
-      "options": [
-        {
-          "key": "A",
-          "text": "Send client feedback"
-        },
-        {
-          "key": "B",
-          "text": "Confirm attendance"
-        },
-        {
-          "key": "C",
-          "text": "Raise concerns about timeline"
-        },
-        {
-          "key": "D",
-          "text": "Update the calendar"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "Lisa asks: 'If you have any concerns about the new timeline, please let me know as soon as possible.'"
-    },
-    {
       "id": "p6-001",
       "type": "part6",
       "category": "text-completion",
@@ -2667,6 +2247,124 @@
           ],
           "correctAnswer": "B",
           "explanation": "Adjective additional modifies noun information."
+        }
+      ]
+    },
+    {
+      "id": "p7-001",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passages": [
+        "Memorandum\n\nTo: All Employees\nFrom: Human Resources\nDate: March 1, 2026\nSubject: New Office Hours\n\nEffective immediately, our office will be open from 9:00 AM to 6:00 PM, Monday through Friday. Employees may request flexible working hours with manager approval. Please contact HR if you have any questions."
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "question": "What is the main purpose of this memo?",
+          "options": [
+            {
+              "key": "A",
+              "text": "To announce new office hours"
+            },
+            {
+              "key": "B",
+              "text": "To hire new employees"
+            },
+            {
+              "key": "C",
+              "text": "To announce a holiday"
+            },
+            {
+              "key": "D",
+              "text": "To change the office location"
+            }
+          ],
+          "correctAnswer": "A",
+          "explanation": "The memo announces new office hours (9 AM to 6 PM)."
+        },
+        {
+          "number": 2,
+          "question": "Who can approve flexible working hours?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Human Resources"
+            },
+            {
+              "key": "B",
+              "text": "The employees manager"
+            },
+            {
+              "key": "C",
+              "text": "The CEO"
+            },
+            {
+              "key": "D",
+              "text": "No one"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Employees may request flexible working hours with manager approval."
+        }
+      ]
+    },
+    {
+      "id": "p7-002",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "passages": [
+        "Email\n\nFrom: john.smith@company.com\nTo: jane.doe@company.com\nSubject: Project Update\n\nHi Jane,\n\nI wanted to give you an update on the marketing project. We have completed the market research and are now working on the campaign strategy. The first draft will be ready by next Friday. Let me know if you have any questions.\n\nBest,\nJohn"
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "question": "When will the first draft be ready?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Next Friday"
+            },
+            {
+              "key": "B",
+              "text": "Tomorrow"
+            },
+            {
+              "key": "C",
+              "text": "Next Monday"
+            },
+            {
+              "key": "D",
+              "text": "In two weeks"
+            }
+          ],
+          "correctAnswer": "A",
+          "explanation": "The email states the first draft will be ready by next Friday."
+        },
+        {
+          "number": 2,
+          "question": "What stage is the project in?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Market research"
+            },
+            {
+              "key": "B",
+              "text": "Campaign strategy"
+            },
+            {
+              "key": "C",
+              "text": "Final review"
+            },
+            {
+              "key": "D",
+              "text": "Completion"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "The email says they have completed market research and are now working on campaign strategy."
         }
       ]
     }

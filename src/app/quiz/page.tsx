@@ -16,7 +16,7 @@ type Question = {
   options: { key: string; text: string }[]
   correctAnswer: string
   explanation: string
-  passage?: string  // For Part 6 & 7
+  passage?: string  // For Part 6
   blankNumber?: number  // For Part 6
   // For Part 6 new format (one passage with multiple blanks)
   questions?: {
@@ -26,6 +26,8 @@ type Question = {
     correctAnswer: string
     explanation: string
   }[]
+  // For Part 7 (multiple passages with multiple questions)
+  passages?: string[]
 }
 
 type Word = {
@@ -271,6 +273,31 @@ export default function QuizPage() {
               explanation: q.explanation,
               blankNumber: q.number,
               questions: undefined
+            })
+          })
+        } else {
+          flattened.push(item)
+        }
+      })
+      return flattened
+    }
+    
+    // 將 Part 7 的多題格式攤平為單一題目
+    if (quizType === "part7") {
+      const flattened: Question[] = []
+      questions.forEach(item => {
+        if (item.questions) {
+          item.questions.forEach(q => {
+            flattened.push({
+              ...item,
+              passage: item.passages?.[0],  // Use first passage for display
+              question: q.question,
+              options: q.options,
+              correctAnswer: q.correctAnswer,
+              explanation: q.explanation,
+              blankNumber: q.number,
+              questions: undefined,
+              passages: undefined
             })
           })
         } else {
