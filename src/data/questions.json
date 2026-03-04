@@ -1,1363 +1,12 @@
 {
   "meta": {
-    "version": "1.0",
-    "created": "2026-03-03",
-    "updated": "2026-03-04",
-    "totalQuestions": 82
+    "version": "2.0",
+    "updated": "2026-03-05",
+    "totalQuestions": 34
   },
   "questions": [
     {
-      "id": "p5-q001",
-      "type": "part5",
-      "category": "verb-tense",
-      "difficulty": "easy",
-      "question": "The new policy will _____ the company's environmental impact.",
-      "options": [
-        {
-          "key": "A",
-          "text": "reduce"
-        },
-        {
-          "key": "B",
-          "text": "reduces"
-        },
-        {
-          "key": "C",
-          "text": "reducing"
-        },
-        {
-          "key": "D",
-          "text": "to reduce"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "\"will\" 後面必須接動詞原形，因此正確答案是 reduce。"
-    },
-    {
-      "id": "p5-q002",
-      "type": "part5",
-      "category": "preposition",
-      "difficulty": "easy",
-      "question": "The meeting is scheduled _____ 3:00 PM tomorrow.",
-      "options": [
-        {
-          "key": "A",
-          "text": "in"
-        },
-        {
-          "key": "B",
-          "text": "at"
-        },
-        {
-          "key": "C",
-          "text": "on"
-        },
-        {
-          "key": "D",
-          "text": "by"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "具體時間點用 \"at\"，所以答案是 \"at 3:00 PM\"。"
-    },
-    {
-      "id": "p5-q003",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "medium",
-      "question": "The company announced a _____ increase in sales this quarter.",
-      "options": [
-        {
-          "key": "A",
-          "text": "signify"
-        },
-        {
-          "key": "B",
-          "text": "significant"
-        },
-        {
-          "key": "C",
-          "text": "significantly"
-        },
-        {
-          "key": "D",
-          "text": "signification"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "形容詞修飾名詞，形容詞置於名詞前，所以用 \"significant\"。"
-    },
-    {
-      "id": "p5-q004",
-      "type": "part5",
-      "category": "relative-pronoun",
-      "difficulty": "medium",
-      "question": "The employee _____ works in the marketing department is attending the conference.",
-      "options": [
-        {
-          "key": "A",
-          "text": "who"
-        },
-        {
-          "key": "B",
-          "text": "whom"
-        },
-        {
-          "key": "C",
-          "text": "whose"
-        },
-        {
-          "key": "D",
-          "text": "which"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "先行詞是 \"employee\" (人)，用關係代名詞 \"who\"。"
-    },
-    {
-      "id": "p5-q005",
-      "type": "part5",
-      "category": "modal-verbs",
-      "difficulty": "easy",
-      "question": "Employees _____ wear identification badges while in the building.",
-      "options": [
-        {
-          "key": "A",
-          "text": "must"
-        },
-        {
-          "key": "B",
-          "text": "can"
-        },
-        {
-          "key": "C",
-          "text": "may"
-        },
-        {
-          "key": "D",
-          "text": "would"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "\"must\" 表示必要性/強制性，語意最合適。"
-    },
-    {
-      "id": "p5-q006",
-      "type": "part5",
-      "category": "conditionals",
-      "difficulty": "hard",
-      "question": "If she _____ the project on time, we would have won the contract.",
-      "options": [
-        {
-          "key": "A",
-          "text": "completes"
-        },
-        {
-          "key": "B",
-          "text": "completed"
-        },
-        {
-          "key": "C",
-          "text": "had completed"
-        },
-        {
-          "key": "D",
-          "text": "has completed"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "這是假設過去的事實，用過去完成式 had completed。"
-    },
-    {
-      "id": "p5-q007",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "medium",
-      "question": "The manager gave a _____ presentation about the new product.",
-      "options": [
-        {
-          "key": "A",
-          "text": "thorough"
-        },
-        {
-          "key": "B",
-          "text": "thoroughly"
-        },
-        {
-          "key": "C",
-          "text": "thoroughness"
-        },
-        {
-          "key": "D",
-          "text": "thoroughly"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "形容詞修飾名詞 \"presentation\"，所以用形容詞 \"thorough\"。"
-    },
-    {
-      "id": "p5-q008",
-      "type": "part5",
-      "category": "conjunction",
-      "difficulty": "easy",
-      "question": "We can start the meeting now _____ everyone has arrived.",
-      "options": [
-        {
-          "key": "A",
-          "text": "although"
-        },
-        {
-          "key": "B",
-          "text": "because"
-        },
-        {
-          "key": "C",
-          "text": "unless"
-        },
-        {
-          "key": "D",
-          "text": "provided that"
-        }
-      ],
-      "correctAnswer": "D",
-      "explanation": "\"provided that\" 表示條件 (只要...就)，符合句意。"
-    },
-    {
-      "id": "p5-q009",
-      "type": "part5",
-      "category": "passive-voice",
-      "difficulty": "medium",
-      "question": "The report _____ by the research team last month.",
-      "options": [
-        {
-          "key": "A",
-          "text": "wrote"
-        },
-        {
-          "key": "B",
-          "text": "writes"
-        },
-        {
-          "key": "C",
-          "text": "was written"
-        },
-        {
-          "key": "D",
-          "text": "has written"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "時間狀態 \"last month\" 是過去式，且主詞是 \"report\" (受事者)，所以用過去式的被動語態 \"was written\"。"
-    },
-    {
-      "id": "p5-q010",
-      "type": "part5",
-      "category": "quantifiers",
-      "difficulty": "easy",
-      "question": "There are _____ documents on the desk. You can take one if you need.",
-      "options": [
-        {
-          "key": "A",
-          "text": "few"
-        },
-        {
-          "key": "B",
-          "text": "a few"
-        },
-        {
-          "key": "C",
-          "text": "little"
-        },
-        {
-          "key": "D",
-          "text": "a little"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "\"documents\" 是可數名詞，用 \"a few\" (幾個) 表示肯定語氣。"
-    },
-    {
-      "id": "p5-q011",
-      "type": "part5",
-      "category": "verb-tense",
-      "difficulty": "easy",
-      "question": "She _____ working here since 2020.",
-      "options": [
-        {
-          "key": "A",
-          "text": "is"
-        },
-        {
-          "key": "B",
-          "text": "has been"
-        },
-        {
-          "key": "C",
-          "text": "had been"
-        },
-        {
-          "key": "D",
-          "text": "will be"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "since + 時間點用現在完成式，\"has been working\" 是正確答案。"
-    },
-    {
-      "id": "p5-q012",
-      "type": "part5",
-      "category": "preposition",
-      "difficulty": "medium",
-      "question": "The train is heading _____ north.",
-      "options": [
-        {
-          "key": "A",
-          "text": "to"
-        },
-        {
-          "key": "B",
-          "text": "toward"
-        },
-        {
-          "key": "C",
-          "text": "at"
-        },
-        {
-          "key": "D",
-          "text": "for"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "\"toward\" 表示方向，正確答案是 \"toward north\"。"
-    },
-    {
-      "id": "p5-q013",
-      "type": "part5",
-      "category": "comparative",
-      "difficulty": "easy",
-      "question": "This task is _____ than the previous one.",
-      "options": [
-        {
-          "key": "A",
-          "text": "more difficult"
-        },
-        {
-          "key": "B",
-          "text": "difficultier"
-        },
-        {
-          "key": "C",
-          "text": "more difficulter"
-        },
-        {
-          "key": "D",
-          "text": "most difficult"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "比較級用 \"more difficult\"，三音節以上形容詞用 more + 形容詞。"
-    },
-    {
-      "id": "p5-q014",
-      "type": "part5",
-      "category": "article",
-      "difficulty": "easy",
-      "question": "We need _____ honest person for this position.",
-      "options": [
-        {
-          "key": "A",
-          "text": "a"
-        },
-        {
-          "key": "B",
-          "text": "an"
-        },
-        {
-          "key": "C",
-          "text": "the"
-        },
-        {
-          "key": "D",
-          "text": "-"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "\"honest\" 是母音開頭，用 \"an honest person\"。"
-    },
-    {
-      "id": "p5-q015",
-      "type": "part5",
-      "category": "gerund-infinitive",
-      "difficulty": "medium",
-      "question": "I enjoy _____ to music during work.",
-      "options": [
-        {
-          "key": "A",
-          "text": "listen"
-        },
-        {
-          "key": "B",
-          "text": "listening"
-        },
-        {
-          "key": "C",
-          "text": "to listen"
-        },
-        {
-          "key": "D",
-          "text": "listened"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "enjoy 後面接動名詞 (Ving)，\"listening\" 是正確答案。"
-    },
-    {
-      "id": "p5-q016",
-      "type": "part5",
-      "category": "passive-voice",
-      "difficulty": "hard",
-      "question": "The new factory _____ next year.",
-      "options": [
-        {
-          "key": "A",
-          "text": "completes"
-        },
-        {
-          "key": "B",
-          "text": "will complete"
-        },
-        {
-          "key": "C",
-          "text": "will be completed"
-        },
-        {
-          "key": "D",
-          "text": "is completing"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "工廠是「被建造」，用未來被動式 \"will be completed\"。"
-    },
-    {
-      "id": "p5-q017",
-      "type": "part5",
-      "category": "noun-clause",
-      "difficulty": "medium",
-      "question": "_____ we finish the report on time depends on the resources we get.",
-      "options": [
-        {
-          "key": "A",
-          "text": "What"
-        },
-        {
-          "key": "B",
-          "text": "Whether"
-        },
-        {
-          "key": "C",
-          "text": "That"
-        },
-        {
-          "key": "D",
-          "text": "If"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "if/whether 表「是否」，根據語意 \"Whether\" 是正確答案。"
-    },
-    {
-      "id": "p5-q018",
-      "type": "part5",
-      "category": "adjective-order",
-      "difficulty": "hard",
-      "question": "She has _____ cat.",
-      "options": [
-        {
-          "key": "A",
-          "text": "a cute black small"
-        },
-        {
-          "key": "B",
-          "text": "a small cute black"
-        },
-        {
-          "key": "C",
-          "text": "a black cute small"
-        },
-        {
-          "key": "D",
-          "text": "a small black cute"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "形容詞順序：大小 → 年齡 → 形狀 → 顏色 → 出處 → 目的，所以是 \"a small cute black cat\"。"
-    },
-    {
-      "id": "p5-q019",
-      "type": "part5",
-      "category": "modal-verbs",
-      "difficulty": "medium",
-      "question": "You _____ have paid for the dinner. It was my treat!",
-      "options": [
-        {
-          "key": "A",
-          "text": "couldn't"
-        },
-        {
-          "key": "B",
-          "text": "shouldn't"
-        },
-        {
-          "key": "C",
-          "text": "mustn't"
-        },
-        {
-          "key": "D",
-          "text": "might not"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "\"shouldn't have done\" 表示「不應該做... (但做了)」，符合語意。"
-    },
-    {
-      "id": "p5-q020",
-      "type": "part5",
-      "category": "conjunction",
-      "difficulty": "medium",
-      "question": "I'll call you _____ I arrive at the airport.",
-      "options": [
-        {
-          "key": "A",
-          "text": "as soon as"
-        },
-        {
-          "key": "B",
-          "text": "before"
-        },
-        {
-          "key": "C",
-          "text": "until"
-        },
-        {
-          "key": "D",
-          "text": "while"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "\"as soon as\" 表示「一...就...」，符合句意。"
-    },
-    {
-      "id": "voc-q001",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "easy",
-      "question": "The company's _____ has decreased significantly over the past year.",
-      "options": [
-        {
-          "key": "A",
-          "text": "compete"
-        },
-        {
-          "key": "B",
-          "text": "competent"
-        },
-        {
-          "key": "C",
-          "text": "competition"
-        },
-        {
-          "key": "D",
-          "text": "competitive"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "這裡需要名詞，\"competition\" (競爭) 是正確答案。"
-    },
-    {
-      "id": "voc-q002",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "medium",
-      "question": "The CEO made a _____ decision to expand into new markets.",
-      "options": [
-        {
-          "key": "A",
-          "text": "strategic"
-        },
-        {
-          "key": "B",
-          "text": "strategize"
-        },
-        {
-          "key": "C",
-          "text": "strategy"
-        },
-        {
-          "key": "D",
-          "text": "strategically"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "形容詞修飾名詞 decision，\"strategic\" (策略性的) 是正確答案。"
-    },
-    {
-      "id": "voc-q003",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "easy",
-      "question": "We need to _____ our marketing efforts to reach a younger audience.",
-      "options": [
-        {
-          "key": "A",
-          "text": "diverse"
-        },
-        {
-          "key": "B",
-          "text": "diversify"
-        },
-        {
-          "key": "C",
-          "text": "diversity"
-        },
-        {
-          "key": "D",
-          "text": "diversion"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "need to + 動詞原形，\"diversify\" (使多樣化) 是正確答案。"
-    },
-    {
-      "id": "voc-q004",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "medium",
-      "question": "The _____ of the new product was higher than expected.",
-      "options": [
-        {
-          "key": "A",
-          "text": "demanding"
-        },
-        {
-          "key": "B",
-          "text": "demanded"
-        },
-        {
-          "key": "C",
-          "text": "demand"
-        },
-        {
-          "key": "D",
-          "text": "demandable"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "The + 名詞，\"demand\" (需求) 是正確答案。"
-    },
-    {
-      "id": "voc-q005",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "easy",
-      "question": "Our team showed great _____ in overcoming the challenges.",
-      "options": [
-        {
-          "key": "A",
-          "text": "resist"
-        },
-        {
-          "key": "B",
-          "text": "resistance"
-        },
-        {
-          "key": "C",
-          "text": "resistant"
-        },
-        {
-          "key": "D",
-          "text": "resisting"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "形容詞性物主代詞後面需要名詞，\"resistance\" (韌性) 是正確答案。"
-    },
-    {
-      "id": "voc-q006",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "medium",
-      "question": "The presentation was very _____, and everyone understood the main points.",
-      "options": [
-        {
-          "key": "A",
-          "text": "clarify"
-        },
-        {
-          "key": "B",
-          "text": "clear"
-        },
-        {
-          "key": "C",
-          "text": "clearly"
-        },
-        {
-          "key": "D",
-          "text": "clearness"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "be 動詞後面用形容詞，\"clear\" (清楚的) 是正確答案。"
-    },
-    {
-      "id": "voc-q007",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "easy",
-      "question": "The company is looking for _____ candidates with international experience.",
-      "options": [
-        {
-          "key": "A",
-          "text": "qualify"
-        },
-        {
-          "key": "B",
-          "text": "qualification"
-        },
-        {
-          "key": "C",
-          "text": "qualified"
-        },
-        {
-          "key": "D",
-          "text": "qualifying"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "形容詞修飾名詞 candidates，\"qualified\" (合格的) 是正確答案。"
-    },
-    {
-      "id": "voc-q008",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "medium",
-      "question": "There has been a significant _____ in online sales this year.",
-      "options": [
-        {
-          "key": "A",
-          "text": "increase"
-        },
-        {
-          "key": "B",
-          "text": "increasing"
-        },
-        {
-          "key": "C",
-          "text": "increased"
-        },
-        {
-          "key": "D",
-          "text": "increases"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "a + 形容詞 + 名詞，這裡需要名詞 \"increase\" (增長)。"
-    },
-    {
-      "id": "voc-q009",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "easy",
-      "question": "The committee made a unanimous _____ to approve the budget.",
-      "options": [
-        {
-          "key": "A",
-          "text": "decide"
-        },
-        {
-          "key": "B",
-          "text": "deciding"
-        },
-        {
-          "key": "C",
-          "text": "decision"
-        },
-        {
-          "key": "D",
-          "text": "decisive"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "a + 形容詞 + 名詞，\"decision\" (決定) 是正確答案。"
-    },
-    {
-      "id": "voc-q010",
-      "type": "part5",
-      "category": "word-form",
-      "difficulty": "medium",
-      "question": "The new regulations require _____ reporting of financial data.",
-      "options": [
-        {
-          "key": "A",
-          "text": "accuracy"
-        },
-        {
-          "key": "B",
-          "text": "accurate"
-        },
-        {
-          "key": "C",
-          "text": "accurately"
-        },
-        {
-          "key": "D",
-          "text": "accurate"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "形容詞修飾名詞 reporting，\"accurate\" (準確的) 是正確答案。"
-    },
-    {
-      "id": "gram-q001",
-      "type": "part5",
-      "category": "verb-tense",
-      "difficulty": "easy",
-      "question": "By next month, we _____ the project.",
-      "options": [
-        {
-          "key": "A",
-          "text": "will finish"
-        },
-        {
-          "key": "B",
-          "text": "will have finished"
-        },
-        {
-          "key": "C",
-          "text": "finished"
-        },
-        {
-          "key": "D",
-          "text": "finish"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "\"by + 未來時間\" 用未來完成式，\"will have finished\" 是正確答案。"
-    },
-    {
-      "id": "gram-q002",
-      "type": "part5",
-      "category": "conditionals",
-      "difficulty": "medium",
-      "question": "If I _____ more money, I would buy a new car.",
-      "options": [
-        {
-          "key": "A",
-          "text": "have"
-        },
-        {
-          "key": "B",
-          "text": "had"
-        },
-        {
-          "key": "C",
-          "text": "will have"
-        },
-        {
-          "key": "D",
-          "text": "would have"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "這是与現在事實相反的假設，用過去式，\"had\" 是正確答案。"
-    },
-    {
-      "id": "gram-q003",
-      "type": "part5",
-      "category": "passive-voice",
-      "difficulty": "easy",
-      "question": "The documents _____ on the table by someone.",
-      "options": [
-        {
-          "key": "A",
-          "text": "were left"
-        },
-        {
-          "key": "B",
-          "text": "left"
-        },
-        {
-          "key": "C",
-          "text": "leaves"
-        },
-        {
-          "key": "D",
-          "text": "was leaving"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "documents 是複數，用過去被動式 \"were left\"。"
-    },
-    {
-      "id": "gram-q004",
-      "type": "part5",
-      "category": "gerund-infinitive",
-      "difficulty": "medium",
-      "question": "She suggested _____ a meeting tomorrow.",
-      "options": [
-        {
-          "key": "A",
-          "text": "have"
-        },
-        {
-          "key": "B",
-          "text": "to have"
-        },
-        {
-          "key": "C",
-          "text": "having"
-        },
-        {
-          "key": "D",
-          "text": "had"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "suggest 後面接動名詞，\"having a meeting\" 是正確答案。"
-    },
-    {
-      "id": "gram-q005",
-      "type": "part5",
-      "category": "relative-pronoun",
-      "difficulty": "easy",
-      "question": "The person _____ car was stolen reported to the police.",
-      "options": [
-        {
-          "key": "A",
-          "text": "who"
-        },
-        {
-          "key": "B",
-          "text": "whom"
-        },
-        {
-          "key": "C",
-          "text": "whose"
-        },
-        {
-          "key": "D",
-          "text": "which"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "所有格關係代名詞用 \"whose\"，表示「那個人的車...」。"
-    },
-    {
-      "id": "gram-q006",
-      "type": "part5",
-      "category": "conjunction",
-      "difficulty": "medium",
-      "question": "She works hard _____ she can support her family.",
-      "options": [
-        {
-          "key": "A",
-          "text": "because of"
-        },
-        {
-          "key": "B",
-          "text": "in order to"
-        },
-        {
-          "key": "C",
-          "text": "so that"
-        },
-        {
-          "key": "D",
-          "text": "although"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "\"so that\" 表示目的，\"she can support her family\" 是附屬子句。"
-    },
-    {
-      "id": "gram-q007",
-      "type": "part5",
-      "category": "modal-verbs",
-      "difficulty": "hard",
-      "question": "You _____ have forgotten the meeting. It was announced last week.",
-      "options": [
-        {
-          "key": "A",
-          "text": "might not"
-        },
-        {
-          "key": "B",
-          "text": "mustn't"
-        },
-        {
-          "key": "C",
-          "text": "can't"
-        },
-        {
-          "key": "D",
-          "text": "couldn't"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "\"can't have done\" 表示「不可能做...」，語意最合適。"
-    },
-    {
-      "id": "gram-q008",
-      "type": "part5",
-      "category": "noun-clause",
-      "difficulty": "medium",
-      "question": "I wonder _____ she will attend the conference.",
-      "options": [
-        {
-          "key": "A",
-          "text": "that"
-        },
-        {
-          "key": "B",
-          "text": "what"
-        },
-        {
-          "key": "C",
-          "text": "whether"
-        },
-        {
-          "key": "D",
-          "text": "which"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "wonder + whether/if 表「不知道...」，\"whether\" 是正確答案。"
-    },
-    {
-      "id": "gram-q009",
-      "type": "part5",
-      "category": "quantifiers",
-      "difficulty": "easy",
-      "question": "There is _____ water in the bottle. It's almost empty.",
-      "options": [
-        {
-          "key": "A",
-          "text": "few"
-        },
-        {
-          "key": "B",
-          "text": "a few"
-        },
-        {
-          "key": "C",
-          "text": "little"
-        },
-        {
-          "key": "D",
-          "text": "a little"
-        }
-      ],
-      "correctAnswer": "C",
-      "explanation": "water 是不可數名詞，用 \"little\" 表示否定 (幾乎沒有)。"
-    },
-    {
-      "id": "gram-q010",
-      "type": "part5",
-      "category": "article",
-      "difficulty": "easy",
-      "question": "He is _____ university professor.",
-      "options": [
-        {
-          "key": "A",
-          "text": "a"
-        },
-        {
-          "key": "B",
-          "text": "an"
-        },
-        {
-          "key": "C",
-          "text": "the"
-        },
-        {
-          "key": "D",
-          "text": "-"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "\"university\" 是子音開頭，用 \"a university professor\"。"
-    },
-    {
-      "id": "full-q001",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "easy",
-      "question": "Please make sure to _____ the documents before submitting.",
-      "options": [
-        {
-          "key": "A",
-          "text": "review"
-        },
-        {
-          "key": "B",
-          "text": "reviews"
-        },
-        {
-          "key": "C",
-          "text": "reviewing"
-        },
-        {
-          "key": "D",
-          "text": "reviewed"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "to + 動詞原形，\"review\" 是正確答案。"
-    },
-    {
-      "id": "full-q002",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "medium",
-      "question": "The manager insisted that the report _____ submitted by Friday.",
-      "options": [
-        {
-          "key": "A",
-          "text": "be"
-        },
-        {
-          "key": "B",
-          "text": "is"
-        },
-        {
-          "key": "C",
-          "text": "was"
-        },
-        {
-          "key": "D",
-          "text": "are"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "insisted that + (should) + V，用虛擬語氣，\"be submitted\" 是正確答案。"
-    },
-    {
-      "id": "full-q003",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "easy",
-      "question": "I would like to know more _____ the company's new policy.",
-      "options": [
-        {
-          "key": "A",
-          "text": "about"
-        },
-        {
-          "key": "B",
-          "text": "from"
-        },
-        {
-          "key": "C",
-          "text": "to"
-        },
-        {
-          "key": "D",
-          "text": "at"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "\"know more about\" 表示「了解更多關於...」，\"about\" 是正確答案。"
-    },
-    {
-      "id": "full-q004",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "medium",
-      "question": "Had I known about the traffic, I _____ earlier.",
-      "options": [
-        {
-          "key": "A",
-          "text": "would leave"
-        },
-        {
-          "key": "B",
-          "text": "would have left"
-        },
-        {
-          "key": "C",
-          "text": "left"
-        },
-        {
-          "key": "D",
-          "text": "had left"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "與過去事實相反的假設，用過去完成式，\"would have left\" 是正確答案。"
-    },
-    {
-      "id": "full-q005",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "easy",
-      "question": "The company's revenue increased _____ 20% last year.",
-      "options": [
-        {
-          "key": "A",
-          "text": "by"
-        },
-        {
-          "key": "B",
-          "text": "to"
-        },
-        {
-          "key": "C",
-          "text": "with"
-        },
-        {
-          "key": "D",
-          "text": "at"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "increase/decrease + by 表「增加了...」，\"by 20%\" 是正確答案。"
-    },
-    {
-      "id": "full-q006",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "hard",
-      "question": "Not only _____ the project on time, but also under budget.",
-      "options": [
-        {
-          "key": "A",
-          "text": "they completed"
-        },
-        {
-          "key": "B",
-          "text": "did they complete"
-        },
-        {
-          "key": "C",
-          "text": "they complete"
-        },
-        {
-          "key": "D",
-          "text": "they had completed"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "Not only 放在句首要倒裝，\"did they complete\" 是正確答案。"
-    },
-    {
-      "id": "full-q007",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "medium",
-      "question": "I look forward to _____ from you soon.",
-      "options": [
-        {
-          "key": "A",
-          "text": "hear"
-        },
-        {
-          "key": "B",
-          "text": "hearing"
-        },
-        {
-          "key": "C",
-          "text": "to hear"
-        },
-        {
-          "key": "D",
-          "text": "heard"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "look forward to + Ving，\"hearing\" 是正確答案。"
-    },
-    {
-      "id": "full-q008",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "easy",
-      "question": "The meeting has been _____ until next week.",
-      "options": [
-        {
-          "key": "A",
-          "text": "put off"
-        },
-        {
-          "key": "B",
-          "text": "put away"
-        },
-        {
-          "key": "C",
-          "text": "put up"
-        },
-        {
-          "key": "D",
-          "text": "put down"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "\"put off\" 表示「延後」，\"has been put off\" 是正確答案。"
-    },
-    {
-      "id": "full-q009",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "hard",
-      "question": "No sooner _____ the presentation than the questions started.",
-      "options": [
-        {
-          "key": "A",
-          "text": "he finished"
-        },
-        {
-          "key": "B",
-          "text": "did he finish"
-        },
-        {
-          "key": "C",
-          "text": "he had finished"
-        },
-        {
-          "key": "D",
-          "text": "he finishes"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "No sooner 放在句首要倒裝，\"did he finish\" 是正確答案。"
-    },
-    {
-      "id": "full-q010",
-      "type": "part5",
-      "category": "mixed",
-      "difficulty": "medium",
-      "question": "I would rather _____ than work overtime today.",
-      "options": [
-        {
-          "key": "A",
-          "text": "go home"
-        },
-        {
-          "key": "B",
-          "text": "to go home"
-        },
-        {
-          "key": "C",
-          "text": "going home"
-        },
-        {
-          "key": "D",
-          "text": "gone home"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "would rather + V (動詞原形)，\"go home\" 是正確答案。"
-    },
-    {
-      "id": "p2-q01",
+      "id": "P2-001-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "medium",
@@ -1377,14 +26,14 @@
         },
         {
           "key": "D",
-          "text": "I am not sure who was in charge of it."
+          "text": "I'm not sure who was in charge of it."
         }
       ],
       "correctAnswer": "A",
       "explanation": "Past Perfect asks about an action before a past time."
     },
     {
-      "id": "p2-q02",
+      "id": "P2-002-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1408,10 +57,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Could you please is a polite request."
+      "explanation": "'Could you please...' is a polite request."
     },
     {
-      "id": "p2-q03",
+      "id": "P2-003-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1435,10 +84,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Why questions require a reason."
+      "explanation": "'Why' questions require a reason."
     },
     {
-      "id": "p2-q04",
+      "id": "P2-004-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "medium",
@@ -1450,7 +99,7 @@
         },
         {
           "key": "B",
-          "text": "I did not know about the change."
+          "text": "I didn't know about the change."
         },
         {
           "key": "C",
@@ -1462,14 +111,14 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "This is a third conditional sentence."
+      "explanation": "Third conditional sentence."
     },
     {
-      "id": "p2-q05",
+      "id": "P2-005-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "medium",
-      "question": "Would not it be better to reschedule the meeting?",
+      "question": "Wouldn't it be better to reschedule the meeting?",
       "options": [
         {
           "key": "A",
@@ -1481,7 +130,7 @@
         },
         {
           "key": "C",
-          "text": "I do not like meetings."
+          "text": "I don't like meetings."
         },
         {
           "key": "D",
@@ -1489,10 +138,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Would not it be better is a suggestion."
+      "explanation": "'Wouldn't it be better...' is a suggestion."
     },
     {
-      "id": "p2-q06",
+      "id": "P2-006-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1516,10 +165,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "How long asks about duration."
+      "explanation": "'How long' asks about duration."
     },
     {
-      "id": "p2-q07",
+      "id": "P2-007-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1543,10 +192,10 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Do you mind - if you do not mind, say No, not at all."
+      "explanation": "'Do you mind...' - say 'No, not at all' for permission."
     },
     {
-      "id": "p2-q08",
+      "id": "P2-008-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1554,7 +203,7 @@
       "options": [
         {
           "key": "A",
-          "text": "I think it is reasonable."
+          "text": "I think it's reasonable."
         },
         {
           "key": "B",
@@ -1570,10 +219,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "What do you think asks for an opinion."
+      "explanation": "'What do you think...' asks for an opinion."
     },
     {
-      "id": "p2-q09",
+      "id": "P2-009-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1597,10 +246,10 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Where asks for a location."
+      "explanation": "'Where' asks for a location."
     },
     {
-      "id": "p2-q10",
+      "id": "P2-010-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "medium",
@@ -1608,7 +257,7 @@
       "options": [
         {
           "key": "A",
-          "text": "Yes, I will take a look."
+          "text": "Yes, I'll take a look."
         },
         {
           "key": "B",
@@ -1616,18 +265,18 @@
         },
         {
           "key": "C",
-          "text": "I do not have time."
+          "text": "I don't have time."
         },
         {
           "key": "D",
-          "text": "It is on your desk."
+          "text": "It's on your desk."
         }
       ],
       "correctAnswer": "A",
       "explanation": "This is a polite request."
     },
     {
-      "id": "p2-q11",
+      "id": "P2-011-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1651,10 +300,10 @@
         }
       ],
       "correctAnswer": "C",
-      "explanation": "Where asks for a place."
+      "explanation": "'Where' asks for a place."
     },
     {
-      "id": "p2-q12",
+      "id": "P2-012-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1662,11 +311,11 @@
       "options": [
         {
           "key": "A",
-          "text": "At 3 o clock."
+          "text": "At 3 o'clock."
         },
         {
           "key": "B",
-          "text": "It is delayed."
+          "text": "It's delayed."
         },
         {
           "key": "C",
@@ -1678,10 +327,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "What time asks for a specific time."
+      "explanation": "'What time' asks for a specific time."
     },
     {
-      "id": "p2-q13",
+      "id": "P2-013-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1693,11 +342,11 @@
         },
         {
           "key": "B",
-          "text": "I do not like salt."
+          "text": "I don't like salt."
         },
         {
           "key": "C",
-          "text": "It is on the table."
+          "text": "It's on the table."
         },
         {
           "key": "D",
@@ -1708,7 +357,7 @@
       "explanation": "This is a polite request."
     },
     {
-      "id": "p2-q14",
+      "id": "P2-014-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1732,10 +381,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Who asks for a person."
+      "explanation": "'Who' asks for a person."
     },
     {
-      "id": "p2-q15",
+      "id": "P2-015-20260304-v1",
       "type": "part2",
       "category": "question-response",
       "difficulty": "easy",
@@ -1743,7 +392,7 @@
       "options": [
         {
           "key": "A",
-          "text": "It is very expensive."
+          "text": "It's very expensive."
         },
         {
           "key": "B",
@@ -1755,14 +404,14 @@
         },
         {
           "key": "D",
-          "text": "I will buy it."
+          "text": "I'll buy it."
         }
       ],
       "correctAnswer": "B",
-      "explanation": "How much asks for a quantity/price."
+      "explanation": "'How much' asks for a quantity/price."
     },
     {
-      "id": "p5-q011",
+      "id": "P5-001-20260304-v1",
       "type": "part5",
       "category": "vocabulary",
       "difficulty": "medium",
@@ -1786,10 +435,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Initiative = a new plan/program."
+      "explanation": "'Initiative' = a new plan/program."
     },
     {
-      "id": "p5-q012",
+      "id": "P5-002-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "hard",
@@ -1813,10 +462,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Insisted that requires subjunctive mood - use base form be."
+      "explanation": "'Insisted that' requires subjunctive mood - use base form 'be'."
     },
     {
-      "id": "p5-q013",
+      "id": "P5-003-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "medium",
@@ -1840,10 +489,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Has been + past participle = present perfect passive."
+      "explanation": "'Has been + past participle' = present perfect passive."
     },
     {
-      "id": "p5-q014",
+      "id": "P5-004-20260304-v1",
       "type": "part5",
       "category": "vocabulary",
       "difficulty": "medium",
@@ -1867,10 +516,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Collocation: make an announcement."
+      "explanation": "Collocation: 'make an announcement'."
     },
     {
-      "id": "p5-q015",
+      "id": "P5-005-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "medium",
@@ -1894,10 +543,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Third conditional - if + past perfect, would + verb."
+      "explanation": "Third conditional: if + past perfect, would + verb."
     },
     {
-      "id": "p5-q016",
+      "id": "P5-006-20260304-v1",
       "type": "part5",
       "category": "vocabulary",
       "difficulty": "easy",
@@ -1921,10 +570,10 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Communication skills - need noun form."
+      "explanation": "'Communication skills' - need noun form."
     },
     {
-      "id": "p5-q017",
+      "id": "P5-007-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "medium",
@@ -1948,10 +597,10 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "By the time + future simple, but project is passive."
+      "explanation": "'By the time' + future simple, but 'project' is passive."
     },
     {
-      "id": "p5-q018",
+      "id": "P5-008-20260304-v1",
       "type": "part5",
       "category": "vocabulary",
       "difficulty": "medium",
@@ -1975,10 +624,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Phrasal verb: put off = postpone."
+      "explanation": "Phrasal verb: 'put off' = postpone."
     },
     {
-      "id": "p5-q019",
+      "id": "P5-009-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "hard",
@@ -2002,10 +651,10 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Not only + did + subject + verb (inverted)."
+      "explanation": "'Not only' + did + subject + verb (inverted structure)."
     },
     {
-      "id": "p5-q020",
+      "id": "P5-010-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "medium",
@@ -2029,10 +678,10 @@
         }
       ],
       "correctAnswer": "C",
-      "explanation": "Seem to have difficulty in doing something."
+      "explanation": "'Seem to have difficulty in doing something'."
     },
     {
-      "id": "p5-q021",
+      "id": "P5-011-20260304-v1",
       "type": "part5",
       "category": "vocabulary",
       "difficulty": "medium",
@@ -2056,10 +705,10 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Need noun form after extensive."
+      "explanation": "Need noun form after 'extensive.'"
     },
     {
-      "id": "p5-q022",
+      "id": "P5-012-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "hard",
@@ -2083,10 +732,10 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Third conditional - if + past perfect + would have."
+      "explanation": "Third conditional - if + past perfect."
     },
     {
-      "id": "p5-q023",
+      "id": "P5-013-20260304-v1",
       "type": "part5",
       "category": "grammar",
       "difficulty": "medium",
@@ -2110,18 +759,19 @@
         }
       ],
       "correctAnswer": "A",
-      "explanation": "Recommend + gerund."
+      "explanation": "'Recommend + gerund'."
     },
     {
-      "id": "p6-001",
+      "id": "P6-001-20260304-v1",
       "type": "part6",
       "category": "text-completion",
       "difficulty": "medium",
-      "passage": "Dear Valued Customer,\n\nThank you for your inquiry regarding our product. We are pleased to inform you that all our products are currently in stock and ready for shipment. Our standard shipping takes 3-5 business days, _______(1) express shipping is available for an additional fee. If you have any further questions, please do not hesitate to contact our customer service team.\n\nWe look forward to _______(2) your business.",
+      "question": "",
+      "passage": "Dear Valued Customer,\n\nThank you for your inquiry. We are pleased to inform you that all products are in stock. Our standard shipping takes 3-5 days, ______(1) express shipping is available for an extra fee. We look forward to ______(2) your business.\n\nPlease contact us if you need _______(3) assistance.",
       "questions": [
         {
           "number": 1,
-          "question": "Our standard shipping takes 3-5 business days, _______ express shipping is available.",
+          "question": "Our standard shipping takes 3-5 days, _______ express shipping is available.",
           "options": [
             {
               "key": "A",
@@ -2141,7 +791,7 @@
             }
           ],
           "correctAnswer": "B",
-          "explanation": "Contrast - but shows contrast between standard and express shipping."
+          "explanation": "Contrast - 'but' shows contrast."
         },
         {
           "number": 2,
@@ -2165,16 +815,65 @@
             }
           ],
           "correctAnswer": "A",
-          "explanation": "Look forward to + gerund - to is a preposition."
+          "explanation": "'Look forward to + gerund'."
+        },
+        {
+          "number": 3,
+          "question": "Please contact us if you need _______ assistance.",
+          "options": [
+            {
+              "key": "A",
+              "text": "addition"
+            },
+            {
+              "key": "B",
+              "text": "additional"
+            },
+            {
+              "key": "C",
+              "text": "additionally"
+            },
+            {
+              "key": "D",
+              "text": "add"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Adjective 'additional' modifies noun."
+        },
+        {
+          "number": 4,
+          "question": "_______ the customer service was helpful, the delivery was delayed.",
+          "options": [
+            {
+              "key": "A",
+              "text": "Although"
+            },
+            {
+              "key": "B",
+              "text": "Because"
+            },
+            {
+              "key": "C",
+              "text": "Since"
+            },
+            {
+              "key": "D",
+              "text": "While"
+            }
+          ],
+          "correctAnswer": "A",
+          "explanation": "Although + subject + verb (contrast)."
         }
       ]
     },
     {
-      "id": "p6-002",
+      "id": "P6-002-20260304-v1",
       "type": "part6",
       "category": "text-completion",
       "difficulty": "medium",
-      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing _______(1) respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping _______(2) orders over \u0000.\n\nPlease let me know if you need _______(3) information.",
+      "question": "",
+      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing ______(1) respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping _______(2) orders over $500.\n\nPlease let me know if you need any _______(3) information. We look forward to _______(4) from you soon.",
       "questions": [
         {
           "number": 1,
@@ -2198,11 +897,11 @@
             }
           ],
           "correctAnswer": "B",
-          "explanation": "Writing to respond - infinitive of purpose."
+          "explanation": "'Writing to respond' - infinitive of purpose."
         },
         {
           "number": 2,
-          "question": "We also provide free shipping _______ orders over \u0000.",
+          "question": "We also provide free shipping _______ orders over $500.",
           "options": [
             {
               "key": "A",
@@ -2222,7 +921,7 @@
             }
           ],
           "correctAnswer": "B",
-          "explanation": "Shipping on orders - correct preposition."
+          "explanation": "Collocation: 'shipping on orders'."
         },
         {
           "number": 3,
@@ -2246,127 +945,479 @@
             }
           ],
           "correctAnswer": "B",
-          "explanation": "Adjective additional modifies noun information."
+          "explanation": "Need adjective 'additional' to modify noun."
+        },
+        {
+          "number": 4,
+          "question": "We look forward to _______ from you soon.",
+          "options": [
+            {
+              "key": "A",
+              "text": "hear"
+            },
+            {
+              "key": "B",
+              "text": "hearing"
+            },
+            {
+              "key": "C",
+              "text": "heard"
+            },
+            {
+              "key": "D",
+              "text": "to hear"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "'Look forward to + gerund'."
         }
       ]
     },
     {
-      "id": "p7-001",
-      "type": "part7",
-      "category": "reading-comprehension",
+      "id": "P6-003-20260304-v1",
+      "type": "part6",
+      "category": "text-completion",
       "difficulty": "medium",
-      "passages": [
-        "Advertisement\n\nWanted: Software Engineers\n\nWe are hiring experienced software engineers to join our growing team. Requirements: - 3+ years experience - Strong JavaScript skills - Good English communication. Benefits: Competitive salary, Health insurance, Remote work option. Apply at: careers@techcompany.com",
-        "Email\n\nFrom: john.doe@email.com\nTo: careers@techcompany.com\nSubject: Application for Software Engineer Position\n\nDear Hiring Manager,\n\nI am writing to apply for the software engineer position advertised on your website. I have 5 years of experience in software development and specialize in JavaScript. I am interested in the remote work option. Please find my resume attached.\n\nBest regards,\nJohn Doe"
-      ],
+      "question": "",
+      "passage": "MEMORANDUM\n\nTO: All Employees\nFROM: HR Department\nRE: Updated Remote Work Policy\n\nFollowing the pilot program ______(1) implemented last quarter, we are expanding remote work options. Employees may work from home _______(2) to three days per week. This policy is designed _______(3) promote work-life balance.\n\nAll arrangements are subject _______(4) manager approval.",
       "questions": [
         {
           "number": 1,
-          "question": "What is the main purpose of the advertisement?",
+          "question": "Following the pilot program _______ implemented last quarter",
           "options": [
             {
               "key": "A",
-              "text": "To sell products"
+              "text": "was"
             },
             {
               "key": "B",
-              "text": "To hire employees"
+              "text": "were"
             },
             {
               "key": "C",
-              "text": "To announce a new product"
+              "text": "is"
             },
             {
               "key": "D",
-              "text": "To find investors"
+              "text": "are"
             }
           ],
-          "correctAnswer": "B",
-          "explanation": "The advertisement is recruiting software engineers."
+          "correctAnswer": "A",
+          "explanation": "'Program was implemented' - passive voice."
         },
         {
           "number": 2,
-          "question": "What benefit is John Doe interested in?",
+          "question": "Employees may work from home _______ to three days per week",
           "options": [
             {
               "key": "A",
-              "text": "Competitive salary"
+              "text": "up"
             },
             {
               "key": "B",
-              "text": "Health insurance"
+              "text": "down"
             },
             {
               "key": "C",
-              "text": "Remote work option"
+              "text": "off"
             },
             {
               "key": "D",
-              "text": "Career growth"
+              "text": "out"
+            }
+          ],
+          "correctAnswer": "A",
+          "explanation": "'Up to' = maximum amount."
+        },
+        {
+          "number": 3,
+          "question": "This policy is designed _______ promote work-life balance",
+          "options": [
+            {
+              "key": "A",
+              "text": "for"
+            },
+            {
+              "key": "B",
+              "text": "to"
+            },
+            {
+              "key": "C",
+              "text": "at"
+            },
+            {
+              "key": "D",
+              "text": "on"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "'Designed to' - infinitive of purpose."
+        },
+        {
+          "number": 4,
+          "question": "All arrangements are subject _______ manager approval",
+          "options": [
+            {
+              "key": "A",
+              "text": "for"
+            },
+            {
+              "key": "B",
+              "text": "to"
+            },
+            {
+              "key": "C",
+              "text": "with"
+            },
+            {
+              "key": "D",
+              "text": "by"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "'Subject to' - fixed phrase."
+        }
+      ]
+    },
+    {
+      "id": "P7-001-20260304-v1",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "question": "",
+      "passage": "MEMORANDUM\n\nTO: All Department Heads\nFROM: Sarah Mitchell, Chief Financial Officer\nDATE: March 15, 2026\nRE: Implementation of New Expense Reimbursement Policy\n\nEffective April 1, 2026, the company will implement a revised expense reimbursement policy to streamline the approval process and reduce administrative costs. Under the new guidelines, employees must submit all expense reports through the automated online system no later than 30 days after the expense was incurred. Any submissions received after this deadline will require additional approval from the department head and may be subject to denial.\n\nThe daily per diem allowance for domestic travel has been increased from $75 to $85 to account for rising accommodation costs. However, employees are still required to book economy-class flights for all domestic travel, with business-class upgrades permitted only for flights exceeding six hours in duration. International travel arrangements must be approved in advance by the CEO's office, and all international expenses must be submitted within 15 days.\n\nAdditionally, the company will no longer reimburse entertainment expenses unless they are directly related to client meetings and accompanied by proper documentation, including the client name, meeting date, and business purpose. Receipts are mandatory for any expense exceeding $25, and all credit card statements must be attached to the expense report.\n\nShould you have any questions regarding this new policy, please contact the Finance Department at extension 2345.",
+      "questions": [
+        {
+          "number": 1,
+          "question": "What is the main purpose of this memorandum?",
+          "options": [
+            {
+              "key": "A",
+              "text": "To announce a salary increase"
+            },
+            {
+              "key": "B",
+              "text": "To introduce a new expense reimbursement policy"
+            },
+            {
+              "key": "C",
+              "text": "To announce a company merger"
+            },
+            {
+              "key": "D",
+              "text": "To request budget proposals"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "The memo clearly states it's about implementing a revised expense reimbursement policy."
+        },
+        {
+          "number": 2,
+          "question": "What happens if an employee submits an expense report after the 30-day deadline?",
+          "options": [
+            {
+              "key": "A",
+              "text": "It will be automatically approved"
+            },
+            {
+              "key": "B",
+              "text": "It requires additional approval and may be denied"
+            },
+            {
+              "key": "C",
+              "text": "It will be approved without question"
+            },
+            {
+              "key": "D",
+              "text": "The employee will be fired"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "The memo states it 'will require additional approval...and may be subject to denial.'"
+        },
+        {
+          "number": 3,
+          "question": "Which expense will NOT be reimbursed under the new policy?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Economy-class flight tickets"
+            },
+            {
+              "key": "B",
+              "text": "Hotel accommodations under $85 per night"
+            },
+            {
+              "key": "C",
+              "text": "Entertainment expenses without proper documentation"
+            },
+            {
+              "key": "D",
+              "text": "Taxi fares to the airport"
             }
           ],
           "correctAnswer": "C",
-          "explanation": "John explicitly states he is interested in the remote work option."
+          "explanation": "The memo states entertainment expenses need proper documentation."
+        },
+        {
+          "number": 4,
+          "question": "What can be inferred about international travel?",
+          "options": [
+            {
+              "key": "A",
+              "text": "It is now prohibited"
+            },
+            {
+              "key": "B",
+              "text": "It requires CEO approval and has a shorter submission deadline"
+            },
+            {
+              "key": "C",
+              "text": "Business class is automatically approved"
+            },
+            {
+              "key": "D",
+              "text": "It is not covered by the new policy"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "International travel requires CEO approval and 15-day submission."
+        },
+        {
+          "number": 5,
+          "question": "Where should employees go for questions about this policy?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Human Resources Department"
+            },
+            {
+              "key": "B",
+              "text": "The CEO's office"
+            },
+            {
+              "key": "C",
+              "text": "Finance Department"
+            },
+            {
+              "key": "D",
+              "text": "Their direct supervisors"
+            }
+          ],
+          "correctAnswer": "C",
+          "explanation": "The memo states 'please contact the Finance Department at extension 2345.'"
         }
       ]
     },
     {
-      "id": "p7-002",
+      "id": "P7-002-20260304-v1",
       "type": "part7",
       "category": "reading-comprehension",
       "difficulty": "medium",
-      "passages": [
-        "Memorandum\n\nTo: All Staff\nFrom: IT Department\nDate: March 4, 2026\nSubject: System Maintenance\n\nPlease be advised that our email system will be undergoing maintenance on Saturday, March 8th, from 2:00 AM to 6:00 AM. During this time, email services will be unavailable. We apologize for any inconvenience.",
-        "Email\n\nFrom: sarah@company.com\nTo: it@company.com\nSubject: Re: System Maintenance\n\nHi,\n\nI have an important presentation on Saturday morning and need to send emails. Is there any way to access email during the maintenance window?\n\nThanks,\nSarah"
-      ],
+      "question": "",
+      "passage": "NOTICE\n\nAll employees are informed that the company picnic scheduled for this Friday has been postponed due to inclement weather. A new date will be announced next week. Employees who have already registered for the event do not need to re-register. For any questions, please contact the HR department.",
       "questions": [
         {
           "number": 1,
-          "question": "When will the email system be unavailable?",
+          "question": "Why was the picnic postponed?",
           "options": [
             {
               "key": "A",
-              "text": "Friday 2AM-6AM"
+              "text": "Lack of participants"
             },
             {
               "key": "B",
-              "text": "Saturday 2AM-6AM"
+              "text": "Inclement weather"
             },
             {
               "key": "C",
-              "text": "Sunday 2AM-6AM"
+              "text": "Budget issues"
             },
             {
               "key": "D",
-              "text": "Saturday 6AM-10AM"
+              "text": "Scheduling conflicts"
             }
           ],
           "correctAnswer": "B",
-          "explanation": "The memo states maintenance on Saturday, March 8th, from 2:00 AM to 6:00 AM."
+          "explanation": "The notice states 'postponed due to inclement weather.'"
         },
         {
           "number": 2,
-          "question": "Why is Sarah contacting IT?",
+          "question": "What should employees do if they have questions?",
           "options": [
             {
               "key": "A",
-              "text": "To report a problem"
+              "text": "Email the manager"
             },
             {
               "key": "B",
-              "text": "To ask for special access"
+              "text": "Contact HR"
             },
             {
               "key": "C",
-              "text": "To reschedule the maintenance"
+              "text": "Register again"
             },
             {
               "key": "D",
-              "text": "To get technical support"
+              "text": "Wait for announcement"
             }
           ],
           "correctAnswer": "B",
-          "explanation": "Sarah needs to send emails during the maintenance window and is asking for access."
+          "explanation": "States 'please contact the HR department.'"
+        },
+        {
+          "number": 3,
+          "question": "Do employees need to re-register?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Yes, they must register again"
+            },
+            {
+              "key": "B",
+              "text": "No, they don't need to re-register"
+            },
+            {
+              "key": "C",
+              "text": "Only if they want to"
+            },
+            {
+              "key": "D",
+              "text": "Registration is no longer available"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "States 'do not need to re-register.'"
+        },
+        {
+          "number": 4,
+          "question": "When will the new date be announced?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Today"
+            },
+            {
+              "key": "B",
+              "text": "Tomorrow"
+            },
+            {
+              "key": "C",
+              "text": "Next week"
+            },
+            {
+              "key": "D",
+              "text": "Next month"
+            }
+          ],
+          "correctAnswer": "C",
+          "explanation": "States 'A new date will be announced next week.'"
+        },
+        {
+          "number": 5,
+          "question": "What is this notice about?",
+          "options": [
+            {
+              "key": "A",
+              "text": "A new company policy"
+            },
+            {
+              "key": "B",
+              "text": "A postponed company picnic"
+            },
+            {
+              "key": "C",
+              "text": "A hiring announcement"
+            },
+            {
+              "key": "D",
+              "text": "An office relocation"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Main topic is about the postponed picnic."
+        }
+      ]
+    },
+    {
+      "id": "P7-003-20260304-v1",
+      "type": "part7",
+      "category": "reading-comprehension",
+      "difficulty": "medium",
+      "question": "",
+      "passage": "OFFICE RELOCATION NOTICE\n\nDear Employees,\n\nWe are pleased to announce that our office will be relocating to a new building at 555 Business Park Drive, effective March 15th. The new facility offers modern amenities, including a fitness center and cafeteria.\n\nMoving day will be on March 14th. Each department will be assigned a specific time to pack and move their equipment. Please coordinate with your department head for details.\n\nThe new office is easily accessible by public transportation, with a bus stop located just in front of the building. For those who drive, parking is available on the first floor.\n\nWe apologize for any inconvenience during this transition.",
+      "questions": [
+        {
+          "number": 1,
+          "question": "When will the office relocate?",
+          "options": [
+            {
+              "key": "A",
+              "text": "March 1st"
+            },
+            {
+              "key": "B",
+              "text": "March 14th"
+            },
+            {
+              "key": "C",
+              "text": "March 15th"
+            },
+            {
+              "key": "D",
+              "text": "April 1st"
+            }
+          ],
+          "correctAnswer": "C",
+          "explanation": "States 'effective March 15th.'"
+        },
+        {
+          "number": 2,
+          "question": "What is NOT mentioned about the new office?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Fitness center"
+            },
+            {
+              "key": "B",
+              "text": "Parking availability"
+            },
+            {
+              "key": "C",
+              "text": "Public transportation access"
+            },
+            {
+              "key": "D",
+              "text": "Larger meeting rooms"
+            }
+          ],
+          "correctAnswer": "D",
+          "explanation": "Mentions fitness center, parking, and bus stop but not meeting rooms."
+        },
+        {
+          "number": 3,
+          "question": "What should employees do to prepare for the move?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Pack their own equipment"
+            },
+            {
+              "key": "B",
+              "text": "Coordinate with department head"
+            },
+            {
+              "key": "C",
+              "text": "Hire moving company"
+            },
+            {
+              "key": "D",
+              "text": "Notify clients"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "States 'Please coordinate with your department head.'"
         }
       ]
     }
