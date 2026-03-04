@@ -831,7 +831,7 @@ export default function QuizPage() {
                 </div>
                 {/* 固定高度、可滾動、可滑動的文章區塊 */}
                 <div
-                  className="relative h-56 overflow-y-auto touch-pan-y"
+                  className="relative h-56 overflow-y-auto touch-pan-y bg-yellow-50 rounded-lg"
                   onTouchStart={(e) => {
                     const touch = e.touches[0]
                     touchStartXRef.current = touch.clientX
@@ -856,7 +856,7 @@ export default function QuizPage() {
                     touchStartXRef.current = 0
                   }}
                 >
-                  <div className="text-base text-gray-600 bg-yellow-50 p-3 rounded-lg whitespace-pre-wrap h-full">
+                  <div className="text-base text-gray-600 p-3 whitespace-pre-wrap h-full">
                     {currentQuestion.passages[currentPassageIndex]}
                   </div>
                 </div>
