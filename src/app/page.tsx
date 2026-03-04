@@ -1,20 +1,17 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { BookOpen, FileText, Heart, GraduationCap, X, ChevronDown, ChevronUp, Shuffle, ClipboardList, Settings, RotateCcw, Check, ChevronLeft, ChevronRight } from "lucide-react"
+import { Heart, GraduationCap, Shuffle, ClipboardList, Settings, RotateCcw, Check, ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function Home() {
   const router = useRouter()
   const [questionCount, setQuestionCount] = useState(10)
-  const [showCategories, setShowCategories] = useState(false)
   const [currentSection, setCurrentSection] = useState(0)
-  const touchStartX = useRef(0)
-  const touchStartY = useRef(0)
-  const touchDirection = useRef<"horizontal" | "vertical" | null>(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
   
   // Section 2: Part 選擇
   const [selectedParts, setSelectedParts] = useState<string[]>(["part2", "part5", "part6", "part7"])
@@ -27,7 +24,7 @@ export default function Home() {
     )
   }
 
-  // Part 列表（包含敬請期待）
+  // Part 列表
   const allParts = [
     { type: "part1", name: "Part 1 圖片描述", enabled: false },
     { type: "part2", name: "Part 2 應答問題", enabled: true },
@@ -54,71 +51,45 @@ export default function Home() {
     { type: "article", name: "冠詞", color: "bg-slate-100" },
   ]
 
-  // 開始隨機測驗
+  // 開始測驗
   const startRandomQuiz = () => {
     router.push(`/quiz?type=random&types=${selectedParts.join(",")}&count=${questionCount}`)
   }
 
-  // 開始分類測驗
-  const startCategoryQuiz = (type: string, name: string) => {
+  const startCategoryQuiz = (type: string) => {
     router.push(`/quiz?type=${type}&count=${questionCount}`)
   }
 
-  // 開始模擬測驗
   const startMockQuiz = () => {
     router.push(`/quiz?type=mock&count=100`)
   }
 
-  // 觸控滑動處理
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-    touchStartY.current = e.touches[0].clientY
-    touchDirection.current = null
-  }
+  // 滾動檢測
+  useEffect(() => {
+    const container = carouselRef.current
+    if (!container) return
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    // 如果已經確定方向，阻止另一個方向
-    if (touchDirection.current === "horizontal") {
-      e.preventDefault()
-    }
-    
-    const diffX = e.touches[0].clientX - touchStartX.current
-    const diffY = e.touches[0].clientY - touchStartY.current
-    
-    // 判斷主要滑動方向
-    if (!touchDirection.current) {
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
-        touchDirection.current = "horizontal"
-      } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 10) {
-        touchDirection.current = "vertical"
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft
+      const sectionWidth = container.scrollWidth / sections.length
+      const newSection = Math.round(scrollLeft / sectionWidth)
+      if (newSection !== currentSection && newSection >= 0 && newSection < sections.length) {
+        setCurrentSection(newSection)
       }
     }
-    
-    // 水平滑動處理
-    if (touchDirection.current === "horizontal") {
-      if (Math.abs(diffX) > 50) {
-        if (diffX > 0 && currentSection > 0) {
-          setCurrentSection(currentSection - 1)
-        } else if (diffX < 0 && currentSection < 4) {
-          setCurrentSection(currentSection + 1)
-        }
-        touchStartX.current = e.touches[0].clientX
-      }
-    }
-  }
 
-  const handleTouchEnd = () => {
-    touchDirection.current = null
-  }
+    container.addEventListener('scroll', handleScroll)
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [currentSection])
 
   // 區塊內容
   const sections = [
     // Section 1: 立刻測驗
-    <div key="section1" className="w-[70%] flex-shrink-0 mx-auto px-1">
+    <div key="section1" className="w-full">
       <h2 className="text-sm font-bold text-gray-700 mb-2">⚡ 立刻測驗</h2>
       <div className="space-y-2">
         <button onClick={startRandomQuiz} className="block w-full text-left">
-          <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-purple-500 to-purple-600 border-0 h-full">
+          <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-purple-500 to-purple-600 border-0">
             <CardHeader className="py-3 px-3">
               <Shuffle className="w-5 h-5 text-white mb-1" />
               <CardTitle className="text-white text-sm">隨機測驗</CardTitle>
@@ -128,7 +99,7 @@ export default function Home() {
         </button>
         
         <button className="block w-full text-left" disabled>
-          <Card className="bg-gray-100 opacity-60 cursor-not-allowed h-full">
+          <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
             <CardHeader className="py-3 px-3">
               <RotateCcw className="w-5 h-5 text-gray-400 mb-1" />
               <CardTitle className="text-gray-500 text-sm">單字複習</CardTitle>
@@ -138,11 +109,11 @@ export default function Home() {
         </button>
         
         <Link href="/notebook" className="block w-full text-left">
-          <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-red-500 to-red-600 border-0 h-full">
+          <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-red-500 to-red-600 border-0">
             <CardHeader className="py-3 px-3">
               <Heart className="w-5 h-5 text-white mb-1" />
               <CardTitle className="text-white text-sm">我的單字</CardTitle>
-              <p className="text-red-100 text-xs">收藏單字</p>
+              <p className="text-red-100 text-xs">收藏不會的單字</p>
             </CardHeader>
           </Card>
         </Link>
@@ -150,11 +121,11 @@ export default function Home() {
     </div>,
 
     // Section 2: 自選測驗
-    <div key="section2" className="w-[70%] flex-shrink-0 mx-auto px-1">
+    <div key="section2" className="w-full">
       <h2 className="text-sm font-bold text-gray-700 mb-2">📝 自選測驗</h2>
       <Card>
         <CardContent className="p-3">
-          <div className="space-y-1.5 max-h-60 overflow-y-auto">
+          <div className="space-y-1.5 max-h-48 overflow-y-auto">
             {allParts.map(part => (
               <button
                 key={part.type}
@@ -213,14 +184,14 @@ export default function Home() {
       </Card>
     </div>,
 
-    // Section 3: 分類練習 - 固定顯示
-    <div key="section3" className="w-[70%] flex-shrink-0 mx-auto px-1">
+    // Section 3: 分類練習
+    <div key="section3" className="w-full">
       <h2 className="text-sm font-bold text-gray-700 mb-2">📚 分類練習</h2>
       <div className="grid grid-cols-4 gap-2">
         {categories.map(cat => (
           <button 
             key={cat.type} 
-            onClick={() => startCategoryQuiz(cat.type, cat.name)}
+            onClick={() => startCategoryQuiz(cat.type)}
             className="text-left"
           >
             <Card className="hover:shadow-sm transition-all cursor-pointer h-full">
@@ -237,7 +208,7 @@ export default function Home() {
     </div>,
 
     // Section 4: 模擬試題
-    <div key="section4" className="w-[70%] flex-shrink-0 mx-auto px-1">
+    <div key="section4" className="w-full">
       <h2 className="text-sm font-bold text-gray-700 mb-2">🎯 模擬試題</h2>
       <button onClick={startMockQuiz} className="block w-full text-left">
         <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-amber-500 to-orange-500 border-0">
@@ -255,7 +226,7 @@ export default function Home() {
     </div>,
 
     // Section 5: 設定
-    <div key="section5" className="w-[70%] flex-shrink-0 mx-auto px-1">
+    <div key="section5" className="w-full">
       <h2 className="text-sm font-bold text-gray-700 mb-2">⚙️ 設定</h2>
       <button className="block w-full text-left" disabled>
         <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
@@ -275,8 +246,6 @@ export default function Home() {
     </div>,
   ]
 
-  const sectionTitles = ["立刻測驗", "自選測驗", "分類練習", "模擬試題", "設定"]
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4 py-6 max-w-md">
@@ -288,12 +257,15 @@ export default function Home() {
           <p className="text-gray-500 text-xs mt-1">TOEIC 練習 App</p>
         </div>
 
-        {/* 滑動區域 - 輪播樣式 */}
+        {/* 輪播區域 */}
         <div className="min-h-[70vh] flex flex-col">
-          {/* 輪播內容區 */}
-          <div className="flex-1 overflow-x-hidden relative">
-            {/* 輪播容器 */}
-            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar" style={{scrollBehavior: 'smooth'}}>
+          {/* 輪播內容 */}
+          <div className="flex-1 overflow-hidden">
+            <div 
+              ref={carouselRef}
+              className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+              style={{ scrollBehavior: 'smooth' }}
+            >
               {/* 左側空白 */}
               <div className="w-[15%] flex-shrink-0 snap-start" />
               
@@ -301,7 +273,10 @@ export default function Home() {
               {sections.map((section, i) => (
                 <div 
                   key={i} 
-                  className={`w-[70%] flex-shrink-0 px-2 snap-center ${i === currentSection ? "opacity-100" : "opacity-40"}`}
+                  className={`w-[70%] flex-shrink-0 px-2 snap-center transition-opacity duration-300 ${
+                    i === currentSection ? "opacity-100" : 
+                    Math.abs(i - currentSection) === 1 ? "opacity-50" : "opacity-20"
+                  }`}
                   onClick={() => setCurrentSection(i)}
                 >
                   {section}
@@ -313,43 +288,49 @@ export default function Home() {
             </div>
           </div>
           
-          {/* 導航指示器 */}
-          <div className="flex justify-center gap-1 py-2">
-            {sections.map((_, i) => (
-              <div
-                key={i}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === currentSection ? "w-6 bg-blue-500" : "w-1.5 bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* 左右導航按鈕 */}
-          <div className="flex justify-between items-center absolute top-1/2 -translate-y-1/2 w-full px-1 pointer-events-none">
+          {/* 導航 */}
+          <div className="flex items-center justify-between py-2">
             <button 
-              onClick={() => currentSection > 0 && setCurrentSection(currentSection - 1)}
-              className={`w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto ${
-                currentSection === 0 ? "opacity-30 cursor-not-allowed" : "opacity-80 hover:opacity-100"
-              }`}
+              onClick={() => {
+                if (currentSection > 0) {
+                  setCurrentSection(currentSection - 1)
+                  carouselRef.current?.scrollTo({ left: (currentSection - 1) * (carouselRef.current.scrollWidth / sections.length), behavior: 'smooth' })
+                }
+              }}
+              className={`p-2 rounded-full ${currentSection === 0 ? "opacity-30" : "opacity-80 hover:opacity-100"}`}
               disabled={currentSection === 0}
             >
-              <ChevronLeft className="w-4 h-4 text-gray-600" />
+              <ChevronLeft className="w-6 h-6 text-gray-600" />
             </button>
+            
+            <div className="flex gap-1">
+              {sections.map((_, i) => (
+                <div
+                  key={i}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === currentSection ? "w-6 bg-blue-500" : "w-1.5 bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+            
             <button 
-              onClick={() => currentSection < sections.length - 1 && setCurrentSection(currentSection + 1)}
-              className={`w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto ${
-                currentSection === sections.length - 1 ? "opacity-30 cursor-not-allowed" : "opacity-80 hover:opacity-100"
-              }`}
+              onClick={() => {
+                if (currentSection < sections.length - 1) {
+                  setCurrentSection(currentSection + 1)
+                  carouselRef.current?.scrollTo({ left: (currentSection + 1) * (carouselRef.current.scrollWidth / sections.length), behavior: 'smooth' })
+                }
+              }}
+              className={`p-2 rounded-full ${currentSection === sections.length - 1 ? "opacity-30" : "opacity-80 hover:opacity-100"}`}
               disabled={currentSection === sections.length - 1}
             >
-              <ChevronRight className="w-4 h-4 text-gray-600" />
+              <ChevronRight className="w-6 h-6 text-gray-600" />
             </button>
           </div>
         </div>
 
         {/* Version */}
-        <div className="text-center text-xs text-gray-400 mt-6 pb-4">
+        <div className="text-center text-xs text-gray-400 mt-4 pb-4">
           v1.1.0
         </div>
       </div>
