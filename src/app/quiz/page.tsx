@@ -278,11 +278,12 @@ export default function QuizPage() {
     // 將 Part 6 的多題格式攤平為單一題目
     if (quizType === "part6") {
       const flattened: Question[] = []
-      questions.forEach(item => {
+      questions.forEach((item, itemIndex) => {
         if (item.questions) {
-          item.questions.forEach(q => {
+          item.questions.forEach((q, qIndex) => {
             flattened.push({
               ...item,
+              id: `${item.id}-q${qIndex + 1}`,  // Unique ID
               question: q.question,
               options: q.options,
               correctAnswer: q.correctAnswer,
