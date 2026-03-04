@@ -3,7 +3,7 @@
     "version": "1.0",
     "created": "2026-03-03",
     "updated": "2026-03-04",
-    "totalQuestions": 99
+    "totalQuestions": 95
   },
   "questions": [
     {
@@ -2533,172 +2533,142 @@
       "explanation": "Lisa asks: 'If you have any concerns about the new timeline, please let me know as soon as possible.'"
     },
     {
-      "id": "p6-q01",
+      "id": "p6-001",
       "type": "part6",
       "category": "text-completion",
       "difficulty": "medium",
-      "passage": "Dear Valued Customer,\n\nThank you for your inquiry. We are pleased to inform you that all products are in stock. Our standard shipping takes 3-5 days, but express shipping is available for an extra fee. We look forward to serving your business in the future.\n\nPlease contact us if you need any additional assistance.",
-      "question": "Our standard shipping takes 3-5 days, _______ express shipping is available.",
-      "options": [
+      "passage": "Dear Valued Customer,\n\nThank you for your inquiry regarding our product. We are pleased to inform you that all our products are currently in stock and ready for shipment. Our standard shipping takes 3-5 business days, _______(1) express shipping is available for an additional fee. If you have any further questions, please do not hesitate to contact our customer service team.\n\nWe look forward to _______(2) your business.",
+      "questions": [
         {
-          "key": "A",
-          "text": "and"
+          "number": 1,
+          "question": "Our standard shipping takes 3-5 business days, _______ express shipping is available.",
+          "options": [
+            {
+              "key": "A",
+              "text": "and"
+            },
+            {
+              "key": "B",
+              "text": "but"
+            },
+            {
+              "key": "C",
+              "text": "or"
+            },
+            {
+              "key": "D",
+              "text": "so"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Contrast - but shows contrast between standard and express shipping."
         },
         {
-          "key": "B",
-          "text": "but"
-        },
-        {
-          "key": "C",
-          "text": "or"
-        },
-        {
-          "key": "D",
-          "text": "so"
+          "number": 2,
+          "question": "We look forward to _______ your business.",
+          "options": [
+            {
+              "key": "A",
+              "text": "serving"
+            },
+            {
+              "key": "B",
+              "text": "serve"
+            },
+            {
+              "key": "C",
+              "text": "have served"
+            },
+            {
+              "key": "D",
+              "text": "to serve"
+            }
+          ],
+          "correctAnswer": "A",
+          "explanation": "Look forward to + gerund - to is a preposition."
         }
-      ],
-      "correctAnswer": "B",
-      "explanation": "Contrast - but shows contrast between standard and express shipping."
+      ]
     },
     {
-      "id": "p6-q02",
+      "id": "p6-002",
       "type": "part6",
       "category": "text-completion",
       "difficulty": "medium",
-      "passage": "Dear Valued Customer,\n\nThank you for your inquiry. We are pleased to inform you that all products are in stock. Our standard shipping takes 3-5 days, but express shipping is available for an extra fee. We look forward to serving your business in the future.\n\nPlease contact us if you need any additional assistance.",
-      "question": "We look forward to _______ your business.",
-      "options": [
+      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing _______(1) respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping _______(2) orders over \u0000.\n\nPlease let me know if you need _______(3) information.",
+      "questions": [
         {
-          "key": "A",
-          "text": "serving"
+          "number": 1,
+          "question": "I am writing _______ respond to your inquiry.",
+          "options": [
+            {
+              "key": "A",
+              "text": "for"
+            },
+            {
+              "key": "B",
+              "text": "to"
+            },
+            {
+              "key": "C",
+              "text": "in"
+            },
+            {
+              "key": "D",
+              "text": "of"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Writing to respond - infinitive of purpose."
         },
         {
-          "key": "B",
-          "text": "serve"
+          "number": 2,
+          "question": "We also provide free shipping _______ orders over \u0000.",
+          "options": [
+            {
+              "key": "A",
+              "text": "for"
+            },
+            {
+              "key": "B",
+              "text": "on"
+            },
+            {
+              "key": "C",
+              "text": "with"
+            },
+            {
+              "key": "D",
+              "text": "at"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Shipping on orders - correct preposition."
         },
         {
-          "key": "C",
-          "text": "have served"
-        },
-        {
-          "key": "D",
-          "text": "to serve"
+          "number": 3,
+          "question": "Please let me know if you need any _______ information.",
+          "options": [
+            {
+              "key": "A",
+              "text": "addition"
+            },
+            {
+              "key": "B",
+              "text": "additional"
+            },
+            {
+              "key": "C",
+              "text": "additionally"
+            },
+            {
+              "key": "D",
+              "text": "add"
+            }
+          ],
+          "correctAnswer": "B",
+          "explanation": "Adjective additional modifies noun information."
         }
-      ],
-      "correctAnswer": "A",
-      "explanation": "Look forward to + gerund - to is a preposition."
-    },
-    {
-      "id": "p6-q03",
-      "type": "part6",
-      "category": "text-completion",
-      "difficulty": "medium",
-      "passage": "Dear Valued Customer,\n\nThank you for your inquiry. We are pleased to inform you that all products are in stock. Our standard shipping takes 3-5 days, but express shipping is available for an extra fee. We look forward to serving your business in the future.\n\nPlease contact us if you need any additional assistance.",
-      "question": "Please contact us if you need _______ assistance.",
-      "options": [
-        {
-          "key": "A",
-          "text": "addition"
-        },
-        {
-          "key": "B",
-          "text": "additional"
-        },
-        {
-          "key": "C",
-          "text": "additionally"
-        },
-        {
-          "key": "D",
-          "text": "add"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "Adjective additional modifies noun assistance."
-    },
-    {
-      "id": "p6-q04",
-      "type": "part6",
-      "category": "text-completion",
-      "difficulty": "medium",
-      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing to respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping on orders over $500.\n\nPlease let me know if you need any additional information.",
-      "question": "I am writing _______ respond to your inquiry.",
-      "options": [
-        {
-          "key": "A",
-          "text": "for"
-        },
-        {
-          "key": "B",
-          "text": "to"
-        },
-        {
-          "key": "C",
-          "text": "in"
-        },
-        {
-          "key": "D",
-          "text": "of"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "Writing to respond - infinitive of purpose."
-    },
-    {
-      "id": "p6-q05",
-      "type": "part6",
-      "category": "text-completion",
-      "difficulty": "medium",
-      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing to respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping on orders over $500.\n\nPlease let me know if you need any additional information.",
-      "question": "We offer discounts _______ bulk orders.",
-      "options": [
-        {
-          "key": "A",
-          "text": "for"
-        },
-        {
-          "key": "B",
-          "text": "on"
-        },
-        {
-          "key": "C",
-          "text": "with"
-        },
-        {
-          "key": "D",
-          "text": "at"
-        }
-      ],
-      "correctAnswer": "A",
-      "explanation": "Discounts for bulk orders - correct collocation."
-    },
-    {
-      "id": "p6-q06",
-      "type": "part6",
-      "category": "text-completion",
-      "difficulty": "medium",
-      "passage": "Dear Mr. Thompson,\n\nThank you for your interest in our products. I am writing to respond to your inquiry about our pricing. Our products are competitively priced, and we offer discounts for bulk orders. We also provide free shipping on orders over $500.\n\nPlease let me know if you need any additional information.",
-      "question": "Please let me know if you need any _______ information.",
-      "options": [
-        {
-          "key": "A",
-          "text": "addition"
-        },
-        {
-          "key": "B",
-          "text": "additional"
-        },
-        {
-          "key": "C",
-          "text": "additionally"
-        },
-        {
-          "key": "D",
-          "text": "add"
-        }
-      ],
-      "correctAnswer": "B",
-      "explanation": "Adjective additional modifies noun information."
+      ]
     }
   ]
 }

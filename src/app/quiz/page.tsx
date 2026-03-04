@@ -17,6 +17,14 @@ type Question = {
   correctAnswer: string
   explanation: string
   passage?: string  // For Part 6 & 7
+  // For Part 6 new format (one passage with multiple blanks)
+  questions?: {
+    number: number
+    question: string
+    options: { key: string; text: string }[]
+    correctAnswer: string
+    explanation: string
+  }[]
 }
 
 type Word = {
@@ -128,10 +136,7 @@ const getQuestionsByType = (type: string, count: number = 5, seed?: number): Que
   }
   
   // 使用固定 seed 確保 SSR 一致
-  const shuffled = shuffleArray(pool, seed)
-  // 使用傳入的 count 參數，最多取 pool 大小
-  const actualCount = Math.min(count, pool.length)
-  return shuffled.slice(0, actualCount)
+  return shuffleArray(pool, seed).slice(0, count)
 }
 
 // 測驗時間設定（秒）
@@ -248,7 +253,33 @@ export default function QuizPage() {
     }
   }, [showResult, storageKey])
 
-  const quizQuestions = useMemo(() => getQuestionsByType(quizType, questionCount), [quizType, questionCount])
+  const quizQuestions = useMemo(() => {
+    const questions = getQuestionsByType(quizType, questionCount)
+    
+    // 將 Part 6 的多題格式攤平為單一題目
+    if (quizType === "part6") {
+      const flattened: Question[] = []
+      questions.forEach(item => {
+        if (item.questions) {
+          item.questions.forEach(q => {
+            flattened.push({
+              ...item,
+              question: q.question,
+              options: q.options,
+              correctAnswer: q.correctAnswer,
+              explanation: q.explanation,
+              questions: undefined
+            })
+          })
+        } else {
+          flattened.push(item)
+        }
+      })
+      return flattened
+    }
+    
+    return questions
+  }, [quizType, questionCount])
   
   // 確保 quizQuestions 和 currentIndex 是有效的（防呆）
   const safeCurrentIndex = currentIndex ?? 0
