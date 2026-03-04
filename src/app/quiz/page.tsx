@@ -16,6 +16,7 @@ type Question = {
   options: { key: string; text: string }[]
   correctAnswer: string
   explanation: string
+  passage?: string  // For Part 6 & 7
 }
 
 type Word = {
@@ -743,6 +744,12 @@ export default function QuizPage() {
               <span>{currentQuestion.category}</span>
               <span className="capitalize">{currentQuestion.difficulty}</span>
             </div>
+            {/* 顯示 Part 6 段落 */}
+            {currentQuestion.passage && (
+              <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mb-3 whitespace-pre-wrap">
+                {currentQuestion.passage}
+              </div>
+            )}
             <div className="text-lg leading-relaxed select-none" style={{ touchAction: 'manipulation' }}>
               {currentQuestion.question.split(" ").map((word, index) => (
                 <span
