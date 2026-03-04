@@ -215,6 +215,7 @@ export default function QuizPage() {
   const [questionTimes, setQuestionTimes] = useState<Record<number, number>>({})
   const questionStartTimeRef = useRef<number | null>(null)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const touchStartXRef = useRef<number>(0)  // For Part 7 swipe gesture
 
   // 初始化計時器 ref（只在客戶端）
   useEffect(() => {
@@ -828,34 +829,36 @@ export default function QuizPage() {
                     />
                   ))}
                 </div>
-                {/* 滑動內容 */}
-                <div className="relative">
-                  <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap min-h-[100px]">
+                {/* 固定高度、可滾動、可滑動的文章區塊 */}
+                <div
+                  className="relative h-40 overflow-y-auto touch-pan-y"
+                  onTouchStart={(e) => {
+                    const touch = e.touches[0]
+                    touchStartXRef.current = touch.clientX
+                  }}
+                  onTouchMove={(e) => {
+                    if (!touchStartXRef.current) return
+                    const touch = e.touches[0]
+                    const diff = touch.clientX - touchStartXRef.current
+                    
+                    // 左滑（下一篇）
+                    if (diff < -50 && currentPassageIndex < currentQuestion.passages!.length - 1) {
+                      setCurrentPassageIndex(currentPassageIndex + 1)
+                      touchStartXRef.current = touch.clientX
+                    }
+                    // 右滑（上一篇）
+                    else if (diff > 50 && currentPassageIndex > 0) {
+                      setCurrentPassageIndex(currentPassageIndex - 1)
+                      touchStartXRef.current = touch.clientX
+                    }
+                  }}
+                  onTouchEnd={() => {
+                    touchStartXRef.current = 0
+                  }}
+                >
+                  <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap h-full">
                     {currentQuestion.passages[currentPassageIndex]}
                   </div>
-                  {/* 左右滑動按鈕 */}
-                  {currentQuestion.passages.length > 1 && (
-                    <>
-                      <button
-                        onClick={() => setCurrentPassageIndex(Math.max(0, currentPassageIndex - 1))}
-                        disabled={currentPassageIndex === 0}
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center ${
-                          currentPassageIndex === 0 ? "opacity-30 cursor-not-allowed" : "opacity-100"
-                        }`}
-                      >
-                        ‹
-                      </button>
-                      <button
-                        onClick={() => currentQuestion.passages && setCurrentPassageIndex(Math.min(currentQuestion.passages.length - 1, currentPassageIndex + 1))}
-                        disabled={!currentQuestion.passages || currentPassageIndex === currentQuestion.passages.length - 1}
-                        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center ${
-                          !currentQuestion.passages || currentPassageIndex === currentQuestion.passages.length - 1 ? "opacity-30 cursor-not-allowed" : "opacity-100"
-                        }`}
-                      >
-                        ›
-                      </button>
-                    </>
-                  )}
                 </div>
               </div>
             )}
