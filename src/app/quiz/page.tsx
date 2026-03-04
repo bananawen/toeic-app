@@ -811,7 +811,7 @@ export default function QuizPage() {
             </div>
             {/* 顯示 Part 6 段落 */}
             {currentQuestion.passage && !currentQuestion.isMultiPassage && (
-              <div className="text-base text-gray-600 bg-gray-50 p-3 rounded-lg mb-2 whitespace-pre-wrap">
+              <div className="text-base text-gray-600 bg-yellow-50 p-3 rounded-lg mb-2 whitespace-pre-wrap">
                 {currentQuestion.passage}
               </div>
             )}
@@ -856,7 +856,7 @@ export default function QuizPage() {
                     touchStartXRef.current = 0
                   }}
                 >
-                  <div className="text-base text-gray-600 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap h-full">
+                  <div className="text-base text-gray-600 bg-yellow-50 p-3 rounded-lg whitespace-pre-wrap h-full">
                     {currentQuestion.passages[currentPassageIndex]}
                   </div>
                 </div>
