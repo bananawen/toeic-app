@@ -136,6 +136,15 @@ const getQuestionsByType = (type: string, count: number = 5, seed?: number): Que
     case "part7":
       pool = allQuestions.filter(q => q.type === "part7")
       break
+    // 隨機測驗
+    case "random":
+      // 從 URL 參數取得選擇的題型
+      pool = allQuestions.filter(q => q.type === "part2" || q.type === "part5" || q.type === "part6" || q.type === "part7")
+      break
+    // 模擬測驗
+    case "mock":
+      pool = allQuestions.filter(q => q.type === "part2" || q.type === "part5" || q.type === "part6" || q.type === "part7")
+      break
     default:
       pool = allQuestions
   }
@@ -183,6 +192,10 @@ const TIME_LIMITS_PER_QUESTION: Record<string, number> = {
   "part6": 45,
   // Part 7: 閱讀理解 - 60秒/題
   "part7": 60,
+  // 隨機測驗：使用 Part 5 的時間
+  "random": 25,
+  // 模擬測驗：使用 Part 5 的時間
+  "mock": 25,
 }
 
 // 思考過久閾值（秒）- 超過這個時間未答題視為思考過久
@@ -381,6 +394,8 @@ export default function QuizPage() {
       "part5": "Part 5 句子填空",
       "part6": "Part 6 段落填空",
       "part7": "Part 7 閱讀測驗",
+      "random": "🎲 隨機測驗",
+      "mock": "📝 模擬測驗",
     }
     return titles[quizType] || "測驗"
   }

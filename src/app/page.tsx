@@ -5,15 +5,18 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { BookOpen, FileText, Heart, GraduationCap, X, ChevronDown, ChevronUp } from "lucide-react"
+import { BookOpen, FileText, Heart, GraduationCap, X, ChevronDown, ChevronUp, Shuffle, ClipboardList } from "lucide-react"
 
 export default function Home() {
   const router = useRouter()
   const [showModal, setShowModal] = useState(false)
+  const [showRandomModal, setShowRandomModal] = useState(false)
+  const [showMockModal, setShowMockModal] = useState(false)
   const [selectedType, setSelectedType] = useState("")
   const [selectedName, setSelectedName] = useState("")
   const [questionCount, setQuestionCount] = useState(5)
   const [showCategories, setShowCategories] = useState(false)
+  const [randomTypes, setRandomTypes] = useState<string[]>(["part2", "part5", "part6", "part7"])
 
   // 分類列表
   const categories = [
@@ -60,6 +63,27 @@ export default function Home() {
     router.push(`/quiz?type=${selectedType}&count=${questionCount}`)
   }
 
+  // 確認隨機測驗
+  const confirmRandom = () => {
+    setShowRandomModal(false)
+    router.push(`/quiz?type=random&types=${randomTypes.join(",")}&count=${questionCount}`)
+  }
+
+  // 確認模擬測驗
+  const confirmMock = () => {
+    setShowMockModal(false)
+    router.push(`/quiz?type=mock&count=100`)
+  }
+
+  // 切換隨機題型
+  const toggleRandomType = (type: string) => {
+    setRandomTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-6">
@@ -104,6 +128,91 @@ export default function Home() {
 
               <Button onClick={confirmStart} className="w-full">
                 開始練習
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {/* 隨機測驗Modal */}
+        {showRandomModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg p-5 max-w-sm w-full shadow-xl">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-bold">🎲 隨機測驗</h3>
+                <button onClick={() => setShowRandomModal(false)} className="text-gray-400 hover:text-gray-600">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <div className="mb-4">
+                <label className="text-sm text-gray-600 mb-2 block">選擇題型</label>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { type: "part2", name: "Part 2", color: "bg-green-100" },
+                    { type: "part5", name: "Part 5", color: "bg-blue-100" },
+                    { type: "part6", name: "Part 6", color: "bg-red-100" },
+                    { type: "part7", name: "Part 7", color: "bg-indigo-100" },
+                  ].map(item => (
+                    <button
+                      key={item.type}
+                      onClick={() => toggleRandomType(item.type)}
+                      className={`py-2 rounded-lg border-2 transition-all text-sm ${
+                        randomTypes.includes(item.type)
+                          ? "border-blue-500 bg-blue-50"
+                          : "border-gray-200"
+                      }`}
+                    >
+                      {item.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <label className="text-sm text-gray-600 mb-2 block">題目數量</label>
+                <div className="flex gap-2">
+                  {[5, 10, 15, 20].map(num => (
+                    <button
+                      key={num}
+                      onClick={() => setQuestionCount(num)}
+                      className={`flex-1 py-2 rounded-lg border-2 transition-all text-sm ${
+                        questionCount === num 
+                          ? "border-blue-500 bg-blue-50 text-blue-600" 
+                          : "border-gray-200 hover:border-gray-300"
+                      }`}
+                    >
+                      {num} 題
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <Button onClick={confirmRandom} className="w-full" disabled={randomTypes.length === 0}>
+                開始測驗
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {/* 模擬測驗Modal */}
+        {showMockModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg p-5 max-w-sm w-full shadow-xl">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-bold">📝 模擬測驗</h3>
+                <button onClick={() => setShowMockModal(false)} className="text-gray-400 hover:text-gray-600">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <div className="mb-4 text-center">
+                <div className="text-4xl mb-2">🎯</div>
+                <p className="text-gray-600">完整 TOEIC 模擬測驗</p>
+                <p className="text-sm text-gray-400 mt-2">100 題涵蓋 Part 2, 5, 6, 7</p>
+              </div>
+
+              <Button onClick={confirmMock} className="w-full">
+                開始測驗
               </Button>
             </div>
           </div>
@@ -273,6 +382,32 @@ export default function Home() {
               </CardHeader>
             </Card>
           </button>
+
+          {/* 隨機測驗 & 模擬測驗 */}
+          <div className="grid grid-cols-2 gap-2 mt-2">
+            <button onClick={() => { setQuestionCount(5); setShowRandomModal(true); }} className="block w-full text-left">
+              <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-purple-50 to-pink-50">
+                <CardHeader className="py-3 px-4">
+                  <div className="flex items-center gap-2">
+                    <Shuffle className="w-4 h-4 text-purple-600" />
+                    <CardTitle className="text-sm">🎲 隨機測驗</CardTitle>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">自選題型</p>
+                </CardHeader>
+              </Card>
+            </button>
+            <button onClick={() => setShowMockModal(true)} className="block w-full text-left">
+              <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-amber-50 to-orange-50">
+                <CardHeader className="py-3 px-4">
+                  <div className="flex items-center gap-2">
+                    <ClipboardList className="w-4 h-4 text-orange-600" />
+                    <CardTitle className="text-sm">📝 模擬測驗</CardTitle>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">完整 100 題</p>
+                </CardHeader>
+              </Card>
+            </button>
+          </div>
 
           {/* 我的單字本 */}
           <Link href="/notebook" className="block mt-2">
