@@ -262,14 +262,29 @@ export default function Home() {
         </div>
 
         {/* 滑動區域 */}
+        {/* 滑動區域 - 輪播樣式 */}
         <div 
-          className="relative overflow-hidden min-h-[70vh]"
+          className="relative min-h-[70vh] overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
         >
-          {/* 當前區塊 */}
-          <div className="transition-opacity duration-300 h-full">
-            {sections[currentSection]}
+          {/* 所有區塊 - 並排顯示 */}
+          <div className="flex h-full">
+            {sections.map((section, i) => (
+              <div 
+                key={i} 
+                className={`w-[70%] flex-shrink-0 px-2 transition-all duration-300 ${
+                  i === currentSection 
+                    ? "opacity-100 scale-100" 
+                    : "opacity-30 scale-95"
+                }`}
+                style={{
+                  marginLeft: i === 0 ? '15%' : '0',
+                }}
+              >
+                {section}
+              </div>
+            ))}
           </div>
 
           {/* 導航指示器 */}
