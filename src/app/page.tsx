@@ -230,6 +230,26 @@ export default function Home() {
     // Section 5: 設定
     <div key="section5" className="w-full">
       <h2 className="text-sm font-bold text-gray-700 mb-2">⚙️ 設定</h2>
+      
+      {/* 主題設定 */}
+      <button onClick={toggleTheme} className="block w-full text-left mb-2">
+        <Card className="hover:shadow-md transition-all cursor-pointer">
+          <CardHeader className="py-3 px-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                  {theme === "light" ? <Moon className="w-4 h-4 text-gray-600" /> : <Sun className="w-4 h-4 text-yellow-400" />}
+                </div>
+                <div>
+                  <CardTitle className="text-sm">主題</CardTitle>
+                  <p className="text-xs text-gray-400">{theme === "light" ? "淺色模式" : "深色模式"}</p>
+                </div>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
+      </button>
+
       <button className="block w-full text-left" disabled>
         <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
           <CardHeader className="py-3 px-4">
@@ -238,7 +258,7 @@ export default function Home() {
                 <Settings className="w-4 h-4 text-gray-400" />
               </div>
               <div className="flex-1">
-                <CardTitle className="text-sm text-gray-500">設定</CardTitle>
+                <CardTitle className="text-sm text-gray-500">其他設定</CardTitle>
                 <p className="text-xs text-gray-400">敬請期待</p>
               </div>
             </div>
@@ -253,14 +273,9 @@ export default function Home() {
       <div className="container mx-auto px-4 py-6 max-w-md">
         {/* Header */}
         <div className="text-center mb-4">
-          <div className="flex items-center justify-center gap-2">
-            <button onClick={toggleTheme} className="p-2">
-              {theme === "light" ? <Moon className="w-5 h-5 text-gray-600" /> : <Sun className="w-5 h-5 text-yellow-400" />}
-            </button>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              🦈 鯊逼多益
-            </h1>
-          </div>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            🦈 鯊逼多益
+          </h1>
           <p className="text-gray-500 text-xs mt-1">TOEIC 練習 App</p>
         </div>
 
