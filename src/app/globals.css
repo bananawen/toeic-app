@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -32,26 +30,22 @@
   --ring: #3b82f6;
 }
 
-.dark {
+/* 深色模式 */
+html.dark {
   --background: #0f172a;
   --foreground: #f1f5f9;
   --card: #1e293b;
   --card-foreground: #f1f5f9;
   --popover: #1e293b;
   --popover-foreground: #f1f5f9;
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
   --secondary: #334155;
   --secondary-foreground: #f1f5f9;
   --muted: #334155;
   --muted-foreground: #94a3b8;
   --accent: #334155;
   --accent-foreground: #f1f5f9;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
   --border: #334155;
   --input: #334155;
-  --ring: #3b82f6;
 }
 
 @layer base {
@@ -65,45 +59,28 @@
   }
 }
 
-/* 強制深色模式的元素 */
-.dark {
-  --card: #1e293b;
-  --card-foreground: #f1f5f9;
-  background-color: #0f172a;
+/* 深色模式時的背景覆蓋 */
+html.dark body {
+  background: linear-gradient(to bottom, #0f172a, #000000);
 }
 
-.dark [class*="bg-white"] {
-  background-color: #1e293b !important;
-}
+html.dark .bg-white { background-color: #1e293b !important; }
+html.dark .bg-gray-50 { background-color: #1e293b !important; }
+html.dark .bg-gray-100 { background-color: #334155 !important; }
+html.dark .bg-gray-200 { background-color: #475569 !important; }
 
-.dark [class*="bg-gray-50"] {
-  background-color: #1e293b !important;
-}
+html.dark .text-gray-800 { color: #f1f5f9 !important; }
+html.dark .text-gray-700 { color: #e2e8f0 !important; }
+html.dark .text-gray-600 { color: #cbd5e1 !important; }
+html.dark .text-gray-500 { color: #94a3b8 !important; }
+html.dark .text-gray-400 { color: #64748b !important; }
 
-.dark [class*="bg-gray-100"] {
-  background-color: #334155 !important;
-}
+html.dark .border-gray-100 { border-color: #334155 !important; }
+html.dark .border-gray-200 { border-color: #475569 !important; }
 
-.dark [class*="bg-gray-200"] {
-  background-color: #475569 !important;
-}
-
-.dark [class*="text-gray-800"] {
-  color: #f1f5f9 !important;
-}
-
-.dark [class*="text-gray-700"] {
-  color: #e2e8f0 !important;
-}
-
-.dark [class*="text-gray-600"] {
-  color: #cbd5e1 !important;
-}
-
-.dark [class*="text-gray-500"] {
-  color: #94a3b8 !important;
-}
-
-.dark [class*="text-gray-400"] {
-  color: #64748b !important;
-}
+html.dark .from-purple-500 { --tw-gradient-from: #7c3aed; }
+html.dark .from-purple-600 { --tw-gradient-from: #7c3aed; }
+html.dark .from-amber-500 { --tw-gradient-from: #f59e0b; }
+html.dark .from-orange-500 { --tw-gradient-from: #f97316; }
+html.dark .from-red-500 { --tw-gradient-from: #ef4444; }
+html.dark .from-red-600 { --tw-gradient-from: #dc2626; }
