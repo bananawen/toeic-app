@@ -5,10 +5,12 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Heart, GraduationCap, Shuffle, ClipboardList, Settings, RotateCcw, Check, ChevronLeft, ChevronRight } from "lucide-react"
+import { Heart, GraduationCap, Shuffle, ClipboardList, Settings, RotateCcw, Check, ChevronLeft, ChevronRight, Sun, Moon } from "lucide-react"
+import { useTheme } from "@/components/ThemeProvider"
 
 export default function Home() {
   const router = useRouter()
+  const { theme, toggleTheme } = useTheme()
   const [questionCount, setQuestionCount] = useState(10)
   const [currentSection, setCurrentSection] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
@@ -251,9 +253,14 @@ export default function Home() {
       <div className="container mx-auto px-4 py-6 max-w-md">
         {/* Header */}
         <div className="text-center mb-4">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            🦈 鯊逼多益
-          </h1>
+          <div className="flex items-center justify-center gap-2">
+            <button onClick={toggleTheme} className="p-2">
+              {theme === "light" ? <Moon className="w-5 h-5 text-gray-600" /> : <Sun className="w-5 h-5 text-yellow-400" />}
+            </button>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              🦈 鯊逼多益
+            </h1>
+          </div>
           <p className="text-gray-500 text-xs mt-1">TOEIC 練習 App</p>
         </div>
 
