@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Plus, Trash2, BookOpen, Home, ArrowLeft, RotateCcw, Check, X, ChevronLeft, ChevronRight } from "lucide-react"
@@ -28,6 +28,7 @@ const REVIEW_INTERVALS = [0, 1, 3, 7, 14, 30]  // 第0次=當天
 
 export default function NotebookPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [words, setWords] = useState<Word[]>([])
   const [newWord, setNewWord] = useState({ word: "", meaning: "", example: "" })
   const [isAdding, setIsAdding] = useState(false)
@@ -48,7 +49,13 @@ export default function NotebookPage() {
         console.error("Failed to parse words:", e)
       }
     }
-  }, [])
+    
+    // 檢查是否要自動開始複習
+    const shouldReview = searchParams.get("review") === "true"
+    if (shouldReview) {
+      setTimeout(() => startReview(), 500)  // 延遲確保載入完成
+    }
+  }, [searchParams])
 
   // 儲存單字本
   const saveWords = (newWords: Word[]) => {

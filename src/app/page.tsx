@@ -12,13 +12,13 @@ export default function Home() {
   const [questionCount, setQuestionCount] = useState(10)
   const [currentSection, setCurrentSection] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
-  
+
   // Section 2: Part 選擇
   const [selectedParts, setSelectedParts] = useState<string[]>(["part2", "part5", "part6", "part7"])
 
   const togglePart = (part: string) => {
-    setSelectedParts(prev => 
-      prev.includes(part) 
+    setSelectedParts(prev =>
+      prev.includes(part)
         ? prev.filter(p => p !== part)
         : [...prev, part]
     )
@@ -97,17 +97,17 @@ export default function Home() {
             </CardHeader>
           </Card>
         </button>
-        
-        <button className="block w-full text-left" disabled>
-          <Card className="bg-gray-100 opacity-60 cursor-not-allowed">
+
+        <Link href="/notebook?review=true" className="block w-full text-left">
+          <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-orange-500 to-orange-600 border-0">
             <CardHeader className="py-3 px-3">
-              <RotateCcw className="w-5 h-5 text-gray-400 mb-1" />
-              <CardTitle className="text-gray-500 text-sm">單字複習</CardTitle>
-              <p className="text-gray-400 text-xs">敬請期待</p>
+              <RotateCcw className="w-5 h-5 text-white mb-1" />
+              <CardTitle className="text-white text-sm">單字複習</CardTitle>
+              <p className="text-orange-100 text-xs">艾賓浩斯遺忘曲線</p>
             </CardHeader>
           </Card>
-        </button>
-        
+        </Link>
+
         <Link href="/notebook" className="block w-full text-left">
           <Card className="hover:shadow-md transition-all cursor-pointer bg-gradient-to-br from-red-500 to-red-600 border-0">
             <CardHeader className="py-3 px-3">
@@ -132,9 +132,9 @@ export default function Home() {
                 onClick={() => part.enabled && togglePart(part.type)}
                 disabled={!part.enabled}
                 className={`w-full flex items-center justify-between p-2 rounded-lg transition-all ${
-                  part.enabled 
-                    ? selectedParts.includes(part.type) 
-                      ? "bg-blue-50 border border-blue-200" 
+                  part.enabled
+                    ? selectedParts.includes(part.type)
+                      ? "bg-blue-50 border border-blue-200"
                       : "bg-gray-50 border border-gray-100 hover:bg-gray-100"
                     : "bg-gray-50 opacity-50 cursor-not-allowed"
                 }`}
@@ -153,7 +153,7 @@ export default function Home() {
               </button>
             ))}
           </div>
-          
+
           <div className="mt-3 pt-3 border-t border-gray-100">
             <label className="text-xs text-gray-500 mb-2 block">題目數量</label>
             <div className="flex gap-2">
@@ -162,8 +162,8 @@ export default function Home() {
                   key={num}
                   onClick={() => setQuestionCount(num)}
                   className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                    questionCount === num 
-                      ? "bg-blue-500 text-white" 
+                    questionCount === num
+                      ? "bg-blue-500 text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -172,9 +172,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-          
-          <Button 
-            onClick={startRandomQuiz} 
+
+          <Button
+            onClick={startRandomQuiz}
             className="w-full mt-3 bg-blue-600 hover:bg-blue-700"
             disabled={selectedParts.length === 0}
           >
@@ -189,8 +189,8 @@ export default function Home() {
       <h2 className="text-sm font-bold text-gray-700 mb-2">📚 分類練習</h2>
       <div className="grid grid-cols-4 gap-2">
         {categories.map(cat => (
-          <button 
-            key={cat.type} 
+          <button
+            key={cat.type}
             onClick={() => startCategoryQuiz(cat.type)}
             className="text-left"
           >
@@ -261,20 +261,20 @@ export default function Home() {
         <div className="min-h-[70vh] flex flex-col">
           {/* 輪播內容 */}
           <div className="flex-1 overflow-hidden">
-            <div 
+            <div
               ref={carouselRef}
               className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
               style={{ scrollBehavior: 'smooth' }}
             >
               {/* 左側空白 */}
               <div className="w-[15%] flex-shrink-0 snap-start" />
-              
+
               {/* 區塊 */}
               {sections.map((section, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className={`w-[70%] flex-shrink-0 px-2 snap-center transition-opacity duration-300 ${
-                    i === currentSection ? "opacity-100" : 
+                    i === currentSection ? "opacity-100" :
                     Math.abs(i - currentSection) === 1 ? "opacity-50" : "opacity-20"
                   }`}
                   onClick={() => setCurrentSection(i)}
@@ -282,15 +282,15 @@ export default function Home() {
                   {section}
                 </div>
               ))}
-              
+
               {/* 右側空白 */}
               <div className="w-[15%] flex-shrink-0 snap-end" />
             </div>
           </div>
-          
+
           {/* 導航 */}
           <div className="flex items-center justify-between py-2">
-            <button 
+            <button
               onClick={() => {
                 if (currentSection > 0) {
                   setCurrentSection(currentSection - 1)
@@ -302,7 +302,7 @@ export default function Home() {
             >
               <ChevronLeft className="w-6 h-6 text-gray-600" />
             </button>
-            
+
             <div className="flex gap-1">
               {sections.map((_, i) => (
                 <div
@@ -313,8 +313,8 @@ export default function Home() {
                 />
               ))}
             </div>
-            
-            <button 
+
+            <button
               onClick={() => {
                 if (currentSection < sections.length - 1) {
                   setCurrentSection(currentSection + 1)
