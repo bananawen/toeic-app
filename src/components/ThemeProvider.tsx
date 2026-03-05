@@ -14,29 +14,39 @@ const ThemeContext = createContext<ThemeContextType>({
   toggleTheme: () => {},
 })
 
-const STORAGE_KEY = "toeic_theme"
+const STORAGE_KEY = "toic_theme"
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // 從 localStorage 讀取主題（同步）
-  const getInitialTheme = (): Theme => {
-    if (typeof window === "undefined") return "light"
-    return (localStorage.getItem(STORAGE_KEY) as Theme) || "light"
-  }
-  
-  const [theme, setTheme] = useState<Theme>(getInitialTheme)
+  const [theme, setTheme] = useState<Theme>("light")
+  const [mounted, setMounted] = useState(false)
 
-  // 套用主題到 html
+  // 客戶端掛載後才讀取 localStorage
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
+    setMounted(true)
+    const saved = localStorage.getItem(STORAGE_KEY) as Theme | null
+    if (saved) {
+      setTheme(saved)
+      document.documentElement.classList.add(saved)
     }
-    localStorage.setItem(STORAGE_KEY, theme)
-  }, [theme])
+  }, [])
 
+  // 切換主題
   const toggleTheme = () => {
-    setTheme(prev => prev === "light" ? "dark" : "light")
+    setTheme(prev => {
+      const newTheme = prev === "light" ? "dark" : "light"
+      localStorage.setItem(STORAGE_KEY, newTheme)
+      if (newTheme === "dark") {
+        document.documentElement.classList.add("dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+      }
+      return newTheme
+    })
+  }
+
+  // 避免 hydration mismatch
+  if (!mounted) {
+    return <>{children}</>
   }
 
   return (
