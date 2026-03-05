@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -63,47 +65,45 @@
   }
 }
 
-/* 深色模式額外樣式 */
-.dark .bg-white {
+/* 強制深色模式的元素 */
+.dark {
+  --card: #1e293b;
+  --card-foreground: #f1f5f9;
+  background-color: #0f172a;
+}
+
+.dark [class*="bg-white"] {
   background-color: #1e293b !important;
 }
 
-.dark .bg-gray-50 {
+.dark [class*="bg-gray-50"] {
   background-color: #1e293b !important;
 }
 
-.dark .bg-gray-100 {
+.dark [class*="bg-gray-100"] {
   background-color: #334155 !important;
 }
 
-.dark .bg-gray-200 {
+.dark [class*="bg-gray-200"] {
   background-color: #475569 !important;
 }
 
-.dark .text-gray-800 {
+.dark [class*="text-gray-800"] {
   color: #f1f5f9 !important;
 }
 
-.dark .text-gray-700 {
+.dark [class*="text-gray-700"] {
   color: #e2e8f0 !important;
 }
 
-.dark .text-gray-600 {
+.dark [class*="text-gray-600"] {
   color: #cbd5e1 !important;
 }
 
-.dark .text-gray-500 {
+.dark [class*="text-gray-500"] {
   color: #94a3b8 !important;
 }
 
-.dark .text-gray-400 {
+.dark [class*="text-gray-400"] {
   color: #64748b !important;
-}
-
-.dark .border-gray-100 {
-  border-color: #334155 !important;
-}
-
-.dark .border-gray-200 {
-  border-color: #475569 !important;
 }
