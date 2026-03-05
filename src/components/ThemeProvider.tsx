@@ -17,36 +17,26 @@ const ThemeContext = createContext<ThemeContextType>({
 const STORAGE_KEY = "toeic_theme"
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light")
-  const [mounted, setMounted] = useState(false)
-
-  // 載入主題
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) as Theme | null
-    if (saved) {
-      setTheme(saved)
-    }
-    setMounted(true)
-  }, [])
-
-  // 切換主題
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light"
-    setTheme(newTheme)
-    localStorage.setItem(STORAGE_KEY, newTheme)
+  // 從 localStorage 讀取主題（同步）
+  const getInitialTheme = (): Theme => {
+    if (typeof window === "undefined") return "light"
+    return (localStorage.getItem(STORAGE_KEY) as Theme) || "light"
   }
+  
+  const [theme, setTheme] = useState<Theme>(getInitialTheme)
 
-  // 套用主題到 body
+  // 套用主題到 html
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark")
     } else {
       document.documentElement.classList.remove("dark")
     }
+    localStorage.setItem(STORAGE_KEY, theme)
   }, [theme])
 
-  if (!mounted) {
-    return <>{children}</>
+  const toggleTheme = () => {
+    setTheme(prev => prev === "light" ? "dark" : "light")
   }
 
   return (
